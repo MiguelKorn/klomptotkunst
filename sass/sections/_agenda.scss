@@ -1,0 +1,205 @@
+/* Agenda
+   ========================================================================== */
+
+&#agenda {
+
+	.agenda {
+		width: 100%;
+		min-height: 500px;
+		background: $gray;
+		margin: 0 auto;
+		position: relative;
+		padding: 50px 305px 50px 50px;
+		margin: 40px 0;
+		@include box-sizing(border-box);
+
+		@media screen and (max-width: 930px) {
+			display: none;
+		}
+
+		.months {
+			display: block;
+			overflow: hidden;
+
+			.col-33 {
+				width: 33%;
+				margin: 0;
+				background: none;
+				font: 24px $font-family;
+				font-weight: $normal;
+				color: $agenda-vivid;
+				text-transform: uppercase;
+				text-align: center;
+				float: left;
+
+				&:first-of-type {
+					font: 16px $font-family;
+					font-weight: $normal;					
+					text-align: left;
+					line-height: 2.1;
+
+					a {
+						color: $blue;
+						text-decoration: none;
+
+						&:hover {
+							background: none;
+						}
+					}
+				}
+
+				&.last {
+					text-align: right !important;
+					font: 16px $font-family;
+					font-weight: $normal;
+					line-height: 2.1; 
+
+					a {
+						color: $blue;
+						text-decoration: none;
+					}
+				}
+			}
+		}
+
+		.content {
+			width: 100%;
+			overflow: hidden;
+			margin: 70px auto 0;
+			display: block;
+
+			.days {
+				display: block;
+				overflow: hidden;
+			}
+
+			.alldays {
+				display: block;
+				overflow: hidden;
+				margin-top: 40px;
+
+				.col-14 {
+					font-size: 16px;
+					margin-bottom: 15px;
+					display: block;
+					border-bottom: 2px solid $transparent;
+					@include box-sizing(border-box);
+					@include transition(background .2s);
+
+					span {
+						width: 30px;
+						height: 30px;
+						margin: 0 auto;
+						position: relative;
+						display: block;
+						line-height: 1.9;
+						cursor: pointer;
+						@include box-sizing(border-box);
+
+						&.active {
+							background: $blue;
+							color: $white;
+							@include transition(background .2s);
+						}
+
+						&.current {
+							background: $red;
+							color: $white;
+							@include border-radius(50%);
+						}
+					}
+				}
+			}
+
+			.col-14 {
+				width: 14%;
+				float: left;
+				font: 22px $font-family;
+				font-weight: $normal;
+				color: $agenda;
+				text-transform: uppercase;
+				text-align: center;
+			}
+		}
+
+
+		/* Side Menu */
+		aside {
+			background: $agenda;	
+			width: 255px;
+			height: 508px;
+			position: absolute;
+			right: 0;
+			top: 0;
+			padding: 50px 0;
+			overflow-y: scroll;
+			@include box-sizing(border-box);
+
+			h4 {
+				font: 16px $font-family;
+				font-weight: $normal;
+				text-transform: uppercase;
+				color: $blue;
+				letter-spacing: 1px;
+				text-align: center;
+				margin-bottom: 0;
+			}
+
+			h5 {
+				@extend h4;
+				color: $agenda-vivid;
+				margin-top: 0px;
+			}
+
+			.row {
+				width: 100%;
+				border-bottom: 1px solid $agenda-font;
+				overflow: hidden;
+				font: $font-size $font-family;
+				font-weight: $normal;
+				color: $agenda-font;
+				margin-bottom: 14px;
+				cursor: pointer;
+
+				p {
+					font: 12px $font-family;
+					font-weight: $normal;
+					font-style: italic;
+					color: $agenda-font;
+					margin: 0 26px 0;
+					padding-bottom: 20px;
+					margin-bottom: 0;
+					display: none;
+					float: left;
+					@include box-sizing(border-box);
+
+					a {
+						display: block;
+						font-style: normal;
+						font-weight: $bold;
+						color: $blue;
+						text-decoration: none;
+					}
+
+					p {
+						margin-left: 0 !important;
+					}
+				}
+
+				&:first-of-type {
+					margin-top: 40px;
+				}
+
+				.col-25 {
+					background: none;
+					float: left;
+					text-align: right;
+				}
+
+				.col-75 {
+					margin-bottom: 10px;
+				}
+			}
+		}
+	}
+}

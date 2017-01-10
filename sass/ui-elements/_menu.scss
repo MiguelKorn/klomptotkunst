@@ -1,0 +1,408 @@
+/* Main Menu
+========================================================================== */
+// Remove agenda on mobile
+#agenda {
+	@media screen and (max-width: 930px) {
+		display: none;
+	}
+}
+
+nav {
+	background: $white;
+	width: 100%;
+	min-height: 67px;
+	margin: 0 auto;
+	padding: 30px 0 20px 0;
+	position: relative;
+	z-index: 999;
+	@include box-sizing(border-box);
+	@include transition(nav .20s);
+
+		&.fixed{
+			min-height: 56px;
+			padding: 15px 0;
+			z-index: 999;
+
+			ul li a{
+				padding: 9px 0;
+				border-top:0;
+				border-bottom: 5px solid $transparent;
+			}
+		}
+
+	&.cbp-spmenu-push {
+		position: fixed !important;
+		overflow: initial;
+	}
+
+	&.left {
+		left: -240px;
+	}
+
+	.container {
+		overflow: inherit;
+	}
+
+	.logo {
+		float: left;
+		position: relative;
+ 		top: -4px;
+
+		a {
+			font: 20px $font-family;
+			font-weight: $normal;
+			color: $black;
+			text-decoration: none;
+			text-transform: uppercase;
+
+			&:hover,
+			&:active {
+				color: $black;
+			}
+		}
+	}
+
+	ul {
+		list-style: none;
+		margin: 0;
+		float: right;
+
+		@media screen and (max-width: 930px) {
+			display: none;
+		}
+
+		li {
+			float: left;
+			margin-right: 35px;
+
+			&:nth-of-type(2) {
+				width: 144px;
+			}
+
+			&:last-of-type {
+				margin-right: 0;
+			}
+
+			a {
+				font-size: 20px $font-family;
+				font-weight: $normal;
+				color: $black;
+				text-decoration: none;
+				text-transform: uppercase;
+				border-top: 5px solid $transparent;
+				padding: 24px 0;
+
+				&:hover,
+				&.active {
+					border-color: $blue;
+				}
+
+				&.locations {
+					background: $white;
+					padding: 14px 28px;
+					border-color: $transparent !important;
+					border-top: 0;
+					@include transition(background .2s);
+
+					&.nl {
+						padding: 14px 36px;
+					}
+
+					&:hover,
+					&.active {
+						background: $subnav;
+						@include transition(background .2s);
+					}
+				}
+			}
+
+			.dropdown {
+				background: $subnav;
+				min-width: 112px;
+				display: none;
+				float: none;
+				position: fixed;
+
+				.row {
+					background: $subnav;
+					min-width: 144px;
+					border-top: 1px solid $gray-dark;
+					display: block;
+					text-align: center;
+					@include transition(background .2s);
+
+					&:hover {
+						background: $gray-dark;
+						@include transition(background .2s);
+					}
+
+					&:first-of-type {
+						margin-top: 13px;
+					}
+
+					a {
+						font: 16px $font-family;
+						font-weight: $normal;
+						color: $black;
+						text-transform: none;
+						border: none;
+						display: block;
+						padding: 10px 21px;
+					}
+				}
+			}
+		}
+	}
+
+	.hamburger {
+		@include retina-sprite(hamburger);
+		float: right;
+		margin-top: 5px;
+		cursor: pointer;
+		display: none;
+
+		@media screen and (max-width: 930px) {
+			display: block;
+		}
+	}
+
+	.close {
+		@extend .hamburger;
+		@include retina-sprite(close);
+		position: relative;
+	}
+
+	.languageswitch {
+		float: right;
+		margin: 0 24px;
+
+		@media screen and (max-width: 930px) {
+			display: none;
+		}
+
+		.ned {
+			@include retina-sprite(ned);
+			float: left;
+			margin-right: 24px;
+			cursor: pointer;
+			opacity: 1;
+			@include transition(opacity .20s);
+
+			&:hover {
+				opacity: 0.8;
+				@include transition(opacity .20s);
+			}
+		}
+
+		.eng {
+			@extend .ned;
+			@include retina-sprite(eng);
+			margin-right: 0;
+		}
+	}
+
+
+	.search {
+		@include retina-sprite(search);
+		float: right;
+		cursor: pointer;
+		@include transition(opacity .2s);
+
+		&:hover {
+			opacity: 0.8;
+			@include transition(opacity .2s);
+		}
+
+		@media screen and (max-width: 930px) {
+			display: none;
+		}
+	}
+
+	.searchclose {
+		@extend .search;
+		@include retina-sprite(close);
+		margin-left: 6px;
+	}
+}
+
+
+
+/* Mobile Navigation */
+
+.cbp-spmenu {
+	background: $agenda;
+	position: fixed;
+	overflow-y: scroll;
+	@include transition(all .3s);
+
+	h1 {
+		color: $agenda-light;
+		padding: 20px;
+		margin: 0;
+		background: $agenda;
+	}
+
+	a {
+		display: block;
+		color: $agenda-light;
+		font-size: 16px;
+		font-weight: $normal;
+		text-decoration: none;
+		text-transform: uppercase;
+		position: relative;
+
+		&:hover,
+		&.active {
+			background: lighten($agenda, 5%);
+		}
+	}
+
+	// Subnav 
+
+	.arrow {
+		@include retina-sprite(arrow-subnav);
+		background-color: $transparent;
+		float: right;
+		margin-top: 5px;
+		@include transition(all 0.3s ease-out);
+
+		&.switch {
+			@include transform(rotate(-180deg));
+			@include transition(all 0.3s ease-out);
+		}
+	}
+
+	ul {
+		list-style: none;
+		margin: 0;
+		display: none;
+
+		a {
+			font-size: 14px;
+			padding-left: 40px;
+
+			&#agenda {
+				@media screen and (max-width: 930px) {
+					display: none;
+				}
+			}
+		}
+	}
+
+	form {
+		width: 100%;
+		padding: 20px;
+		position: relative;
+		@include box-sizing(border-box);
+
+		input[type="text"] {
+			padding: 10px 30px 10px 10px;
+		}
+
+		.search-btn {
+			@include retina-sprite(search-btn);
+			background-color: lighten($agenda, 5%);
+			color: $transparent;
+			border: 0;
+			position: absolute;
+			right: 30px;
+			top: 28px;
+			padding: 8px;
+			color: $transparent !important;
+			z-index: 999;
+		}
+	}
+
+	.languages {
+		width: 100%;
+		margin-top: 10px;
+		padding: 0 20px;
+		@include box-sizing(border-box);
+
+		a {
+			border: 0;
+			padding: 0;
+			background: $transparent !important;
+		}
+
+		.ned {
+			@include retina-sprite(ned);
+			float: left;
+			margin-right: 24px;
+			cursor: pointer;
+			opacity: 1;
+			@include transition(opacity .20s);
+
+			&:hover {
+				opacity: 0.8;
+				@include transition(opacity .20s);
+			}
+		}
+
+		.eng {
+			@extend .ned;
+			@include retina-sprite(eng);
+			margin-right: 0;
+		}
+	}
+}
+
+
+.cbp-spmenu-vertical {
+	width: 240px;
+	height: 100%;
+	top: 0;
+	z-index: 1000;
+}
+
+.cbp-spmenu-vertical a {
+	border-bottom: 1px solid $agenda-vivid;
+	padding: 1em;
+}
+
+/* Vertical menu that slides from the left or right */
+
+.cbp-spmenu-right {
+	right: -240px;
+}
+
+.cbp-spmenu-right.cbp-spmenu-open {
+	right: 0px;
+}
+
+
+/* Push classes applied to the body */
+
+.cbp-spmenu-push {
+	overflow-x: hidden;
+	position: relative;
+	left: 0;
+	@include transition(all .3s);
+}
+
+.cbp-spmenu-push-toleft {
+	left: -240px;
+}
+
+/* Transitions */
+
+@media screen and (max-height: 26.375em){
+
+	.cbp-spmenu-vertical {
+		font-size: 90%;
+		width: 190px;
+	}
+
+	.cbp-spmenu-left,
+	.cbp-spmenu-push-toleft {
+		left: -190px;
+	}
+
+	.cbp-spmenu-right {
+		right: -190px;
+	}
+
+	.cbp-spmenu-push-toright {
+		left: 190px;
+	}
+}

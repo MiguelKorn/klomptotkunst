@@ -1,0 +1,22 @@
+/* Sections
+   ========================================================================== */
+
+   section {
+   	width: 100%;
+   	margin: 0 auto;
+   	overflow: hidden;
+
+   	// Imports
+   	@import "plaatsen";
+   	@import "info";
+      @import "inschrijven";
+      @import "profile";
+      @import "locations";
+      @import "agenda";
+      @import "contact";
+      @import "user";
+      @import "404";
+      @import "search";
+   	
+   }
+   

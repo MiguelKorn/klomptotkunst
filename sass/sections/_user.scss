@@ -1,0 +1,72 @@
+&#user-panel{
+	width:32px;
+	background:$agenda;
+	height:initial;
+	margin: 0;
+	position: fixed;
+	z-index: 999;
+	top: 10px;
+	left:0;
+
+	@media screen and (max-width:900px){
+		top:60px;
+	}
+
+	div{
+		height: 32px;
+		position: relative;
+		cursor:pointer;
+		@include box-sizing(border-box);
+	}
+	span{
+		display: block;
+		height: 100%;
+		width: 100%;
+	}
+	.user{
+		background: url(../images/icons/user.png) no-repeat 8px 8px $agenda;
+		background-size: 16px;
+
+		&:hover,
+		&:active{
+			background: url(../images/icons/user.png) no-repeat 8px 8px lighten($agenda, 10%);
+			@include transition(background .20s);
+			background-size: 16px;
+		}
+	}
+
+	.edit{
+		background: url(../images/icons/edit.png) no-repeat 8px 8px $agenda;
+		background-size: 16px;
+
+		&:hover,
+		&:active{
+			background: url(../images/icons/edit.png) no-repeat 8px 8px lighten($agenda, 10%);
+			@include transition(background .20s);
+			background-size: 16px;
+		}
+	}
+	.calender{
+		background: url(../images/icons/calender.png) no-repeat 8px 8px $agenda;
+		background-size: 16px;
+
+		&:hover,
+		&:active{
+			background: url(../images/icons/calender.png) no-repeat 8px 8px lighten($agenda, 10%);
+			@include transition(background .20s);
+			background-size: 16px;
+		}
+	}
+	.log-out{
+		background: url(../images/icons/log-out.png) no-repeat 8px 8px $agenda;
+		background-size: 16px;
+
+		&:hover,
+		&:active{
+			background: url(../images/icons/log-out.png) no-repeat 8px 8px lighten($agenda, 10%);
+			@include transition(background .20s);
+			background-size: 16px;
+		}
+	}
+
+}

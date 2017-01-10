@@ -1,0 +1,6161 @@
+/* ==========================================================================
+   import scss files
+   ========================================================================== */
+/* ==========================================================================
+   Variables
+   ========================================================================== */
+/* compass defaults
+   ========================================================================== */
+/* normalize setup
+   ========================================================================== */
+/* =============================================================================
+   HTML5 display definitions
+   ========================================================================== */
+/*
+ * Corrects block display not defined in IE6/7/8/9 & FF3
+ */
+/* Removes outline from all elements on focus */
+@import url(http://fonts.googleapis.com/css?family=Open+Sans:400,300,700,600);
+/* line 11, ../sass/_normalize.scss */
+*:focus {
+  outline: 0 !important;
+}
+
+/* line 15, ../sass/_normalize.scss */
+article,
+aside,
+details,
+figcaption,
+figure,
+footer,
+header,
+hgroup,
+nav,
+section,
+summary {
+  display: block;
+}
+
+/*
+ * Corrects inline-block display not defined in IE6/7/8/9 & FF3
+ */
+/* line 33, ../sass/_normalize.scss */
+audio,
+canvas,
+video {
+  display: inline-block;
+}
+
+/*
+ * Prevents modern browsers from displaying 'audio' without controls
+ * Remove excess height in iOS5 devices
+ */
+/* line 48, ../sass/_normalize.scss */
+audio:not([controls]) {
+  display: none;
+  height: 0;
+}
+
+/*
+ * Addresses styling for 'hidden' attribute not present in IE7/8/9, FF3, S4
+ * Known issue: no IE6 support
+ */
+/* line 58, ../sass/_normalize.scss */
+[hidden] {
+  display: none;
+}
+
+/* =============================================================================
+   Base
+   ========================================================================== */
+/*
+ * 1. Corrects text resizing oddly in IE6/7 when body font-size is set using em units
+ *    http://clagnut.com/blog/348/#c790
+ * 2. Prevents iOS text size adjust after orientation change, without disabling user zoom
+ *    www.456bereastreet.com/archive/201012/controlling_text_size_in_safari_for_ios_without_disabling_user_zoom/
+ */
+/* line 74, ../sass/_normalize.scss */
+html {
+  font-size: 100%;
+  /* 1 */
+  -webkit-text-size-adjust: 100%;
+  /* 2 */
+  -ms-text-size-adjust: 100%;
+  /* 2 */
+  /* Establishes a vertical rhythm unit using $base-line-height. */
+  line-height: 1.3125em;
+  height: 100%;
+}
+
+/*
+ * Addresses font-family inconsistency between 'textarea' and other form elements.
+ */
+/* line 88, ../sass/_normalize.scss */
+html,
+button,
+input,
+select,
+textarea {
+  font-family: "Open Sans", sans-serif;
+}
+
+/*
+ * Addresses margins handled incorrectly in IE6/7
+ */
+/* line 100, ../sass/_normalize.scss */
+body {
+  background: #ffffff;
+  margin: 0;
+  height: 100%;
+  -webkit-overflow-scrolling: touch;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+/* =============================================================================
+   Links
+   ========================================================================== */
+/*
+ * Addresses outline displayed oddly in Chrome
+ */
+/* line 118, ../sass/_normalize.scss */
+a:focus {
+  outline: thin dotted;
+}
+
+/*
+ * Improves readability when focused and also mouse hovered in all browsers
+ * people.opera.com/patrickl/experiments/keyboard/test
+ */
+/* line 127, ../sass/_normalize.scss */
+a:hover,
+a:active {
+  outline: 0;
+}
+
+/* =============================================================================
+   Typography
+   ========================================================================== */
+/*
+ * Addresses font sizes and margins set differently in IE6/7
+ * Addresses font sizes within 'section' and 'article' in FF4+, Chrome, S5
+ */
+/* line 142, ../sass/_normalize.scss */
+h1 {
+  /* Sets the font-size and line-height while keeping a proper vertical rhythm. */
+  font-size: 2em;
+  line-height: 1.3125em;
+  /* Sets 1 unit of vertical rhythm on the top and bottom margins. */
+  margin-top: 0.65625em;
+  margin-bottom: 0.65625em;
+}
+
+/* line 151, ../sass/_normalize.scss */
+h2 {
+  font-size: 1.5em;
+  line-height: 1.75em;
+  margin-top: 0.875em;
+  margin-bottom: 0.875em;
+}
+
+/* line 157, ../sass/_normalize.scss */
+h3 {
+  font-size: 1.17em;
+  line-height: 2.24359em;
+  margin-top: 1.12179em;
+  margin-bottom: 1.12179em;
+}
+
+/* line 163, ../sass/_normalize.scss */
+h4, section#agenda .agenda aside h5 {
+  font-size: 1em;
+  line-height: 1.3125em;
+  margin-top: 1.3125em;
+  margin-bottom: 1.3125em;
+}
+
+/* line 169, ../sass/_normalize.scss */
+h5 {
+  font-size: 0.83em;
+  line-height: 1.58133em;
+  margin-top: 1.58133em;
+  margin-bottom: 1.58133em;
+}
+
+/* line 175, ../sass/_normalize.scss */
+h6 {
+  font-size: 0.75em;
+  line-height: 1.75em;
+  margin-top: 1.75em;
+  margin-bottom: 1.75em;
+}
+
+/*
+ * Addresses styling not present in IE7/8/9, S5, Chrome
+ */
+/* line 185, ../sass/_normalize.scss */
+abbr[title] {
+  border-bottom: 1px dotted;
+}
+
+/*
+ * Addresses style set to 'bolder' in FF3+, S4/5, Chrome
+*/
+/* line 193, ../sass/_normalize.scss */
+b,
+strong {
+  font-weight: bold;
+}
+
+/* line 198, ../sass/_normalize.scss */
+blockquote {
+  /* Sets 1 unit of vertical rhythm on the top and bottom margin. */
+  margin: 1.3125em 40px;
+}
+
+/*
+ * Addresses styling not present in S5, Chrome
+ */
+/* line 207, ../sass/_normalize.scss */
+dfn {
+  font-style: italic;
+}
+
+/*
+ * Addresses styling not present in IE6/7/8/9
+ */
+/* line 215, ../sass/_normalize.scss */
+mark {
+  background: #ff0;
+  color: #000;
+}
+
+/*
+ * Addresses margins set differently in IE6/7
+ */
+/* line 224, ../sass/_normalize.scss */
+p,
+pre {
+  /* Sets 1 unit of vertical rhythm on the top and bottom margin. */
+  margin: 1.3125em 0;
+}
+
+/*
+ * Corrects font family set oddly in IE6, S4/5, Chrome
+ * en.wikipedia.org/wiki/User:Davidgothberg/Test59
+ */
+/* line 235, ../sass/_normalize.scss */
+pre,
+code,
+kbd,
+samp {
+  font-family: monospace, serif;
+  font-size: 1em;
+  line-height: 1.3125em;
+}
+
+/*
+ * Improves readability of pre-formatted text in all browsers
+ */
+/* line 250, ../sass/_normalize.scss */
+pre {
+  white-space: pre;
+  white-space: pre-wrap;
+  word-wrap: break-word;
+}
+
+/*
+ * 1. Addresses CSS quotes not supported in IE6/7
+ * 2. Addresses quote property not supported in S4
+ */
+/* 1 */
+/* line 263, ../sass/_normalize.scss */
+q {
+  quotes: none;
+}
+
+/* 2 */
+/* line 269, ../sass/_normalize.scss */
+q:before,
+q:after {
+  content: '';
+  content: none;
+}
+
+/* line 275, ../sass/_normalize.scss */
+small {
+  font-size: 75%;
+}
+
+/*
+ * Prevents sub and sup affecting line-height in all browsers
+ * gist.github.com/413930
+ */
+/* line 284, ../sass/_normalize.scss */
+sub,
+sup {
+  font-size: 75%;
+  line-height: 0;
+  position: relative;
+  vertical-align: baseline;
+}
+
+/* line 292, ../sass/_normalize.scss */
+sup {
+  top: -0.5em;
+}
+
+/* line 296, ../sass/_normalize.scss */
+sub {
+  bottom: -0.25em;
+}
+
+/* =============================================================================
+   Lists
+   ========================================================================== */
+/*
+ * Addresses margins set differently in IE6/7
+ */
+/* line 309, ../sass/_normalize.scss */
+dl,
+menu,
+ol,
+ul {
+  /* Sets 1 unit of vertical rhythm on the top and bottom margin. */
+  margin: 1.3125em 0;
+}
+
+/* line 317, ../sass/_normalize.scss */
+dd {
+  margin: 0 0 0 40px;
+}
+
+/*
+ * Addresses paddings set differently in IE6/7
+ */
+/* line 325, ../sass/_normalize.scss */
+menu,
+ol,
+ul {
+  padding: 0;
+}
+
+/*
+ * Corrects list images handled incorrectly in IE7
+ */
+/* line 335, ../sass/_normalize.scss */
+nav ul,
+nav ol {
+  list-style: none;
+  list-style-image: none;
+}
+
+/* =============================================================================
+   Embedded content
+   ========================================================================== */
+/*
+ * 1. Removes border when inside 'a' element in IE6/7/8/9, FF3
+ * 2. Improves image quality when scaled in IE7
+ *    code.flickr.com/blog/2008/11/12/on-ui-quality-the-little-things-client-side-image-resizing/
+ */
+/* line 352, ../sass/_normalize.scss */
+img {
+  border: 0;
+  /* 1 */
+  -ms-interpolation-mode: bicubic;
+  /* 2 */
+}
+
+/*
+ * Corrects overflow displayed oddly in IE9
+ */
+/* line 361, ../sass/_normalize.scss */
+svg:not(:root) {
+  overflow: hidden;
+}
+
+/* =============================================================================
+   Figures
+   ========================================================================== */
+/*
+ * Addresses margin not present in IE6/7/8/9, S5, O11
+ */
+/* line 374, ../sass/_normalize.scss */
+figure {
+  margin: 0;
+}
+
+/* =============================================================================
+   Forms
+   ========================================================================== */
+/*
+ * Corrects margin displayed oddly in IE6/7
+ */
+/* line 387, ../sass/_normalize.scss */
+form {
+  margin: 0;
+}
+
+/*
+ * Define consistent border, margin, and padding
+ */
+/* line 395, ../sass/_normalize.scss */
+fieldset {
+  border-color: #c0c0c0;
+  margin: 0 2px;
+  /* Apply borders and padding that keep the vertical rhythm. */
+  border-top-width: 0.0625em;
+  border-top-style: solid;
+  padding-top: 0.39688em;
+  border-bottom-width: 0.0625em;
+  border-bottom-style: solid;
+  padding-bottom: 0.79063em;
+  border-left-width: 0.0625em;
+  border-left-style: solid;
+  padding-left: 0.75781em;
+  border-right-width: 0.0625em;
+  border-right-style: solid;
+  padding-right: 0.75781em;
+}
+
+/*
+ * 1. Corrects color not being inherited in IE6/7/8/9
+ * 2. Corrects text not wrapping in FF3
+ * 3. Corrects alignment displayed oddly in IE6/7
+ */
+/* line 411, ../sass/_normalize.scss */
+legend {
+  border: 0;
+  /* 1 */
+  padding: 0;
+  white-space: normal;
+  /* 2 */
+}
+
+/*
+ * 1. Corrects font size not being inherited in all browsers
+ * 2. Addresses margins set differently in IE6/7, FF3+, S5, Chrome
+ * 3. Improves appearance and consistency in all browsers
+ */
+/* line 426, ../sass/_normalize.scss */
+button,
+input,
+select,
+textarea {
+  font-size: 100%;
+  /* 1 */
+  margin: 0;
+  /* 2 */
+  vertical-align: baseline;
+  /* 3 */
+}
+
+/*
+ * Addresses FF3/4 setting line-height on 'input' using !important in the UA stylesheet
+ */
+/* line 442, ../sass/_normalize.scss */
+button,
+input {
+  line-height: normal;
+  /* 1 */
+}
+
+/*
+ * 1. Improves usability and consistency of cursor style between image-type 'input' and others
+ * 2. Corrects inability to style clickable 'input' types in iOS
+ * 3. Removes inner spacing in IE7 without affecting normal text inputs
+ *    Known issue: inner spacing remains in IE6
+ */
+/* line 454, ../sass/_normalize.scss */
+button,
+input[type="button"],
+input[type="reset"],
+input[type="submit"] {
+  cursor: pointer;
+  /* 1 */
+  -webkit-appearance: button;
+  /* 2 */
+}
+
+/*
+ * Re-set default cursor for disabled elements
+ */
+/* line 469, ../sass/_normalize.scss */
+button[disabled],
+input[disabled] {
+  cursor: default;
+}
+
+/*
+ * 1. Addresses box sizing set to content-box in IE8/9
+ * 2. Removes excess padding in IE8/9
+ * 3. Removes excess padding in IE7
+      Known issue: excess padding remains in IE6
+ */
+/* line 481, ../sass/_normalize.scss */
+input[type="checkbox"],
+input[type="radio"] {
+  -moz-box-sizing: border-box;
+  -webkit-box-sizing: border-box;
+  box-sizing: border-box;
+  /* 1 */
+  padding: 0;
+  /* 2 */
+}
+
+/*
+ * 1. Addresses appearance set to searchfield in S5, Chrome
+ * 2. Addresses box-sizing set to border-box in S5, Chrome (include -moz to future-proof)
+ */
+/* line 496, ../sass/_normalize.scss */
+input[type="search"] {
+  -webkit-appearance: textfield;
+  /* 1 */
+  -moz-box-sizing: content-box;
+  -webkit-box-sizing: content-box;
+  box-sizing: content-box;
+  /* 2 */
+}
+
+/*
+ * Removes inner padding and search cancel button in S5, Chrome on OS X
+ */
+/* line 505, ../sass/_normalize.scss */
+input[type="search"]::-webkit-search-decoration,
+input[type="search"]::-webkit-search-cancel-button {
+  -webkit-appearance: none;
+}
+
+/*
+ * Removes inner padding and border in FF3+
+ * www.sitepen.com/blog/2008/05/14/the-devils-in-the-details-fixing-dojos-toolbar-buttons/
+ */
+/* line 515, ../sass/_normalize.scss */
+button::-moz-focus-inner,
+input::-moz-focus-inner {
+  border: 0;
+  padding: 0;
+}
+
+/*
+ * 1. Removes default vertical scrollbar in IE6/7/8/9
+ * 2. Improves readability and alignment in all browsers
+ */
+/* line 526, ../sass/_normalize.scss */
+textarea {
+  overflow: auto;
+  /* 1 */
+  vertical-align: top;
+  /* 2 */
+}
+
+/* =============================================================================
+   Tables
+   ========================================================================== */
+/*
+ * Remove most spacing between table cells
+ */
+/* line 540, ../sass/_normalize.scss */
+table {
+  border-collapse: collapse;
+  border-spacing: 0;
+}
+
+/* fonts
+   ========================================================================== */
+/* headings
+   ========================================================================== */
+/* line 7, ../sass/_typography.scss */
+h1 {
+  font: 30px "Open Sans", sans-serif;
+  text-align: left;
+  font-weight: 700;
+}
+
+/* line 13, ../sass/_typography.scss */
+h2 {
+  display: inline-block;
+  font: 20px "Open Sans", sans-serif;
+  font-weight: 700;
+  color: #333333;
+  text-align: left;
+  text-transform: uppercase;
+  border-bottom: 2px solid #00bff3;
+}
+
+/* line 23, ../sass/_typography.scss */
+h3 {
+  font: 20px "Open Sans", sans-serif;
+  text-align: left;
+  font-weight: 700;
+}
+
+/* line 29, ../sass/_typography.scss */
+p {
+  width: 100%;
+  font: 14px "Open Sans", sans-serif;
+  font-weight: 400;
+  color: #333333;
+  line-height: 1.6;
+}
+
+/* Layout
+   ========================================================================== */
+/* line 4, ../sass/_layout.scss */
+.container {
+  max-width: 1200px;
+  width: 100%;
+  margin: 0 auto;
+  padding: 0px 50px;
+  -moz-box-sizing: border-box;
+  -webkit-box-sizing: border-box;
+  box-sizing: border-box;
+}
+@media screen and (max-width: 768px) {
+  /* line 4, ../sass/_layout.scss */
+  .container {
+    padding: 0px 20px;
+  }
+}
+
+/* line 15, ../sass/_layout.scss */
+.col-25 {
+  width: 23.5%;
+  margin: 0 1%;
+  float: left;
+  position: relative;
+  background: #e6e4e4;
+  -moz-box-sizing: border-box;
+  -webkit-box-sizing: border-box;
+  box-sizing: border-box;
+}
+@media screen and (max-width: 925px) {
+  /* line 15, ../sass/_layout.scss */
+  .col-25 {
+    width: 49%;
+  }
+}
+@media screen and (max-width: 480px) {
+  /* line 15, ../sass/_layout.scss */
+  .col-25 {
+    width: 100%;
+    margin: 0;
+  }
+}
+/* line 31, ../sass/_layout.scss */
+.col-25:first-of-type {
+  margin-left: 0;
+}
+/* line 34, ../sass/_layout.scss */
+.col-25:last-of-type {
+  margin-right: 0;
+}
+/* line 38, ../sass/_layout.scss */
+.col-25 a {
+  height: 100%;
+  width: 100%;
+  display: block;
+}
+/* line 44, ../sass/_layout.scss */
+.col-25 .overlay {
+  background: rgba(0, 0, 0, 0.6);
+  margin: auto;
+  width: 100%;
+  -moz-box-sizing: border-box;
+  -webkit-box-sizing: border-box;
+  box-sizing: border-box;
+  padding: 20px;
+  border-bottom: 2px solid #00bff3;
+  position: absolute;
+  bottom: 40px;
+}
+/* line 55, ../sass/_layout.scss */
+.col-25 .overlay h3 {
+  color: #ffffff;
+  margin-top: 0px;
+  margin-bottom: 0px;
+  margin-top: -13px;
+}
+/* line 62, ../sass/_layout.scss */
+.col-25 .overlay p {
+  font-size: 14px;
+  color: #ffffff;
+  font-family: "Open Sans", sans-serif;
+  margin: 0;
+}
+
+/* line 72, ../sass/_layout.scss */
+.col-33 {
+  width: 32%;
+  margin: 0 1%;
+  float: left;
+  position: relative;
+  background: #ffffff;
+  -moz-box-sizing: border-box;
+  -webkit-box-sizing: border-box;
+  box-sizing: border-box;
+}
+@media screen and (max-width: 925px) {
+  /* line 72, ../sass/_layout.scss */
+  .col-33 {
+    width: 49%;
+  }
+}
+@media screen and (max-width: 480px) {
+  /* line 72, ../sass/_layout.scss */
+  .col-33 {
+    width: 100%;
+    margin: 0;
+  }
+}
+/* line 88, ../sass/_layout.scss */
+.col-33:first-of-type {
+  margin-left: 0;
+}
+/* line 91, ../sass/_layout.scss */
+.col-33:last-of-type {
+  margin-right: 0;
+}
+/* line 95, ../sass/_layout.scss */
+.col-33 a {
+  height: 100%;
+  width: 100%;
+  display: block;
+}
+/* line 101, ../sass/_layout.scss */
+.col-33 .overlay {
+  background: rgba(0, 0, 0, 0.6);
+  margin: auto;
+  width: 100%;
+  -moz-box-sizing: border-box;
+  -webkit-box-sizing: border-box;
+  box-sizing: border-box;
+  padding: 20px;
+  border-bottom: 2px solid #00bff3;
+  position: absolute;
+  bottom: 40px;
+}
+/* line 111, ../sass/_layout.scss */
+.col-33 .overlay h3 {
+  color: #ffffff;
+  margin-top: 0px;
+  margin-bottom: 0px;
+  margin-top: -13px;
+}
+/* line 118, ../sass/_layout.scss */
+.col-33 .overlay p {
+  font-size: 14px;
+  color: #ffffff;
+  font-family: "Open Sans", sans-serif;
+  margin: 0;
+  overflow: hidden;
+  display: block;
+  /* Fallback for non-webkit */
+  display: -webkit-box;
+  max-width: 100%;
+  height: 14px 1.4 2;
+  /* Fallback for non-webkit */
+  line-height: 1.4;
+  -webkit-line-clamp: 2;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+/* line 136, ../sass/_layout.scss */
+.col-33 a:hover {
+  background: rgba(255, 255, 255, 0.2);
+  -moz-transition: background 0.2s;
+  -o-transition: background 0.2s;
+  -webkit-transition: background 0.2s;
+  transition: background 0.2s;
+}
+
+/* line 141, ../sass/_layout.scss */
+.col-50 {
+  width: 50%;
+  float: left;
+  padding: 0 20px;
+  -moz-box-sizing: border-box;
+  -webkit-box-sizing: border-box;
+  box-sizing: border-box;
+}
+/* line 147, ../sass/_layout.scss */
+.col-50:first-of-type {
+  padding-left: 0;
+}
+/* line 151, ../sass/_layout.scss */
+.col-50:last-of-type {
+  padding-right: 0;
+}
+
+/* line 157, ../sass/_layout.scss */
+.search-container {
+  background: #f8f6f6;
+  width: 100%;
+  height: 75px;
+  position: relative;
+  top: 0;
+  left: 0;
+  z-index: 999;
+  display: none;
+  padding-top: 10px;
+  -moz-box-sizing: border-box;
+  -webkit-box-sizing: border-box;
+  box-sizing: border-box;
+}
+@media screen and (max-width: 880px) {
+  /* line 157, ../sass/_layout.scss */
+  .search-container {
+    display: none !important;
+  }
+}
+
+/* line 175, ../sass/_layout.scss */
+.col-75 {
+  width: 75%;
+  padding: 0 10px 0 16px;
+  float: left;
+  position: relative;
+  -moz-box-sizing: border-box;
+  -webkit-box-sizing: border-box;
+  box-sizing: border-box;
+}
+
+/* line 183, ../sass/_layout.scss */
+.col-100 {
+  width: 100%;
+  background: #ffffff;
+}
+
+/* line 187, ../sass/_layout.scss */
+.active-search {
+  display: block;
+}
+
+/* ==========================================================================
+	 buttons
+	 ========================================================================== */
+/* line 5, ../sass/ui-elements/_buttons.scss */
+.overlay .btn {
+  display: block;
+  padding: 10px;
+  background: #00bff3;
+  text-align: center;
+  color: #ffffff;
+  width: 180px;
+  text-decoration: none;
+  font-family: "Open Sans", sans-serif;
+  font-size: 18px;
+  margin: auto;
+  -moz-transition: background 0.2s;
+  -o-transition: background 0.2s;
+  -webkit-transition: background 0.2s;
+  transition: background 0.2s;
+}
+/* line 18, ../sass/ui-elements/_buttons.scss */
+.overlay .btn:hover, .overlay .btn:active {
+  background: #0097c0;
+  -moz-transition: background 0.2s;
+  -o-transition: background 0.2s;
+  -webkit-transition: background 0.2s;
+  transition: background 0.2s;
+}
+
+/* line 26, ../sass/ui-elements/_buttons.scss */
+.btn,
+input[type="submit"] {
+  display: block;
+  padding: 10px;
+  background: #00bff3;
+  text-align: center;
+  color: #ffffff !important;
+  border-radius: 0;
+  width: 180px;
+  text-decoration: none;
+  font-family: "Open Sans", sans-serif;
+  font-size: 18px;
+  border: 0;
+  -moz-transition: background 0.2s;
+  -o-transition: background 0.2s;
+  -webkit-transition: background 0.2s;
+  transition: background 0.2s;
+}
+/* line 41, ../sass/ui-elements/_buttons.scss */
+.btn:hover, .btn:active,
+input[type="submit"]:hover,
+input[type="submit"]:active {
+  background: #0097c0;
+  -moz-transition: background 0.2s;
+  -o-transition: background 0.2s;
+  -webkit-transition: background 0.2s;
+  transition: background 0.2s;
+}
+
+/* Main Menu
+========================================================================== */
+@media screen and (max-width: 930px) {
+  /* line 4, ../sass/ui-elements/_menu.scss */
+  #agenda {
+    display: none;
+  }
+}
+
+/* line 10, ../sass/ui-elements/_menu.scss */
+nav {
+  background: #ffffff;
+  width: 100%;
+  min-height: 67px;
+  margin: 0 auto;
+  padding: 30px 0 20px 0;
+  position: relative;
+  z-index: 999;
+  -moz-box-sizing: border-box;
+  -webkit-box-sizing: border-box;
+  box-sizing: border-box;
+  -moz-transition: nav 0.2s;
+  -o-transition: nav 0.2s;
+  -webkit-transition: nav 0.2s;
+  transition: nav 0.2s;
+}
+/* line 21, ../sass/ui-elements/_menu.scss */
+nav.fixed {
+  min-height: 56px;
+  padding: 15px 0;
+  z-index: 999;
+}
+/* line 26, ../sass/ui-elements/_menu.scss */
+nav.fixed ul li a {
+  padding: 9px 0;
+  border-top: 0;
+  border-bottom: 5px solid transparent;
+}
+/* line 33, ../sass/ui-elements/_menu.scss */
+nav.cbp-spmenu-push {
+  position: fixed !important;
+  overflow: initial;
+}
+/* line 38, ../sass/ui-elements/_menu.scss */
+nav.left {
+  left: -240px;
+}
+/* line 42, ../sass/ui-elements/_menu.scss */
+nav .container {
+  overflow: inherit;
+}
+/* line 46, ../sass/ui-elements/_menu.scss */
+nav .logo {
+  float: left;
+  position: relative;
+  top: -4px;
+}
+/* line 51, ../sass/ui-elements/_menu.scss */
+nav .logo a {
+  font: 20px "Open Sans", sans-serif;
+  font-weight: 400;
+  color: #333333;
+  text-decoration: none;
+  text-transform: uppercase;
+}
+/* line 58, ../sass/ui-elements/_menu.scss */
+nav .logo a:hover, nav .logo a:active {
+  color: #333333;
+}
+/* line 65, ../sass/ui-elements/_menu.scss */
+nav ul {
+  list-style: none;
+  margin: 0;
+  float: right;
+}
+@media screen and (max-width: 930px) {
+  /* line 65, ../sass/ui-elements/_menu.scss */
+  nav ul {
+    display: none;
+  }
+}
+/* line 74, ../sass/ui-elements/_menu.scss */
+nav ul li {
+  float: left;
+  margin-right: 35px;
+}
+/* line 78, ../sass/ui-elements/_menu.scss */
+nav ul li:nth-of-type(2) {
+  width: 144px;
+}
+/* line 82, ../sass/ui-elements/_menu.scss */
+nav ul li:last-of-type {
+  margin-right: 0;
+}
+/* line 86, ../sass/ui-elements/_menu.scss */
+nav ul li a {
+  font-size: 20px "Open Sans", sans-serif;
+  font-weight: 400;
+  color: #333333;
+  text-decoration: none;
+  text-transform: uppercase;
+  border-top: 5px solid transparent;
+  padding: 24px 0;
+}
+/* line 95, ../sass/ui-elements/_menu.scss */
+nav ul li a:hover, nav ul li a.active {
+  border-color: #00bff3;
+}
+/* line 100, ../sass/ui-elements/_menu.scss */
+nav ul li a.locations {
+  background: #ffffff;
+  padding: 14px 28px;
+  border-color: transparent !important;
+  border-top: 0;
+  -moz-transition: background 0.2s;
+  -o-transition: background 0.2s;
+  -webkit-transition: background 0.2s;
+  transition: background 0.2s;
+}
+/* line 107, ../sass/ui-elements/_menu.scss */
+nav ul li a.locations.nl {
+  padding: 14px 36px;
+}
+/* line 111, ../sass/ui-elements/_menu.scss */
+nav ul li a.locations:hover, nav ul li a.locations.active {
+  background: #f8f6f6;
+  -moz-transition: background 0.2s;
+  -o-transition: background 0.2s;
+  -webkit-transition: background 0.2s;
+  transition: background 0.2s;
+}
+/* line 119, ../sass/ui-elements/_menu.scss */
+nav ul li .dropdown {
+  background: #f8f6f6;
+  min-width: 112px;
+  display: none;
+  float: none;
+  position: fixed;
+}
+/* line 126, ../sass/ui-elements/_menu.scss */
+nav ul li .dropdown .row {
+  background: #f8f6f6;
+  min-width: 144px;
+  border-top: 1px solid #c8c7c7;
+  display: block;
+  text-align: center;
+  -moz-transition: background 0.2s;
+  -o-transition: background 0.2s;
+  -webkit-transition: background 0.2s;
+  transition: background 0.2s;
+}
+/* line 134, ../sass/ui-elements/_menu.scss */
+nav ul li .dropdown .row:hover {
+  background: #c8c7c7;
+  -moz-transition: background 0.2s;
+  -o-transition: background 0.2s;
+  -webkit-transition: background 0.2s;
+  transition: background 0.2s;
+}
+/* line 139, ../sass/ui-elements/_menu.scss */
+nav ul li .dropdown .row:first-of-type {
+  margin-top: 13px;
+}
+/* line 143, ../sass/ui-elements/_menu.scss */
+nav ul li .dropdown .row a {
+  font: 16px "Open Sans", sans-serif;
+  font-weight: 400;
+  color: #333333;
+  text-transform: none;
+  border: none;
+  display: block;
+  padding: 10px 21px;
+}
+/* line 157, ../sass/ui-elements/_menu.scss */
+nav .hamburger, nav .close {
+  height: 17px;
+  width: 20px;
+  background-image: url('../images/sprites-s321426c62e.png');
+  background-position: 0 -52px;
+  background-repeat: no-repeat;
+  float: right;
+  margin-top: 5px;
+  cursor: pointer;
+  display: none;
+}
+@media (-webkit-min-device-pixel-ratio: 1.5), (min--moz-device-pixel-ratio: 1.5), (-o-min-device-pixel-ratio: 3 / 2), (min-device-pixel-ratio: 1.5), (min-resolution: 144dpi) {
+  /* line 45, ../sass/mixins/_sprite.scss */
+  nav .hamburger, nav .close {
+    background-image: url('../images/sprites-retina-s8f836c7c43.png');
+    background-position: 0 -51px;
+    -moz-background-size: 35px auto;
+    -o-background-size: 35px auto;
+    -webkit-background-size: 35px auto;
+    background-size: 35px auto;
+  }
+}
+@media screen and (max-width: 930px) {
+  /* line 157, ../sass/ui-elements/_menu.scss */
+  nav .hamburger, nav .close {
+    display: block;
+  }
+}
+/* line 169, ../sass/ui-elements/_menu.scss */
+nav .close {
+  height: 17px;
+  width: 17px;
+  background-image: url('../images/sprites-s321426c62e.png');
+  background-position: 0 -12px;
+  background-repeat: no-repeat;
+  position: relative;
+}
+@media (-webkit-min-device-pixel-ratio: 1.5), (min--moz-device-pixel-ratio: 1.5), (-o-min-device-pixel-ratio: 3 / 2), (min-device-pixel-ratio: 1.5), (min-resolution: 144dpi) {
+  /* line 45, ../sass/mixins/_sprite.scss */
+  nav .close {
+    background-image: url('../images/sprites-retina-s8f836c7c43.png');
+    background-position: 0 -11px;
+    -moz-background-size: 35px auto;
+    -o-background-size: 35px auto;
+    -webkit-background-size: 35px auto;
+    background-size: 35px auto;
+  }
+}
+/* line 175, ../sass/ui-elements/_menu.scss */
+nav .languageswitch {
+  float: right;
+  margin: 0 24px;
+}
+@media screen and (max-width: 930px) {
+  /* line 175, ../sass/ui-elements/_menu.scss */
+  nav .languageswitch {
+    display: none;
+  }
+}
+/* line 183, ../sass/ui-elements/_menu.scss */
+nav .languageswitch .ned, nav .languageswitch .eng, nav .languageswitch .cbp-spmenu .languages .eng, .cbp-spmenu .languages nav .languageswitch .eng {
+  height: 23px;
+  width: 35px;
+  background-image: url('../images/sprites-s321426c62e.png');
+  background-position: 0 -69px;
+  background-repeat: no-repeat;
+  float: left;
+  margin-right: 24px;
+  cursor: pointer;
+  opacity: 1;
+  -moz-transition: opacity 0.2s;
+  -o-transition: opacity 0.2s;
+  -webkit-transition: opacity 0.2s;
+  transition: opacity 0.2s;
+}
+@media (-webkit-min-device-pixel-ratio: 1.5), (min--moz-device-pixel-ratio: 1.5), (-o-min-device-pixel-ratio: 3 / 2), (min-device-pixel-ratio: 1.5), (min-resolution: 144dpi) {
+  /* line 45, ../sass/mixins/_sprite.scss */
+  nav .languageswitch .ned, nav .languageswitch .eng, nav .languageswitch .cbp-spmenu .languages .eng, .cbp-spmenu .languages nav .languageswitch .eng {
+    background-image: url('../images/sprites-retina-s8f836c7c43.png');
+    background-position: 0 -68px;
+    -moz-background-size: 35px auto;
+    -o-background-size: 35px auto;
+    -webkit-background-size: 35px auto;
+    background-size: 35px auto;
+  }
+}
+/* line 191, ../sass/ui-elements/_menu.scss */
+nav .languageswitch .ned:hover, nav .languageswitch .eng:hover {
+  opacity: 0.8;
+  -moz-transition: opacity 0.2s;
+  -o-transition: opacity 0.2s;
+  -webkit-transition: opacity 0.2s;
+  transition: opacity 0.2s;
+}
+/* line 197, ../sass/ui-elements/_menu.scss */
+nav .languageswitch .eng {
+  height: 23px;
+  width: 35px;
+  background-image: url('../images/sprites-s321426c62e.png');
+  background-position: 0 -29px;
+  background-repeat: no-repeat;
+  margin-right: 0;
+}
+@media (-webkit-min-device-pixel-ratio: 1.5), (min--moz-device-pixel-ratio: 1.5), (-o-min-device-pixel-ratio: 3 / 2), (min-device-pixel-ratio: 1.5), (min-resolution: 144dpi) {
+  /* line 45, ../sass/mixins/_sprite.scss */
+  nav .languageswitch .eng {
+    background-image: url('../images/sprites-retina-s8f836c7c43.png');
+    background-position: 0 -28px;
+    -moz-background-size: 35px auto;
+    -o-background-size: 35px auto;
+    -webkit-background-size: 35px auto;
+    background-size: 35px auto;
+  }
+}
+/* line 205, ../sass/ui-elements/_menu.scss */
+nav .search, nav .searchclose {
+  height: 23px;
+  width: 23px;
+  background-image: url('../images/sprites-s321426c62e.png');
+  background-position: 0 -109px;
+  background-repeat: no-repeat;
+  float: right;
+  cursor: pointer;
+  -moz-transition: opacity 0.2s;
+  -o-transition: opacity 0.2s;
+  -webkit-transition: opacity 0.2s;
+  transition: opacity 0.2s;
+}
+@media (-webkit-min-device-pixel-ratio: 1.5), (min--moz-device-pixel-ratio: 1.5), (-o-min-device-pixel-ratio: 3 / 2), (min-device-pixel-ratio: 1.5), (min-resolution: 144dpi) {
+  /* line 45, ../sass/mixins/_sprite.scss */
+  nav .search, nav .searchclose {
+    background-image: url('../images/sprites-retina-s8f836c7c43.png');
+    background-position: 0 -108px;
+    -moz-background-size: 35px auto;
+    -o-background-size: 35px auto;
+    -webkit-background-size: 35px auto;
+    background-size: 35px auto;
+  }
+}
+/* line 211, ../sass/ui-elements/_menu.scss */
+nav .search:hover, nav .searchclose:hover {
+  opacity: 0.8;
+  -moz-transition: opacity 0.2s;
+  -o-transition: opacity 0.2s;
+  -webkit-transition: opacity 0.2s;
+  transition: opacity 0.2s;
+}
+@media screen and (max-width: 930px) {
+  /* line 205, ../sass/ui-elements/_menu.scss */
+  nav .search, nav .searchclose {
+    display: none;
+  }
+}
+/* line 221, ../sass/ui-elements/_menu.scss */
+nav .searchclose {
+  height: 17px;
+  width: 17px;
+  background-image: url('../images/sprites-s321426c62e.png');
+  background-position: 0 -12px;
+  background-repeat: no-repeat;
+  margin-left: 6px;
+}
+@media (-webkit-min-device-pixel-ratio: 1.5), (min--moz-device-pixel-ratio: 1.5), (-o-min-device-pixel-ratio: 3 / 2), (min-device-pixel-ratio: 1.5), (min-resolution: 144dpi) {
+  /* line 45, ../sass/mixins/_sprite.scss */
+  nav .searchclose {
+    background-image: url('../images/sprites-retina-s8f836c7c43.png');
+    background-position: 0 -11px;
+    -moz-background-size: 35px auto;
+    -o-background-size: 35px auto;
+    -webkit-background-size: 35px auto;
+    background-size: 35px auto;
+  }
+}
+
+/* Mobile Navigation */
+/* line 232, ../sass/ui-elements/_menu.scss */
+.cbp-spmenu {
+  background: #3e454c;
+  position: fixed;
+  overflow-y: scroll;
+  -moz-transition: all 0.3s;
+  -o-transition: all 0.3s;
+  -webkit-transition: all 0.3s;
+  transition: all 0.3s;
+}
+/* line 238, ../sass/ui-elements/_menu.scss */
+.cbp-spmenu h1 {
+  color: #AFC7E0;
+  padding: 20px;
+  margin: 0;
+  background: #3e454c;
+}
+/* line 245, ../sass/ui-elements/_menu.scss */
+.cbp-spmenu a {
+  display: block;
+  color: #AFC7E0;
+  font-size: 16px;
+  font-weight: 400;
+  text-decoration: none;
+  text-transform: uppercase;
+  position: relative;
+}
+/* line 254, ../sass/ui-elements/_menu.scss */
+.cbp-spmenu a:hover, .cbp-spmenu a.active {
+  background: #49525a;
+}
+/* line 262, ../sass/ui-elements/_menu.scss */
+.cbp-spmenu .arrow {
+  height: 12px;
+  width: 16px;
+  background-image: url('../images/sprites-s321426c62e.png');
+  background-position: 0 0;
+  background-repeat: no-repeat;
+  background-color: transparent;
+  float: right;
+  margin-top: 5px;
+  -moz-transition: all 0.3s ease-out;
+  -o-transition: all 0.3s ease-out;
+  -webkit-transition: all 0.3s ease-out;
+  transition: all 0.3s ease-out;
+}
+@media (-webkit-min-device-pixel-ratio: 1.5), (min--moz-device-pixel-ratio: 1.5), (-o-min-device-pixel-ratio: 3 / 2), (min-device-pixel-ratio: 1.5), (min-resolution: 144dpi) {
+  /* line 45, ../sass/mixins/_sprite.scss */
+  .cbp-spmenu .arrow {
+    background-image: url('../images/sprites-retina-s8f836c7c43.png');
+    background-position: 0 0;
+    -moz-background-size: 35px auto;
+    -o-background-size: 35px auto;
+    -webkit-background-size: 35px auto;
+    background-size: 35px auto;
+  }
+}
+/* line 269, ../sass/ui-elements/_menu.scss */
+.cbp-spmenu .arrow.switch {
+  -moz-transform: rotate(-180deg);
+  -ms-transform: rotate(-180deg);
+  -webkit-transform: rotate(-180deg);
+  transform: rotate(-180deg);
+  -moz-transition: all 0.3s ease-out;
+  -o-transition: all 0.3s ease-out;
+  -webkit-transition: all 0.3s ease-out;
+  transition: all 0.3s ease-out;
+}
+/* line 275, ../sass/ui-elements/_menu.scss */
+.cbp-spmenu ul {
+  list-style: none;
+  margin: 0;
+  display: none;
+}
+/* line 280, ../sass/ui-elements/_menu.scss */
+.cbp-spmenu ul a {
+  font-size: 14px;
+  padding-left: 40px;
+}
+@media screen and (max-width: 930px) {
+  /* line 284, ../sass/ui-elements/_menu.scss */
+  .cbp-spmenu ul a#agenda {
+    display: none;
+  }
+}
+/* line 292, ../sass/ui-elements/_menu.scss */
+.cbp-spmenu form {
+  width: 100%;
+  padding: 20px;
+  position: relative;
+  -moz-box-sizing: border-box;
+  -webkit-box-sizing: border-box;
+  box-sizing: border-box;
+}
+/* line 298, ../sass/ui-elements/_menu.scss */
+.cbp-spmenu form input[type="text"] {
+  padding: 10px 30px 10px 10px;
+}
+/* line 302, ../sass/ui-elements/_menu.scss */
+.cbp-spmenu form .search-btn {
+  height: 17px;
+  width: 12px;
+  background-image: url('../images/sprites-s321426c62e.png');
+  background-position: 0 -92px;
+  background-repeat: no-repeat;
+  background-color: #49525a;
+  color: transparent;
+  border: 0;
+  position: absolute;
+  right: 30px;
+  top: 28px;
+  padding: 8px;
+  color: transparent !important;
+  z-index: 999;
+}
+@media (-webkit-min-device-pixel-ratio: 1.5), (min--moz-device-pixel-ratio: 1.5), (-o-min-device-pixel-ratio: 3 / 2), (min-device-pixel-ratio: 1.5), (min-resolution: 144dpi) {
+  /* line 45, ../sass/mixins/_sprite.scss */
+  .cbp-spmenu form .search-btn {
+    background-image: url('../images/sprites-retina-s8f836c7c43.png');
+    background-position: 0 -91px;
+    -moz-background-size: 35px auto;
+    -o-background-size: 35px auto;
+    -webkit-background-size: 35px auto;
+    background-size: 35px auto;
+  }
+}
+/* line 316, ../sass/ui-elements/_menu.scss */
+.cbp-spmenu .languages {
+  width: 100%;
+  margin-top: 10px;
+  padding: 0 20px;
+  -moz-box-sizing: border-box;
+  -webkit-box-sizing: border-box;
+  box-sizing: border-box;
+}
+/* line 322, ../sass/ui-elements/_menu.scss */
+.cbp-spmenu .languages a {
+  border: 0;
+  padding: 0;
+  background: transparent !important;
+}
+/* line 328, ../sass/ui-elements/_menu.scss */
+.cbp-spmenu .languages .ned, .cbp-spmenu .languages .eng {
+  height: 23px;
+  width: 35px;
+  background-image: url('../images/sprites-s321426c62e.png');
+  background-position: 0 -69px;
+  background-repeat: no-repeat;
+  float: left;
+  margin-right: 24px;
+  cursor: pointer;
+  opacity: 1;
+  -moz-transition: opacity 0.2s;
+  -o-transition: opacity 0.2s;
+  -webkit-transition: opacity 0.2s;
+  transition: opacity 0.2s;
+}
+@media (-webkit-min-device-pixel-ratio: 1.5), (min--moz-device-pixel-ratio: 1.5), (-o-min-device-pixel-ratio: 3 / 2), (min-device-pixel-ratio: 1.5), (min-resolution: 144dpi) {
+  /* line 45, ../sass/mixins/_sprite.scss */
+  .cbp-spmenu .languages .ned, .cbp-spmenu .languages .eng {
+    background-image: url('../images/sprites-retina-s8f836c7c43.png');
+    background-position: 0 -68px;
+    -moz-background-size: 35px auto;
+    -o-background-size: 35px auto;
+    -webkit-background-size: 35px auto;
+    background-size: 35px auto;
+  }
+}
+/* line 336, ../sass/ui-elements/_menu.scss */
+.cbp-spmenu .languages .ned:hover, .cbp-spmenu .languages .eng:hover {
+  opacity: 0.8;
+  -moz-transition: opacity 0.2s;
+  -o-transition: opacity 0.2s;
+  -webkit-transition: opacity 0.2s;
+  transition: opacity 0.2s;
+}
+/* line 342, ../sass/ui-elements/_menu.scss */
+.cbp-spmenu .languages .eng {
+  height: 23px;
+  width: 35px;
+  background-image: url('../images/sprites-s321426c62e.png');
+  background-position: 0 -29px;
+  background-repeat: no-repeat;
+  margin-right: 0;
+}
+@media (-webkit-min-device-pixel-ratio: 1.5), (min--moz-device-pixel-ratio: 1.5), (-o-min-device-pixel-ratio: 3 / 2), (min-device-pixel-ratio: 1.5), (min-resolution: 144dpi) {
+  /* line 45, ../sass/mixins/_sprite.scss */
+  .cbp-spmenu .languages .eng {
+    background-image: url('../images/sprites-retina-s8f836c7c43.png');
+    background-position: 0 -28px;
+    -moz-background-size: 35px auto;
+    -o-background-size: 35px auto;
+    -webkit-background-size: 35px auto;
+    background-size: 35px auto;
+  }
+}
+
+/* line 351, ../sass/ui-elements/_menu.scss */
+.cbp-spmenu-vertical {
+  width: 240px;
+  height: 100%;
+  top: 0;
+  z-index: 1000;
+}
+
+/* line 358, ../sass/ui-elements/_menu.scss */
+.cbp-spmenu-vertical a {
+  border-bottom: 1px solid #677480;
+  padding: 1em;
+}
+
+/* Vertical menu that slides from the left or right */
+/* line 365, ../sass/ui-elements/_menu.scss */
+.cbp-spmenu-right {
+  right: -240px;
+}
+
+/* line 369, ../sass/ui-elements/_menu.scss */
+.cbp-spmenu-right.cbp-spmenu-open {
+  right: 0px;
+}
+
+/* Push classes applied to the body */
+/* line 376, ../sass/ui-elements/_menu.scss */
+.cbp-spmenu-push {
+  overflow-x: hidden;
+  position: relative;
+  left: 0;
+  -moz-transition: all 0.3s;
+  -o-transition: all 0.3s;
+  -webkit-transition: all 0.3s;
+  transition: all 0.3s;
+}
+
+/* line 383, ../sass/ui-elements/_menu.scss */
+.cbp-spmenu-push-toleft {
+  left: -240px;
+}
+
+/* Transitions */
+@media screen and (max-height: 26.375em) {
+  /* line 391, ../sass/ui-elements/_menu.scss */
+  .cbp-spmenu-vertical {
+    font-size: 90%;
+    width: 190px;
+  }
+
+  /* line 396, ../sass/ui-elements/_menu.scss */
+  .cbp-spmenu-left,
+  .cbp-spmenu-push-toleft {
+    left: -190px;
+  }
+
+  /* line 401, ../sass/ui-elements/_menu.scss */
+  .cbp-spmenu-right {
+    right: -190px;
+  }
+
+  /* line 405, ../sass/ui-elements/_menu.scss */
+  .cbp-spmenu-push-toright {
+    left: 190px;
+  }
+}
+/* ==========================================================================
+	 forms
+	 ========================================================================== */
+/* line 5, ../sass/ui-elements/_forms.scss */
+#error {
+  padding: 10px;
+  background: #c0392b;
+  color: #ffffff;
+  text-align: center;
+  margin-bottom: 20px;
+  font-size: 14px;
+}
+
+/* line 13, ../sass/ui-elements/_forms.scss */
+#succses {
+  padding: 10px;
+  background: #27ae60;
+  color: #ffffff;
+  text-align: center;
+  margin-bottom: 20px;
+  font-size: 14px;
+}
+
+/* line 22, ../sass/ui-elements/_forms.scss */
+input[type="text"] {
+  background: #49525a;
+  max-width: 250px;
+  width: 100%;
+  height: 36px;
+  padding: 10px;
+  border: 0;
+  color: #AFC7E0;
+  font: 14px "Open Sans", sans-serif;
+  font-weight: 400;
+  -moz-box-sizing: border-box;
+  -webkit-box-sizing: border-box;
+  box-sizing: border-box;
+}
+/* line 34, ../sass/ui-elements/_forms.scss */
+input[type="text"]#searchfield {
+  background: #ffffff;
+  border: 1px solid #c8c7c7;
+  max-width: 500px;
+  width: 100%;
+  margin: 10px auto;
+}
+
+/* line 43, ../sass/ui-elements/_forms.scss */
+#postsearch {
+  padding: 6px 10px;
+  margin: 10px 0 0 10px;
+  display: inline;
+}
+
+/* line 49, ../sass/ui-elements/_forms.scss */
+.centerform {
+  width: 100%;
+  overflow: hidden;
+  text-align: center;
+}
+
+/* line 58, ../sass/ui-elements/_forms.scss */
+#contact input[type="text"],
+#inschrijven input[type="text"] {
+  background: #ffffff;
+  max-width: 250px;
+  width: 100%;
+  margin-bottom: 20px;
+  margin-left: 20px;
+  height: 36px;
+  padding: 10px 10px 0px 10px;
+  border: 0;
+  border-radius: 0;
+  border-bottom: 2px solid #e6e4e4;
+  color: #333333;
+  font: 14px "Open Sans", sans-serif;
+  font-weight: 400;
+  -moz-box-sizing: border-box;
+  -webkit-box-sizing: border-box;
+  box-sizing: border-box;
+  -moz-transition: border-bottom 0.6s;
+  -o-transition: border-bottom 0.6s;
+  -webkit-transition: border-bottom 0.6s;
+  transition: border-bottom 0.6s;
+}
+@media screen and (max-width: 1190px) {
+  /* line 58, ../sass/ui-elements/_forms.scss */
+  #contact input[type="text"],
+  #inschrijven input[type="text"] {
+    width: 47%;
+  }
+}
+@media screen and (max-width: 945px) {
+  /* line 58, ../sass/ui-elements/_forms.scss */
+  #contact input[type="text"],
+  #inschrijven input[type="text"] {
+    width: 100%;
+    margin-left: 0px;
+    max-width: 100%;
+  }
+}
+/* line 85, ../sass/ui-elements/_forms.scss */
+#contact input[type="text"]:focus,
+#inschrijven input[type="text"]:focus {
+  -moz-transition: border-bottom 0.6s;
+  -o-transition: border-bottom 0.6s;
+  -webkit-transition: border-bottom 0.6s;
+  transition: border-bottom 0.6s;
+  border-bottom: 2px solid #00bff3;
+}
+/* line 90, ../sass/ui-elements/_forms.scss */
+#contact textarea,
+#inschrijven textarea {
+  background: #ffffff;
+  width: 100%;
+  margin-bottom: 20px;
+  margin-left: 20px;
+  height: 36px;
+  overflow: hidden;
+  padding: 10px 10px 4px 10px;
+  border: 0;
+  margin-left: 0px;
+  border-radius: 0;
+  border-bottom: 2px solid #e6e4e4;
+  color: #333333;
+  font: 14px "Open Sans", sans-serif;
+  font-weight: 400;
+  -moz-box-sizing: border-box;
+  -webkit-box-sizing: border-box;
+  box-sizing: border-box;
+  -moz-transition: border-bottom 0.6s;
+  -o-transition: border-bottom 0.6s;
+  -webkit-transition: border-bottom 0.6s;
+  transition: border-bottom 0.6s;
+}
+/* line 108, ../sass/ui-elements/_forms.scss */
+#contact textarea[type="text"]:focus,
+#inschrijven textarea[type="text"]:focus {
+  -moz-transition: border-bottom 0.6s;
+  -o-transition: border-bottom 0.6s;
+  -webkit-transition: border-bottom 0.6s;
+  transition: border-bottom 0.6s;
+  border-bottom: 2px solid #00bff3;
+}
+/* line 113, ../sass/ui-elements/_forms.scss */
+#contact select,
+#inschrijven select {
+  background: #e6e4e4;
+  max-width: 250px;
+  width: 100%;
+  margin: 20px 0px 30px 20px;
+  height: 36px;
+  border: 0;
+  border-radius: 0;
+  padding: 0px 10px;
+  color: #333333;
+  font: 14px "Open Sans", sans-serif;
+  font-weight: 400;
+}
+@media screen and (max-width: 1190px) {
+  /* line 113, ../sass/ui-elements/_forms.scss */
+  #contact select,
+  #inschrijven select {
+    width: 47%;
+  }
+}
+@media screen and (max-width: 945px) {
+  /* line 113, ../sass/ui-elements/_forms.scss */
+  #contact select,
+  #inschrijven select {
+    width: 100%;
+    margin-left: 0px;
+    max-width: 100%;
+  }
+}
+/* line 137, ../sass/ui-elements/_forms.scss */
+#contact .first,
+#inschrijven .first {
+  margin-left: 0px !important;
+}
+
+/*!
+Animate.css - http://daneden.me/animate
+Licensed under the MIT license
+
+Copyright (c) 2013 Daniel Eden
+
+Permission is hereby granted, free of charge, to any person obtaining a copy of this software and associated documentation files (the "Software"), to deal in the Software without restriction, including without limitation the rights to use, copy, modify, merge, publish, distribute, sublicense, and/or sell copies of the Software, and to permit persons to whom the Software is furnished to do so, subject to the following conditions:
+
+The above copyright notice and this permission notice shall be included in all copies or substantial portions of the Software.
+
+THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
+*/
+/* line 16, ../sass/plugins/_animate.scss */
+.animated {
+  -webkit-animation-duration: 1s;
+  animation-duration: 1s;
+  -webkit-animation-fill-mode: both;
+  animation-fill-mode: both;
+}
+
+/* line 23, ../sass/plugins/_animate.scss */
+.animated.infinite {
+  -webkit-animation-iteration-count: infinite;
+  animation-iteration-count: infinite;
+}
+
+/* line 28, ../sass/plugins/_animate.scss */
+.animated.hinge {
+  -webkit-animation-duration: 2s;
+  animation-duration: 2s;
+}
+
+@-webkit-keyframes bounce {
+  0%, 20%, 50%, 80%, 100% {
+    -webkit-transform: translateY(0);
+    transform: translateY(0);
+  }
+  40% {
+    -webkit-transform: translateY(-30px);
+    transform: translateY(-30px);
+  }
+  60% {
+    -webkit-transform: translateY(-15px);
+    transform: translateY(-15px);
+  }
+}
+@keyframes bounce {
+  0%, 20%, 50%, 80%, 100% {
+    -webkit-transform: translateY(0);
+    -ms-transform: translateY(0);
+    transform: translateY(0);
+  }
+  40% {
+    -webkit-transform: translateY(-30px);
+    -ms-transform: translateY(-30px);
+    transform: translateY(-30px);
+  }
+  60% {
+    -webkit-transform: translateY(-15px);
+    -ms-transform: translateY(-15px);
+    transform: translateY(-15px);
+  }
+}
+/* line 70, ../sass/plugins/_animate.scss */
+.bounce {
+  -webkit-animation-name: bounce;
+  animation-name: bounce;
+}
+
+@-webkit-keyframes flash {
+  0%, 50%, 100% {
+    opacity: 1;
+  }
+  25%, 75% {
+    opacity: 0;
+  }
+}
+@keyframes flash {
+  0%, 50%, 100% {
+    opacity: 1;
+  }
+  25%, 75% {
+    opacity: 0;
+  }
+}
+/* line 95, ../sass/plugins/_animate.scss */
+.flash {
+  -webkit-animation-name: flash;
+  animation-name: flash;
+}
+
+/* originally authored by Nick Pettit - https://github.com/nickpettit/glide */
+@-webkit-keyframes pulse {
+  0% {
+    -webkit-transform: scale(1);
+    transform: scale(1);
+  }
+  50% {
+    -webkit-transform: scale(1.05);
+    transform: scale(1.05);
+  }
+  100% {
+    -webkit-transform: scale(1);
+    transform: scale(1);
+  }
+}
+@keyframes pulse {
+  0% {
+    -webkit-transform: scale(1);
+    -ms-transform: scale(1);
+    transform: scale(1);
+  }
+  50% {
+    -webkit-transform: scale(1.05);
+    -ms-transform: scale(1.05);
+    transform: scale(1.05);
+  }
+  100% {
+    -webkit-transform: scale(1);
+    -ms-transform: scale(1);
+    transform: scale(1);
+  }
+}
+/* line 139, ../sass/plugins/_animate.scss */
+.pulse {
+  -webkit-animation-name: pulse;
+  animation-name: pulse;
+}
+
+@-webkit-keyframes rubberBand {
+  0% {
+    -webkit-transform: scale(1);
+    transform: scale(1);
+  }
+  30% {
+    -webkit-transform: scaleX(1.25) scaleY(0.75);
+    transform: scaleX(1.25) scaleY(0.75);
+  }
+  40% {
+    -webkit-transform: scaleX(0.75) scaleY(1.25);
+    transform: scaleX(0.75) scaleY(1.25);
+  }
+  60% {
+    -webkit-transform: scaleX(1.15) scaleY(0.85);
+    transform: scaleX(1.15) scaleY(0.85);
+  }
+  100% {
+    -webkit-transform: scale(1);
+    transform: scale(1);
+  }
+}
+@keyframes rubberBand {
+  0% {
+    -webkit-transform: scale(1);
+    -ms-transform: scale(1);
+    transform: scale(1);
+  }
+  30% {
+    -webkit-transform: scaleX(1.25) scaleY(0.75);
+    -ms-transform: scaleX(1.25) scaleY(0.75);
+    transform: scaleX(1.25) scaleY(0.75);
+  }
+  40% {
+    -webkit-transform: scaleX(0.75) scaleY(1.25);
+    -ms-transform: scaleX(0.75) scaleY(1.25);
+    transform: scaleX(0.75) scaleY(1.25);
+  }
+  60% {
+    -webkit-transform: scaleX(1.15) scaleY(0.85);
+    -ms-transform: scaleX(1.15) scaleY(0.85);
+    transform: scaleX(1.15) scaleY(0.85);
+  }
+  100% {
+    -webkit-transform: scale(1);
+    -ms-transform: scale(1);
+    transform: scale(1);
+  }
+}
+/* line 203, ../sass/plugins/_animate.scss */
+.rubberBand {
+  -webkit-animation-name: rubberBand;
+  animation-name: rubberBand;
+}
+
+@-webkit-keyframes shake {
+  0%, 100% {
+    -webkit-transform: translateX(0);
+    transform: translateX(0);
+  }
+  10%, 30%, 50%, 70%, 90% {
+    -webkit-transform: translateX(-10px);
+    transform: translateX(-10px);
+  }
+  20%, 40%, 60%, 80% {
+    -webkit-transform: translateX(10px);
+    transform: translateX(10px);
+  }
+}
+@keyframes shake {
+  0%, 100% {
+    -webkit-transform: translateX(0);
+    -ms-transform: translateX(0);
+    transform: translateX(0);
+  }
+  10%, 30%, 50%, 70%, 90% {
+    -webkit-transform: translateX(-10px);
+    -ms-transform: translateX(-10px);
+    transform: translateX(-10px);
+  }
+  20%, 40%, 60%, 80% {
+    -webkit-transform: translateX(10px);
+    -ms-transform: translateX(10px);
+    transform: translateX(10px);
+  }
+}
+/* line 245, ../sass/plugins/_animate.scss */
+.shake {
+  -webkit-animation-name: shake;
+  animation-name: shake;
+}
+
+@-webkit-keyframes swing {
+  20% {
+    -webkit-transform: rotate(15deg);
+    transform: rotate(15deg);
+  }
+  40% {
+    -webkit-transform: rotate(-10deg);
+    transform: rotate(-10deg);
+  }
+  60% {
+    -webkit-transform: rotate(5deg);
+    transform: rotate(5deg);
+  }
+  80% {
+    -webkit-transform: rotate(-5deg);
+    transform: rotate(-5deg);
+  }
+  100% {
+    -webkit-transform: rotate(0deg);
+    transform: rotate(0deg);
+  }
+}
+@keyframes swing {
+  20% {
+    -webkit-transform: rotate(15deg);
+    -ms-transform: rotate(15deg);
+    transform: rotate(15deg);
+  }
+  40% {
+    -webkit-transform: rotate(-10deg);
+    -ms-transform: rotate(-10deg);
+    transform: rotate(-10deg);
+  }
+  60% {
+    -webkit-transform: rotate(5deg);
+    -ms-transform: rotate(5deg);
+    transform: rotate(5deg);
+  }
+  80% {
+    -webkit-transform: rotate(-5deg);
+    -ms-transform: rotate(-5deg);
+    transform: rotate(-5deg);
+  }
+  100% {
+    -webkit-transform: rotate(0deg);
+    -ms-transform: rotate(0deg);
+    transform: rotate(0deg);
+  }
+}
+/* line 309, ../sass/plugins/_animate.scss */
+.swing {
+  -webkit-transform-origin: top center;
+  -ms-transform-origin: top center;
+  transform-origin: top center;
+  -webkit-animation-name: swing;
+  animation-name: swing;
+}
+
+@-webkit-keyframes tada {
+  0% {
+    -webkit-transform: scale(1);
+    transform: scale(1);
+  }
+  10%, 20% {
+    -webkit-transform: scale(0.9) rotate(-3deg);
+    transform: scale(0.9) rotate(-3deg);
+  }
+  30%, 50%, 70%, 90% {
+    -webkit-transform: scale(1.1) rotate(3deg);
+    transform: scale(1.1) rotate(3deg);
+  }
+  40%, 60%, 80% {
+    -webkit-transform: scale(1.1) rotate(-3deg);
+    transform: scale(1.1) rotate(-3deg);
+  }
+  100% {
+    -webkit-transform: scale(1) rotate(0);
+    transform: scale(1) rotate(0);
+  }
+}
+@keyframes tada {
+  0% {
+    -webkit-transform: scale(1);
+    -ms-transform: scale(1);
+    transform: scale(1);
+  }
+  10%, 20% {
+    -webkit-transform: scale(0.9) rotate(-3deg);
+    -ms-transform: scale(0.9) rotate(-3deg);
+    transform: scale(0.9) rotate(-3deg);
+  }
+  30%, 50%, 70%, 90% {
+    -webkit-transform: scale(1.1) rotate(3deg);
+    -ms-transform: scale(1.1) rotate(3deg);
+    transform: scale(1.1) rotate(3deg);
+  }
+  40%, 60%, 80% {
+    -webkit-transform: scale(1.1) rotate(-3deg);
+    -ms-transform: scale(1.1) rotate(-3deg);
+    transform: scale(1.1) rotate(-3deg);
+  }
+  100% {
+    -webkit-transform: scale(1) rotate(0);
+    -ms-transform: scale(1) rotate(0);
+    transform: scale(1) rotate(0);
+  }
+}
+/* line 376, ../sass/plugins/_animate.scss */
+.tada {
+  -webkit-animation-name: tada;
+  animation-name: tada;
+}
+
+/* originally authored by Nick Pettit - https://github.com/nickpettit/glide */
+@-webkit-keyframes wobble {
+  0% {
+    -webkit-transform: translateX(0%);
+    transform: translateX(0%);
+  }
+  15% {
+    -webkit-transform: translateX(-25%) rotate(-5deg);
+    transform: translateX(-25%) rotate(-5deg);
+  }
+  30% {
+    -webkit-transform: translateX(20%) rotate(3deg);
+    transform: translateX(20%) rotate(3deg);
+  }
+  45% {
+    -webkit-transform: translateX(-15%) rotate(-3deg);
+    transform: translateX(-15%) rotate(-3deg);
+  }
+  60% {
+    -webkit-transform: translateX(10%) rotate(2deg);
+    transform: translateX(10%) rotate(2deg);
+  }
+  75% {
+    -webkit-transform: translateX(-5%) rotate(-1deg);
+    transform: translateX(-5%) rotate(-1deg);
+  }
+  100% {
+    -webkit-transform: translateX(0%);
+    transform: translateX(0%);
+  }
+}
+@keyframes wobble {
+  0% {
+    -webkit-transform: translateX(0%);
+    -ms-transform: translateX(0%);
+    transform: translateX(0%);
+  }
+  15% {
+    -webkit-transform: translateX(-25%) rotate(-5deg);
+    -ms-transform: translateX(-25%) rotate(-5deg);
+    transform: translateX(-25%) rotate(-5deg);
+  }
+  30% {
+    -webkit-transform: translateX(20%) rotate(3deg);
+    -ms-transform: translateX(20%) rotate(3deg);
+    transform: translateX(20%) rotate(3deg);
+  }
+  45% {
+    -webkit-transform: translateX(-15%) rotate(-3deg);
+    -ms-transform: translateX(-15%) rotate(-3deg);
+    transform: translateX(-15%) rotate(-3deg);
+  }
+  60% {
+    -webkit-transform: translateX(10%) rotate(2deg);
+    -ms-transform: translateX(10%) rotate(2deg);
+    transform: translateX(10%) rotate(2deg);
+  }
+  75% {
+    -webkit-transform: translateX(-5%) rotate(-1deg);
+    -ms-transform: translateX(-5%) rotate(-1deg);
+    transform: translateX(-5%) rotate(-1deg);
+  }
+  100% {
+    -webkit-transform: translateX(0%);
+    -ms-transform: translateX(0%);
+    transform: translateX(0%);
+  }
+}
+/* line 464, ../sass/plugins/_animate.scss */
+.wobble {
+  -webkit-animation-name: wobble;
+  animation-name: wobble;
+}
+
+@-webkit-keyframes bounceIn {
+  0% {
+    opacity: 0;
+    -webkit-transform: scale(0.3);
+    transform: scale(0.3);
+  }
+  50% {
+    opacity: 1;
+    -webkit-transform: scale(1.05);
+    transform: scale(1.05);
+  }
+  70% {
+    -webkit-transform: scale(0.9);
+    transform: scale(0.9);
+  }
+  100% {
+    opacity: 1;
+    -webkit-transform: scale(1);
+    transform: scale(1);
+  }
+}
+@keyframes bounceIn {
+  0% {
+    opacity: 0;
+    -webkit-transform: scale(0.3);
+    -ms-transform: scale(0.3);
+    transform: scale(0.3);
+  }
+  50% {
+    opacity: 1;
+    -webkit-transform: scale(1.05);
+    -ms-transform: scale(1.05);
+    transform: scale(1.05);
+  }
+  70% {
+    -webkit-transform: scale(0.9);
+    -ms-transform: scale(0.9);
+    transform: scale(0.9);
+  }
+  100% {
+    opacity: 1;
+    -webkit-transform: scale(1);
+    -ms-transform: scale(1);
+    transform: scale(1);
+  }
+}
+/* line 523, ../sass/plugins/_animate.scss */
+.bounceIn {
+  -webkit-animation-name: bounceIn;
+  animation-name: bounceIn;
+}
+
+@-webkit-keyframes bounceInDown {
+  0% {
+    opacity: 0;
+    -webkit-transform: translateY(-2000px);
+    transform: translateY(-2000px);
+  }
+  60% {
+    opacity: 1;
+    -webkit-transform: translateY(30px);
+    transform: translateY(30px);
+  }
+  80% {
+    -webkit-transform: translateY(-10px);
+    transform: translateY(-10px);
+  }
+  100% {
+    -webkit-transform: translateY(0);
+    transform: translateY(0);
+  }
+}
+@keyframes bounceInDown {
+  0% {
+    opacity: 0;
+    -webkit-transform: translateY(-2000px);
+    -ms-transform: translateY(-2000px);
+    transform: translateY(-2000px);
+  }
+  60% {
+    opacity: 1;
+    -webkit-transform: translateY(30px);
+    -ms-transform: translateY(30px);
+    transform: translateY(30px);
+  }
+  80% {
+    -webkit-transform: translateY(-10px);
+    -ms-transform: translateY(-10px);
+    transform: translateY(-10px);
+  }
+  100% {
+    -webkit-transform: translateY(0);
+    -ms-transform: translateY(0);
+    transform: translateY(0);
+  }
+}
+/* line 580, ../sass/plugins/_animate.scss */
+.bounceInDown {
+  -webkit-animation-name: bounceInDown;
+  animation-name: bounceInDown;
+}
+
+@-webkit-keyframes bounceInLeft {
+  0% {
+    opacity: 0;
+    -webkit-transform: translateX(-2000px);
+    transform: translateX(-2000px);
+  }
+  60% {
+    opacity: 1;
+    -webkit-transform: translateX(30px);
+    transform: translateX(30px);
+  }
+  80% {
+    -webkit-transform: translateX(-10px);
+    transform: translateX(-10px);
+  }
+  100% {
+    -webkit-transform: translateX(0);
+    transform: translateX(0);
+  }
+}
+@keyframes bounceInLeft {
+  0% {
+    opacity: 0;
+    -webkit-transform: translateX(-2000px);
+    -ms-transform: translateX(-2000px);
+    transform: translateX(-2000px);
+  }
+  60% {
+    opacity: 1;
+    -webkit-transform: translateX(30px);
+    -ms-transform: translateX(30px);
+    transform: translateX(30px);
+  }
+  80% {
+    -webkit-transform: translateX(-10px);
+    -ms-transform: translateX(-10px);
+    transform: translateX(-10px);
+  }
+  100% {
+    -webkit-transform: translateX(0);
+    -ms-transform: translateX(0);
+    transform: translateX(0);
+  }
+}
+/* line 637, ../sass/plugins/_animate.scss */
+.bounceInLeft {
+  -webkit-animation-name: bounceInLeft;
+  animation-name: bounceInLeft;
+}
+
+@-webkit-keyframes bounceInRight {
+  0% {
+    opacity: 0;
+    -webkit-transform: translateX(2000px);
+    transform: translateX(2000px);
+  }
+  60% {
+    opacity: 1;
+    -webkit-transform: translateX(-30px);
+    transform: translateX(-30px);
+  }
+  80% {
+    -webkit-transform: translateX(10px);
+    transform: translateX(10px);
+  }
+  100% {
+    -webkit-transform: translateX(0);
+    transform: translateX(0);
+  }
+}
+@keyframes bounceInRight {
+  0% {
+    opacity: 0;
+    -webkit-transform: translateX(2000px);
+    -ms-transform: translateX(2000px);
+    transform: translateX(2000px);
+  }
+  60% {
+    opacity: 1;
+    -webkit-transform: translateX(-30px);
+    -ms-transform: translateX(-30px);
+    transform: translateX(-30px);
+  }
+  80% {
+    -webkit-transform: translateX(10px);
+    -ms-transform: translateX(10px);
+    transform: translateX(10px);
+  }
+  100% {
+    -webkit-transform: translateX(0);
+    -ms-transform: translateX(0);
+    transform: translateX(0);
+  }
+}
+/* line 694, ../sass/plugins/_animate.scss */
+.bounceInRight {
+  -webkit-animation-name: bounceInRight;
+  animation-name: bounceInRight;
+}
+
+@-webkit-keyframes bounceInUp {
+  0% {
+    opacity: 0;
+    -webkit-transform: translateY(2000px);
+    transform: translateY(2000px);
+  }
+  60% {
+    opacity: 1;
+    -webkit-transform: translateY(-30px);
+    transform: translateY(-30px);
+  }
+  80% {
+    -webkit-transform: translateY(10px);
+    transform: translateY(10px);
+  }
+  100% {
+    -webkit-transform: translateY(0);
+    transform: translateY(0);
+  }
+}
+@keyframes bounceInUp {
+  0% {
+    opacity: 0;
+    -webkit-transform: translateY(2000px);
+    -ms-transform: translateY(2000px);
+    transform: translateY(2000px);
+  }
+  60% {
+    opacity: 1;
+    -webkit-transform: translateY(-30px);
+    -ms-transform: translateY(-30px);
+    transform: translateY(-30px);
+  }
+  80% {
+    -webkit-transform: translateY(10px);
+    -ms-transform: translateY(10px);
+    transform: translateY(10px);
+  }
+  100% {
+    -webkit-transform: translateY(0);
+    -ms-transform: translateY(0);
+    transform: translateY(0);
+  }
+}
+/* line 751, ../sass/plugins/_animate.scss */
+.bounceInUp {
+  -webkit-animation-name: bounceInUp;
+  animation-name: bounceInUp;
+}
+
+@-webkit-keyframes bounceOut {
+  0% {
+    -webkit-transform: scale(1);
+    transform: scale(1);
+  }
+  25% {
+    -webkit-transform: scale(0.95);
+    transform: scale(0.95);
+  }
+  50% {
+    opacity: 1;
+    -webkit-transform: scale(1.1);
+    transform: scale(1.1);
+  }
+  100% {
+    opacity: 0;
+    -webkit-transform: scale(0.3);
+    transform: scale(0.3);
+  }
+}
+@keyframes bounceOut {
+  0% {
+    -webkit-transform: scale(1);
+    -ms-transform: scale(1);
+    transform: scale(1);
+  }
+  25% {
+    -webkit-transform: scale(0.95);
+    -ms-transform: scale(0.95);
+    transform: scale(0.95);
+  }
+  50% {
+    opacity: 1;
+    -webkit-transform: scale(1.1);
+    -ms-transform: scale(1.1);
+    transform: scale(1.1);
+  }
+  100% {
+    opacity: 0;
+    -webkit-transform: scale(0.3);
+    -ms-transform: scale(0.3);
+    transform: scale(0.3);
+  }
+}
+/* line 808, ../sass/plugins/_animate.scss */
+.bounceOut {
+  -webkit-animation-name: bounceOut;
+  animation-name: bounceOut;
+}
+
+@-webkit-keyframes bounceOutDown {
+  0% {
+    -webkit-transform: translateY(0);
+    transform: translateY(0);
+  }
+  20% {
+    opacity: 1;
+    -webkit-transform: translateY(-20px);
+    transform: translateY(-20px);
+  }
+  100% {
+    opacity: 0;
+    -webkit-transform: translateY(2000px);
+    transform: translateY(2000px);
+  }
+}
+@keyframes bounceOutDown {
+  0% {
+    -webkit-transform: translateY(0);
+    -ms-transform: translateY(0);
+    transform: translateY(0);
+  }
+  20% {
+    opacity: 1;
+    -webkit-transform: translateY(-20px);
+    -ms-transform: translateY(-20px);
+    transform: translateY(-20px);
+  }
+  100% {
+    opacity: 0;
+    -webkit-transform: translateY(2000px);
+    -ms-transform: translateY(2000px);
+    transform: translateY(2000px);
+  }
+}
+/* line 854, ../sass/plugins/_animate.scss */
+.bounceOutDown {
+  -webkit-animation-name: bounceOutDown;
+  animation-name: bounceOutDown;
+}
+
+@-webkit-keyframes bounceOutLeft {
+  0% {
+    -webkit-transform: translateX(0);
+    transform: translateX(0);
+  }
+  20% {
+    opacity: 1;
+    -webkit-transform: translateX(20px);
+    transform: translateX(20px);
+  }
+  100% {
+    opacity: 0;
+    -webkit-transform: translateX(-2000px);
+    transform: translateX(-2000px);
+  }
+}
+@keyframes bounceOutLeft {
+  0% {
+    -webkit-transform: translateX(0);
+    -ms-transform: translateX(0);
+    transform: translateX(0);
+  }
+  20% {
+    opacity: 1;
+    -webkit-transform: translateX(20px);
+    -ms-transform: translateX(20px);
+    transform: translateX(20px);
+  }
+  100% {
+    opacity: 0;
+    -webkit-transform: translateX(-2000px);
+    -ms-transform: translateX(-2000px);
+    transform: translateX(-2000px);
+  }
+}
+/* line 900, ../sass/plugins/_animate.scss */
+.bounceOutLeft {
+  -webkit-animation-name: bounceOutLeft;
+  animation-name: bounceOutLeft;
+}
+
+@-webkit-keyframes bounceOutRight {
+  0% {
+    -webkit-transform: translateX(0);
+    transform: translateX(0);
+  }
+  20% {
+    opacity: 1;
+    -webkit-transform: translateX(-20px);
+    transform: translateX(-20px);
+  }
+  100% {
+    opacity: 0;
+    -webkit-transform: translateX(2000px);
+    transform: translateX(2000px);
+  }
+}
+@keyframes bounceOutRight {
+  0% {
+    -webkit-transform: translateX(0);
+    -ms-transform: translateX(0);
+    transform: translateX(0);
+  }
+  20% {
+    opacity: 1;
+    -webkit-transform: translateX(-20px);
+    -ms-transform: translateX(-20px);
+    transform: translateX(-20px);
+  }
+  100% {
+    opacity: 0;
+    -webkit-transform: translateX(2000px);
+    -ms-transform: translateX(2000px);
+    transform: translateX(2000px);
+  }
+}
+/* line 946, ../sass/plugins/_animate.scss */
+.bounceOutRight {
+  -webkit-animation-name: bounceOutRight;
+  animation-name: bounceOutRight;
+}
+
+@-webkit-keyframes bounceOutUp {
+  0% {
+    -webkit-transform: translateY(0);
+    transform: translateY(0);
+  }
+  20% {
+    opacity: 1;
+    -webkit-transform: translateY(20px);
+    transform: translateY(20px);
+  }
+  100% {
+    opacity: 0;
+    -webkit-transform: translateY(-2000px);
+    transform: translateY(-2000px);
+  }
+}
+@keyframes bounceOutUp {
+  0% {
+    -webkit-transform: translateY(0);
+    -ms-transform: translateY(0);
+    transform: translateY(0);
+  }
+  20% {
+    opacity: 1;
+    -webkit-transform: translateY(20px);
+    -ms-transform: translateY(20px);
+    transform: translateY(20px);
+  }
+  100% {
+    opacity: 0;
+    -webkit-transform: translateY(-2000px);
+    -ms-transform: translateY(-2000px);
+    transform: translateY(-2000px);
+  }
+}
+/* line 992, ../sass/plugins/_animate.scss */
+.bounceOutUp {
+  -webkit-animation-name: bounceOutUp;
+  animation-name: bounceOutUp;
+}
+
+@-webkit-keyframes fadeIn {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+@keyframes fadeIn {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+/* line 1017, ../sass/plugins/_animate.scss */
+.fadeIn {
+  -webkit-animation-name: fadeIn;
+  animation-name: fadeIn;
+}
+
+@-webkit-keyframes fadeInDown {
+  0% {
+    opacity: 0;
+    -webkit-transform: translateY(-20px);
+    transform: translateY(-20px);
+  }
+  100% {
+    opacity: 1;
+    -webkit-transform: translateY(0);
+    transform: translateY(0);
+  }
+}
+@keyframes fadeInDown {
+  0% {
+    opacity: 0;
+    -webkit-transform: translateY(-20px);
+    -ms-transform: translateY(-20px);
+    transform: translateY(-20px);
+  }
+  100% {
+    opacity: 1;
+    -webkit-transform: translateY(0);
+    -ms-transform: translateY(0);
+    transform: translateY(0);
+  }
+}
+/* line 1052, ../sass/plugins/_animate.scss */
+.fadeInDown {
+  -webkit-animation-name: fadeInDown;
+  animation-name: fadeInDown;
+}
+
+@-webkit-keyframes fadeInDownBig {
+  0% {
+    opacity: 0;
+    -webkit-transform: translateY(-2000px);
+    transform: translateY(-2000px);
+  }
+  100% {
+    opacity: 1;
+    -webkit-transform: translateY(0);
+    transform: translateY(0);
+  }
+}
+@keyframes fadeInDownBig {
+  0% {
+    opacity: 0;
+    -webkit-transform: translateY(-2000px);
+    -ms-transform: translateY(-2000px);
+    transform: translateY(-2000px);
+  }
+  100% {
+    opacity: 1;
+    -webkit-transform: translateY(0);
+    -ms-transform: translateY(0);
+    transform: translateY(0);
+  }
+}
+/* line 1087, ../sass/plugins/_animate.scss */
+.fadeInDownBig {
+  -webkit-animation-name: fadeInDownBig;
+  animation-name: fadeInDownBig;
+}
+
+@-webkit-keyframes fadeInLeft {
+  0% {
+    opacity: 0;
+    -webkit-transform: translateX(-20px);
+    transform: translateX(-20px);
+  }
+  100% {
+    opacity: 1;
+    -webkit-transform: translateX(0);
+    transform: translateX(0);
+  }
+}
+@keyframes fadeInLeft {
+  0% {
+    opacity: 0;
+    -webkit-transform: translateX(-20px);
+    -ms-transform: translateX(-20px);
+    transform: translateX(-20px);
+  }
+  100% {
+    opacity: 1;
+    -webkit-transform: translateX(0);
+    -ms-transform: translateX(0);
+    transform: translateX(0);
+  }
+}
+/* line 1122, ../sass/plugins/_animate.scss */
+.fadeInLeft {
+  -webkit-animation-name: fadeInLeft;
+  animation-name: fadeInLeft;
+}
+
+@-webkit-keyframes fadeInLeftBig {
+  0% {
+    opacity: 0;
+    -webkit-transform: translateX(-2000px);
+    transform: translateX(-2000px);
+  }
+  100% {
+    opacity: 1;
+    -webkit-transform: translateX(0);
+    transform: translateX(0);
+  }
+}
+@keyframes fadeInLeftBig {
+  0% {
+    opacity: 0;
+    -webkit-transform: translateX(-2000px);
+    -ms-transform: translateX(-2000px);
+    transform: translateX(-2000px);
+  }
+  100% {
+    opacity: 1;
+    -webkit-transform: translateX(0);
+    -ms-transform: translateX(0);
+    transform: translateX(0);
+  }
+}
+/* line 1157, ../sass/plugins/_animate.scss */
+.fadeInLeftBig {
+  -webkit-animation-name: fadeInLeftBig;
+  animation-name: fadeInLeftBig;
+}
+
+@-webkit-keyframes fadeInRight {
+  0% {
+    opacity: 0;
+    -webkit-transform: translateX(20px);
+    transform: translateX(20px);
+  }
+  100% {
+    opacity: 1;
+    -webkit-transform: translateX(0);
+    transform: translateX(0);
+  }
+}
+@keyframes fadeInRight {
+  0% {
+    opacity: 0;
+    -webkit-transform: translateX(20px);
+    -ms-transform: translateX(20px);
+    transform: translateX(20px);
+  }
+  100% {
+    opacity: 1;
+    -webkit-transform: translateX(0);
+    -ms-transform: translateX(0);
+    transform: translateX(0);
+  }
+}
+/* line 1192, ../sass/plugins/_animate.scss */
+.fadeInRight {
+  -webkit-animation-name: fadeInRight;
+  animation-name: fadeInRight;
+}
+
+@-webkit-keyframes fadeInRightBig {
+  0% {
+    opacity: 0;
+    -webkit-transform: translateX(2000px);
+    transform: translateX(2000px);
+  }
+  100% {
+    opacity: 1;
+    -webkit-transform: translateX(0);
+    transform: translateX(0);
+  }
+}
+@keyframes fadeInRightBig {
+  0% {
+    opacity: 0;
+    -webkit-transform: translateX(2000px);
+    -ms-transform: translateX(2000px);
+    transform: translateX(2000px);
+  }
+  100% {
+    opacity: 1;
+    -webkit-transform: translateX(0);
+    -ms-transform: translateX(0);
+    transform: translateX(0);
+  }
+}
+/* line 1227, ../sass/plugins/_animate.scss */
+.fadeInRightBig {
+  -webkit-animation-name: fadeInRightBig;
+  animation-name: fadeInRightBig;
+}
+
+@-webkit-keyframes fadeInUp {
+  0% {
+    opacity: 0;
+    -webkit-transform: translateY(20px);
+    transform: translateY(20px);
+  }
+  100% {
+    opacity: 1;
+    -webkit-transform: translateY(0);
+    transform: translateY(0);
+  }
+}
+@keyframes fadeInUp {
+  0% {
+    opacity: 0;
+    -webkit-transform: translateY(20px);
+    -ms-transform: translateY(20px);
+    transform: translateY(20px);
+  }
+  100% {
+    opacity: 1;
+    -webkit-transform: translateY(0);
+    -ms-transform: translateY(0);
+    transform: translateY(0);
+  }
+}
+/* line 1262, ../sass/plugins/_animate.scss */
+.fadeInUp {
+  -webkit-animation-name: fadeInUp;
+  animation-name: fadeInUp;
+}
+
+@-webkit-keyframes fadeInUpBig {
+  0% {
+    opacity: 0;
+    -webkit-transform: translateY(2000px);
+    transform: translateY(2000px);
+  }
+  100% {
+    opacity: 1;
+    -webkit-transform: translateY(0);
+    transform: translateY(0);
+  }
+}
+@keyframes fadeInUpBig {
+  0% {
+    opacity: 0;
+    -webkit-transform: translateY(2000px);
+    -ms-transform: translateY(2000px);
+    transform: translateY(2000px);
+  }
+  100% {
+    opacity: 1;
+    -webkit-transform: translateY(0);
+    -ms-transform: translateY(0);
+    transform: translateY(0);
+  }
+}
+/* line 1297, ../sass/plugins/_animate.scss */
+.fadeInUpBig {
+  -webkit-animation-name: fadeInUpBig;
+  animation-name: fadeInUpBig;
+}
+
+@-webkit-keyframes fadeOut {
+  0% {
+    opacity: 1;
+  }
+  100% {
+    opacity: 0;
+  }
+}
+@keyframes fadeOut {
+  0% {
+    opacity: 1;
+  }
+  100% {
+    opacity: 0;
+  }
+}
+/* line 1322, ../sass/plugins/_animate.scss */
+.fadeOut {
+  -webkit-animation-name: fadeOut;
+  animation-name: fadeOut;
+}
+
+@-webkit-keyframes fadeOutDown {
+  0% {
+    opacity: 1;
+    -webkit-transform: translateY(0);
+    transform: translateY(0);
+  }
+  100% {
+    opacity: 0;
+    -webkit-transform: translateY(20px);
+    transform: translateY(20px);
+  }
+}
+@keyframes fadeOutDown {
+  0% {
+    opacity: 1;
+    -webkit-transform: translateY(0);
+    -ms-transform: translateY(0);
+    transform: translateY(0);
+  }
+  100% {
+    opacity: 0;
+    -webkit-transform: translateY(20px);
+    -ms-transform: translateY(20px);
+    transform: translateY(20px);
+  }
+}
+/* line 1357, ../sass/plugins/_animate.scss */
+.fadeOutDown {
+  -webkit-animation-name: fadeOutDown;
+  animation-name: fadeOutDown;
+}
+
+@-webkit-keyframes fadeOutDownBig {
+  0% {
+    opacity: 1;
+    -webkit-transform: translateY(0);
+    transform: translateY(0);
+  }
+  100% {
+    opacity: 0;
+    -webkit-transform: translateY(2000px);
+    transform: translateY(2000px);
+  }
+}
+@keyframes fadeOutDownBig {
+  0% {
+    opacity: 1;
+    -webkit-transform: translateY(0);
+    -ms-transform: translateY(0);
+    transform: translateY(0);
+  }
+  100% {
+    opacity: 0;
+    -webkit-transform: translateY(2000px);
+    -ms-transform: translateY(2000px);
+    transform: translateY(2000px);
+  }
+}
+/* line 1392, ../sass/plugins/_animate.scss */
+.fadeOutDownBig {
+  -webkit-animation-name: fadeOutDownBig;
+  animation-name: fadeOutDownBig;
+}
+
+@-webkit-keyframes fadeOutLeft {
+  0% {
+    opacity: 1;
+    -webkit-transform: translateX(0);
+    transform: translateX(0);
+  }
+  100% {
+    opacity: 0;
+    -webkit-transform: translateX(-20px);
+    transform: translateX(-20px);
+  }
+}
+@keyframes fadeOutLeft {
+  0% {
+    opacity: 1;
+    -webkit-transform: translateX(0);
+    -ms-transform: translateX(0);
+    transform: translateX(0);
+  }
+  100% {
+    opacity: 0;
+    -webkit-transform: translateX(-20px);
+    -ms-transform: translateX(-20px);
+    transform: translateX(-20px);
+  }
+}
+/* line 1427, ../sass/plugins/_animate.scss */
+.fadeOutLeft {
+  -webkit-animation-name: fadeOutLeft;
+  animation-name: fadeOutLeft;
+}
+
+@-webkit-keyframes fadeOutLeftBig {
+  0% {
+    opacity: 1;
+    -webkit-transform: translateX(0);
+    transform: translateX(0);
+  }
+  100% {
+    opacity: 0;
+    -webkit-transform: translateX(-2000px);
+    transform: translateX(-2000px);
+  }
+}
+@keyframes fadeOutLeftBig {
+  0% {
+    opacity: 1;
+    -webkit-transform: translateX(0);
+    -ms-transform: translateX(0);
+    transform: translateX(0);
+  }
+  100% {
+    opacity: 0;
+    -webkit-transform: translateX(-2000px);
+    -ms-transform: translateX(-2000px);
+    transform: translateX(-2000px);
+  }
+}
+/* line 1462, ../sass/plugins/_animate.scss */
+.fadeOutLeftBig {
+  -webkit-animation-name: fadeOutLeftBig;
+  animation-name: fadeOutLeftBig;
+}
+
+@-webkit-keyframes fadeOutRight {
+  0% {
+    opacity: 1;
+    -webkit-transform: translateX(0);
+    transform: translateX(0);
+  }
+  100% {
+    opacity: 0;
+    -webkit-transform: translateX(20px);
+    transform: translateX(20px);
+  }
+}
+@keyframes fadeOutRight {
+  0% {
+    opacity: 1;
+    -webkit-transform: translateX(0);
+    -ms-transform: translateX(0);
+    transform: translateX(0);
+  }
+  100% {
+    opacity: 0;
+    -webkit-transform: translateX(20px);
+    -ms-transform: translateX(20px);
+    transform: translateX(20px);
+  }
+}
+/* line 1497, ../sass/plugins/_animate.scss */
+.fadeOutRight {
+  -webkit-animation-name: fadeOutRight;
+  animation-name: fadeOutRight;
+}
+
+@-webkit-keyframes fadeOutRightBig {
+  0% {
+    opacity: 1;
+    -webkit-transform: translateX(0);
+    transform: translateX(0);
+  }
+  100% {
+    opacity: 0;
+    -webkit-transform: translateX(2000px);
+    transform: translateX(2000px);
+  }
+}
+@keyframes fadeOutRightBig {
+  0% {
+    opacity: 1;
+    -webkit-transform: translateX(0);
+    -ms-transform: translateX(0);
+    transform: translateX(0);
+  }
+  100% {
+    opacity: 0;
+    -webkit-transform: translateX(2000px);
+    -ms-transform: translateX(2000px);
+    transform: translateX(2000px);
+  }
+}
+/* line 1532, ../sass/plugins/_animate.scss */
+.fadeOutRightBig {
+  -webkit-animation-name: fadeOutRightBig;
+  animation-name: fadeOutRightBig;
+}
+
+@-webkit-keyframes fadeOutUp {
+  0% {
+    opacity: 1;
+    -webkit-transform: translateY(0);
+    transform: translateY(0);
+  }
+  100% {
+    opacity: 0;
+    -webkit-transform: translateY(-20px);
+    transform: translateY(-20px);
+  }
+}
+@keyframes fadeOutUp {
+  0% {
+    opacity: 1;
+    -webkit-transform: translateY(0);
+    -ms-transform: translateY(0);
+    transform: translateY(0);
+  }
+  100% {
+    opacity: 0;
+    -webkit-transform: translateY(-20px);
+    -ms-transform: translateY(-20px);
+    transform: translateY(-20px);
+  }
+}
+/* line 1567, ../sass/plugins/_animate.scss */
+.fadeOutUp {
+  -webkit-animation-name: fadeOutUp;
+  animation-name: fadeOutUp;
+}
+
+@-webkit-keyframes fadeOutUpBig {
+  0% {
+    opacity: 1;
+    -webkit-transform: translateY(0);
+    transform: translateY(0);
+  }
+  100% {
+    opacity: 0;
+    -webkit-transform: translateY(-2000px);
+    transform: translateY(-2000px);
+  }
+}
+@keyframes fadeOutUpBig {
+  0% {
+    opacity: 1;
+    -webkit-transform: translateY(0);
+    -ms-transform: translateY(0);
+    transform: translateY(0);
+  }
+  100% {
+    opacity: 0;
+    -webkit-transform: translateY(-2000px);
+    -ms-transform: translateY(-2000px);
+    transform: translateY(-2000px);
+  }
+}
+/* line 1602, ../sass/plugins/_animate.scss */
+.fadeOutUpBig {
+  -webkit-animation-name: fadeOutUpBig;
+  animation-name: fadeOutUpBig;
+}
+
+@-webkit-keyframes flip {
+  0% {
+    -webkit-transform: perspective(400px) translateZ(0) rotateY(0) scale(1);
+    transform: perspective(400px) translateZ(0) rotateY(0) scale(1);
+    -webkit-animation-timing-function: ease-out;
+    animation-timing-function: ease-out;
+  }
+  40% {
+    -webkit-transform: perspective(400px) translateZ(150px) rotateY(170deg) scale(1);
+    transform: perspective(400px) translateZ(150px) rotateY(170deg) scale(1);
+    -webkit-animation-timing-function: ease-out;
+    animation-timing-function: ease-out;
+  }
+  50% {
+    -webkit-transform: perspective(400px) translateZ(150px) rotateY(190deg) scale(1);
+    transform: perspective(400px) translateZ(150px) rotateY(190deg) scale(1);
+    -webkit-animation-timing-function: ease-in;
+    animation-timing-function: ease-in;
+  }
+  80% {
+    -webkit-transform: perspective(400px) translateZ(0) rotateY(360deg) scale(0.95);
+    transform: perspective(400px) translateZ(0) rotateY(360deg) scale(0.95);
+    -webkit-animation-timing-function: ease-in;
+    animation-timing-function: ease-in;
+  }
+  100% {
+    -webkit-transform: perspective(400px) translateZ(0) rotateY(360deg) scale(1);
+    transform: perspective(400px) translateZ(0) rotateY(360deg) scale(1);
+    -webkit-animation-timing-function: ease-in;
+    animation-timing-function: ease-in;
+  }
+}
+@keyframes flip {
+  0% {
+    -webkit-transform: perspective(400px) translateZ(0) rotateY(0) scale(1);
+    -ms-transform: perspective(400px) translateZ(0) rotateY(0) scale(1);
+    transform: perspective(400px) translateZ(0) rotateY(0) scale(1);
+    -webkit-animation-timing-function: ease-out;
+    animation-timing-function: ease-out;
+  }
+  40% {
+    -webkit-transform: perspective(400px) translateZ(150px) rotateY(170deg) scale(1);
+    -ms-transform: perspective(400px) translateZ(150px) rotateY(170deg) scale(1);
+    transform: perspective(400px) translateZ(150px) rotateY(170deg) scale(1);
+    -webkit-animation-timing-function: ease-out;
+    animation-timing-function: ease-out;
+  }
+  50% {
+    -webkit-transform: perspective(400px) translateZ(150px) rotateY(190deg) scale(1);
+    -ms-transform: perspective(400px) translateZ(150px) rotateY(190deg) scale(1);
+    transform: perspective(400px) translateZ(150px) rotateY(190deg) scale(1);
+    -webkit-animation-timing-function: ease-in;
+    animation-timing-function: ease-in;
+  }
+  80% {
+    -webkit-transform: perspective(400px) translateZ(0) rotateY(360deg) scale(0.95);
+    -ms-transform: perspective(400px) translateZ(0) rotateY(360deg) scale(0.95);
+    transform: perspective(400px) translateZ(0) rotateY(360deg) scale(0.95);
+    -webkit-animation-timing-function: ease-in;
+    animation-timing-function: ease-in;
+  }
+  100% {
+    -webkit-transform: perspective(400px) translateZ(0) rotateY(360deg) scale(1);
+    -ms-transform: perspective(400px) translateZ(0) rotateY(360deg) scale(1);
+    transform: perspective(400px) translateZ(0) rotateY(360deg) scale(1);
+    -webkit-animation-timing-function: ease-in;
+    animation-timing-function: ease-in;
+  }
+}
+/* line 1686, ../sass/plugins/_animate.scss */
+.animated.flip {
+  -webkit-backface-visibility: visible;
+  -ms-backface-visibility: visible;
+  backface-visibility: visible;
+  -webkit-animation-name: flip;
+  animation-name: flip;
+}
+
+@-webkit-keyframes flipInX {
+  0% {
+    -webkit-transform: perspective(400px) rotateX(90deg);
+    transform: perspective(400px) rotateX(90deg);
+    opacity: 0;
+  }
+  40% {
+    -webkit-transform: perspective(400px) rotateX(-10deg);
+    transform: perspective(400px) rotateX(-10deg);
+  }
+  70% {
+    -webkit-transform: perspective(400px) rotateX(10deg);
+    transform: perspective(400px) rotateX(10deg);
+  }
+  100% {
+    -webkit-transform: perspective(400px) rotateX(0deg);
+    transform: perspective(400px) rotateX(0deg);
+    opacity: 1;
+  }
+}
+@keyframes flipInX {
+  0% {
+    -webkit-transform: perspective(400px) rotateX(90deg);
+    -ms-transform: perspective(400px) rotateX(90deg);
+    transform: perspective(400px) rotateX(90deg);
+    opacity: 0;
+  }
+  40% {
+    -webkit-transform: perspective(400px) rotateX(-10deg);
+    -ms-transform: perspective(400px) rotateX(-10deg);
+    transform: perspective(400px) rotateX(-10deg);
+  }
+  70% {
+    -webkit-transform: perspective(400px) rotateX(10deg);
+    -ms-transform: perspective(400px) rotateX(10deg);
+    transform: perspective(400px) rotateX(10deg);
+  }
+  100% {
+    -webkit-transform: perspective(400px) rotateX(0deg);
+    -ms-transform: perspective(400px) rotateX(0deg);
+    transform: perspective(400px) rotateX(0deg);
+    opacity: 1;
+  }
+}
+/* line 1746, ../sass/plugins/_animate.scss */
+.flipInX {
+  -webkit-backface-visibility: visible !important;
+  -ms-backface-visibility: visible !important;
+  backface-visibility: visible !important;
+  -webkit-animation-name: flipInX;
+  animation-name: flipInX;
+}
+
+@-webkit-keyframes flipInY {
+  0% {
+    -webkit-transform: perspective(400px) rotateY(90deg);
+    transform: perspective(400px) rotateY(90deg);
+    opacity: 0;
+  }
+  40% {
+    -webkit-transform: perspective(400px) rotateY(-10deg);
+    transform: perspective(400px) rotateY(-10deg);
+  }
+  70% {
+    -webkit-transform: perspective(400px) rotateY(10deg);
+    transform: perspective(400px) rotateY(10deg);
+  }
+  100% {
+    -webkit-transform: perspective(400px) rotateY(0deg);
+    transform: perspective(400px) rotateY(0deg);
+    opacity: 1;
+  }
+}
+@keyframes flipInY {
+  0% {
+    -webkit-transform: perspective(400px) rotateY(90deg);
+    -ms-transform: perspective(400px) rotateY(90deg);
+    transform: perspective(400px) rotateY(90deg);
+    opacity: 0;
+  }
+  40% {
+    -webkit-transform: perspective(400px) rotateY(-10deg);
+    -ms-transform: perspective(400px) rotateY(-10deg);
+    transform: perspective(400px) rotateY(-10deg);
+  }
+  70% {
+    -webkit-transform: perspective(400px) rotateY(10deg);
+    -ms-transform: perspective(400px) rotateY(10deg);
+    transform: perspective(400px) rotateY(10deg);
+  }
+  100% {
+    -webkit-transform: perspective(400px) rotateY(0deg);
+    -ms-transform: perspective(400px) rotateY(0deg);
+    transform: perspective(400px) rotateY(0deg);
+    opacity: 1;
+  }
+}
+/* line 1806, ../sass/plugins/_animate.scss */
+.flipInY {
+  -webkit-backface-visibility: visible !important;
+  -ms-backface-visibility: visible !important;
+  backface-visibility: visible !important;
+  -webkit-animation-name: flipInY;
+  animation-name: flipInY;
+}
+
+@-webkit-keyframes flipOutX {
+  0% {
+    -webkit-transform: perspective(400px) rotateX(0deg);
+    transform: perspective(400px) rotateX(0deg);
+    opacity: 1;
+  }
+  100% {
+    -webkit-transform: perspective(400px) rotateX(90deg);
+    transform: perspective(400px) rotateX(90deg);
+    opacity: 0;
+  }
+}
+@keyframes flipOutX {
+  0% {
+    -webkit-transform: perspective(400px) rotateX(0deg);
+    -ms-transform: perspective(400px) rotateX(0deg);
+    transform: perspective(400px) rotateX(0deg);
+    opacity: 1;
+  }
+  100% {
+    -webkit-transform: perspective(400px) rotateX(90deg);
+    -ms-transform: perspective(400px) rotateX(90deg);
+    transform: perspective(400px) rotateX(90deg);
+    opacity: 0;
+  }
+}
+/* line 1844, ../sass/plugins/_animate.scss */
+.flipOutX {
+  -webkit-animation-name: flipOutX;
+  animation-name: flipOutX;
+  -webkit-backface-visibility: visible !important;
+  -ms-backface-visibility: visible !important;
+  backface-visibility: visible !important;
+}
+
+@-webkit-keyframes flipOutY {
+  0% {
+    -webkit-transform: perspective(400px) rotateY(0deg);
+    transform: perspective(400px) rotateY(0deg);
+    opacity: 1;
+  }
+  100% {
+    -webkit-transform: perspective(400px) rotateY(90deg);
+    transform: perspective(400px) rotateY(90deg);
+    opacity: 0;
+  }
+}
+@keyframes flipOutY {
+  0% {
+    -webkit-transform: perspective(400px) rotateY(0deg);
+    -ms-transform: perspective(400px) rotateY(0deg);
+    transform: perspective(400px) rotateY(0deg);
+    opacity: 1;
+  }
+  100% {
+    -webkit-transform: perspective(400px) rotateY(90deg);
+    -ms-transform: perspective(400px) rotateY(90deg);
+    transform: perspective(400px) rotateY(90deg);
+    opacity: 0;
+  }
+}
+/* line 1882, ../sass/plugins/_animate.scss */
+.flipOutY {
+  -webkit-backface-visibility: visible !important;
+  -ms-backface-visibility: visible !important;
+  backface-visibility: visible !important;
+  -webkit-animation-name: flipOutY;
+  animation-name: flipOutY;
+}
+
+@-webkit-keyframes lightSpeedIn {
+  0% {
+    -webkit-transform: translateX(100%) skewX(-30deg);
+    transform: translateX(100%) skewX(-30deg);
+    opacity: 0;
+  }
+  60% {
+    -webkit-transform: translateX(-20%) skewX(30deg);
+    transform: translateX(-20%) skewX(30deg);
+    opacity: 1;
+  }
+  80% {
+    -webkit-transform: translateX(0%) skewX(-15deg);
+    transform: translateX(0%) skewX(-15deg);
+    opacity: 1;
+  }
+  100% {
+    -webkit-transform: translateX(0%) skewX(0deg);
+    transform: translateX(0%) skewX(0deg);
+    opacity: 1;
+  }
+}
+@keyframes lightSpeedIn {
+  0% {
+    -webkit-transform: translateX(100%) skewX(-30deg);
+    -ms-transform: translateX(100%) skewX(-30deg);
+    transform: translateX(100%) skewX(-30deg);
+    opacity: 0;
+  }
+  60% {
+    -webkit-transform: translateX(-20%) skewX(30deg);
+    -ms-transform: translateX(-20%) skewX(30deg);
+    transform: translateX(-20%) skewX(30deg);
+    opacity: 1;
+  }
+  80% {
+    -webkit-transform: translateX(0%) skewX(-15deg);
+    -ms-transform: translateX(0%) skewX(-15deg);
+    transform: translateX(0%) skewX(-15deg);
+    opacity: 1;
+  }
+  100% {
+    -webkit-transform: translateX(0%) skewX(0deg);
+    -ms-transform: translateX(0%) skewX(0deg);
+    transform: translateX(0%) skewX(0deg);
+    opacity: 1;
+  }
+}
+/* line 1946, ../sass/plugins/_animate.scss */
+.lightSpeedIn {
+  -webkit-animation-name: lightSpeedIn;
+  animation-name: lightSpeedIn;
+  -webkit-animation-timing-function: ease-out;
+  animation-timing-function: ease-out;
+}
+
+@-webkit-keyframes lightSpeedOut {
+  0% {
+    -webkit-transform: translateX(0%) skewX(0deg);
+    transform: translateX(0%) skewX(0deg);
+    opacity: 1;
+  }
+  100% {
+    -webkit-transform: translateX(100%) skewX(-30deg);
+    transform: translateX(100%) skewX(-30deg);
+    opacity: 0;
+  }
+}
+@keyframes lightSpeedOut {
+  0% {
+    -webkit-transform: translateX(0%) skewX(0deg);
+    -ms-transform: translateX(0%) skewX(0deg);
+    transform: translateX(0%) skewX(0deg);
+    opacity: 1;
+  }
+  100% {
+    -webkit-transform: translateX(100%) skewX(-30deg);
+    -ms-transform: translateX(100%) skewX(-30deg);
+    transform: translateX(100%) skewX(-30deg);
+    opacity: 0;
+  }
+}
+/* line 1983, ../sass/plugins/_animate.scss */
+.lightSpeedOut {
+  -webkit-animation-name: lightSpeedOut;
+  animation-name: lightSpeedOut;
+  -webkit-animation-timing-function: ease-in;
+  animation-timing-function: ease-in;
+}
+
+@-webkit-keyframes rotateIn {
+  0% {
+    -webkit-transform-origin: center center;
+    transform-origin: center center;
+    -webkit-transform: rotate(-200deg);
+    transform: rotate(-200deg);
+    opacity: 0;
+  }
+  100% {
+    -webkit-transform-origin: center center;
+    transform-origin: center center;
+    -webkit-transform: rotate(0);
+    transform: rotate(0);
+    opacity: 1;
+  }
+}
+@keyframes rotateIn {
+  0% {
+    -webkit-transform-origin: center center;
+    -ms-transform-origin: center center;
+    transform-origin: center center;
+    -webkit-transform: rotate(-200deg);
+    -ms-transform: rotate(-200deg);
+    transform: rotate(-200deg);
+    opacity: 0;
+  }
+  100% {
+    -webkit-transform-origin: center center;
+    -ms-transform-origin: center center;
+    transform-origin: center center;
+    -webkit-transform: rotate(0);
+    -ms-transform: rotate(0);
+    transform: rotate(0);
+    opacity: 1;
+  }
+}
+/* line 2030, ../sass/plugins/_animate.scss */
+.rotateIn {
+  -webkit-animation-name: rotateIn;
+  animation-name: rotateIn;
+}
+
+@-webkit-keyframes rotateInDownLeft {
+  0% {
+    -webkit-transform-origin: left bottom;
+    transform-origin: left bottom;
+    -webkit-transform: rotate(-90deg);
+    transform: rotate(-90deg);
+    opacity: 0;
+  }
+  100% {
+    -webkit-transform-origin: left bottom;
+    transform-origin: left bottom;
+    -webkit-transform: rotate(0);
+    transform: rotate(0);
+    opacity: 1;
+  }
+}
+@keyframes rotateInDownLeft {
+  0% {
+    -webkit-transform-origin: left bottom;
+    -ms-transform-origin: left bottom;
+    transform-origin: left bottom;
+    -webkit-transform: rotate(-90deg);
+    -ms-transform: rotate(-90deg);
+    transform: rotate(-90deg);
+    opacity: 0;
+  }
+  100% {
+    -webkit-transform-origin: left bottom;
+    -ms-transform-origin: left bottom;
+    transform-origin: left bottom;
+    -webkit-transform: rotate(0);
+    -ms-transform: rotate(0);
+    transform: rotate(0);
+    opacity: 1;
+  }
+}
+/* line 2075, ../sass/plugins/_animate.scss */
+.rotateInDownLeft {
+  -webkit-animation-name: rotateInDownLeft;
+  animation-name: rotateInDownLeft;
+}
+
+@-webkit-keyframes rotateInDownRight {
+  0% {
+    -webkit-transform-origin: right bottom;
+    transform-origin: right bottom;
+    -webkit-transform: rotate(90deg);
+    transform: rotate(90deg);
+    opacity: 0;
+  }
+  100% {
+    -webkit-transform-origin: right bottom;
+    transform-origin: right bottom;
+    -webkit-transform: rotate(0);
+    transform: rotate(0);
+    opacity: 1;
+  }
+}
+@keyframes rotateInDownRight {
+  0% {
+    -webkit-transform-origin: right bottom;
+    -ms-transform-origin: right bottom;
+    transform-origin: right bottom;
+    -webkit-transform: rotate(90deg);
+    -ms-transform: rotate(90deg);
+    transform: rotate(90deg);
+    opacity: 0;
+  }
+  100% {
+    -webkit-transform-origin: right bottom;
+    -ms-transform-origin: right bottom;
+    transform-origin: right bottom;
+    -webkit-transform: rotate(0);
+    -ms-transform: rotate(0);
+    transform: rotate(0);
+    opacity: 1;
+  }
+}
+/* line 2120, ../sass/plugins/_animate.scss */
+.rotateInDownRight {
+  -webkit-animation-name: rotateInDownRight;
+  animation-name: rotateInDownRight;
+}
+
+@-webkit-keyframes rotateInUpLeft {
+  0% {
+    -webkit-transform-origin: left bottom;
+    transform-origin: left bottom;
+    -webkit-transform: rotate(90deg);
+    transform: rotate(90deg);
+    opacity: 0;
+  }
+  100% {
+    -webkit-transform-origin: left bottom;
+    transform-origin: left bottom;
+    -webkit-transform: rotate(0);
+    transform: rotate(0);
+    opacity: 1;
+  }
+}
+@keyframes rotateInUpLeft {
+  0% {
+    -webkit-transform-origin: left bottom;
+    -ms-transform-origin: left bottom;
+    transform-origin: left bottom;
+    -webkit-transform: rotate(90deg);
+    -ms-transform: rotate(90deg);
+    transform: rotate(90deg);
+    opacity: 0;
+  }
+  100% {
+    -webkit-transform-origin: left bottom;
+    -ms-transform-origin: left bottom;
+    transform-origin: left bottom;
+    -webkit-transform: rotate(0);
+    -ms-transform: rotate(0);
+    transform: rotate(0);
+    opacity: 1;
+  }
+}
+/* line 2165, ../sass/plugins/_animate.scss */
+.rotateInUpLeft {
+  -webkit-animation-name: rotateInUpLeft;
+  animation-name: rotateInUpLeft;
+}
+
+@-webkit-keyframes rotateInUpRight {
+  0% {
+    -webkit-transform-origin: right bottom;
+    transform-origin: right bottom;
+    -webkit-transform: rotate(-90deg);
+    transform: rotate(-90deg);
+    opacity: 0;
+  }
+  100% {
+    -webkit-transform-origin: right bottom;
+    transform-origin: right bottom;
+    -webkit-transform: rotate(0);
+    transform: rotate(0);
+    opacity: 1;
+  }
+}
+@keyframes rotateInUpRight {
+  0% {
+    -webkit-transform-origin: right bottom;
+    -ms-transform-origin: right bottom;
+    transform-origin: right bottom;
+    -webkit-transform: rotate(-90deg);
+    -ms-transform: rotate(-90deg);
+    transform: rotate(-90deg);
+    opacity: 0;
+  }
+  100% {
+    -webkit-transform-origin: right bottom;
+    -ms-transform-origin: right bottom;
+    transform-origin: right bottom;
+    -webkit-transform: rotate(0);
+    -ms-transform: rotate(0);
+    transform: rotate(0);
+    opacity: 1;
+  }
+}
+/* line 2210, ../sass/plugins/_animate.scss */
+.rotateInUpRight {
+  -webkit-animation-name: rotateInUpRight;
+  animation-name: rotateInUpRight;
+}
+
+@-webkit-keyframes rotateOut {
+  0% {
+    -webkit-transform-origin: center center;
+    transform-origin: center center;
+    -webkit-transform: rotate(0);
+    transform: rotate(0);
+    opacity: 1;
+  }
+  100% {
+    -webkit-transform-origin: center center;
+    transform-origin: center center;
+    -webkit-transform: rotate(200deg);
+    transform: rotate(200deg);
+    opacity: 0;
+  }
+}
+@keyframes rotateOut {
+  0% {
+    -webkit-transform-origin: center center;
+    -ms-transform-origin: center center;
+    transform-origin: center center;
+    -webkit-transform: rotate(0);
+    -ms-transform: rotate(0);
+    transform: rotate(0);
+    opacity: 1;
+  }
+  100% {
+    -webkit-transform-origin: center center;
+    -ms-transform-origin: center center;
+    transform-origin: center center;
+    -webkit-transform: rotate(200deg);
+    -ms-transform: rotate(200deg);
+    transform: rotate(200deg);
+    opacity: 0;
+  }
+}
+/* line 2255, ../sass/plugins/_animate.scss */
+.rotateOut {
+  -webkit-animation-name: rotateOut;
+  animation-name: rotateOut;
+}
+
+@-webkit-keyframes rotateOutDownLeft {
+  0% {
+    -webkit-transform-origin: left bottom;
+    transform-origin: left bottom;
+    -webkit-transform: rotate(0);
+    transform: rotate(0);
+    opacity: 1;
+  }
+  100% {
+    -webkit-transform-origin: left bottom;
+    transform-origin: left bottom;
+    -webkit-transform: rotate(90deg);
+    transform: rotate(90deg);
+    opacity: 0;
+  }
+}
+@keyframes rotateOutDownLeft {
+  0% {
+    -webkit-transform-origin: left bottom;
+    -ms-transform-origin: left bottom;
+    transform-origin: left bottom;
+    -webkit-transform: rotate(0);
+    -ms-transform: rotate(0);
+    transform: rotate(0);
+    opacity: 1;
+  }
+  100% {
+    -webkit-transform-origin: left bottom;
+    -ms-transform-origin: left bottom;
+    transform-origin: left bottom;
+    -webkit-transform: rotate(90deg);
+    -ms-transform: rotate(90deg);
+    transform: rotate(90deg);
+    opacity: 0;
+  }
+}
+/* line 2300, ../sass/plugins/_animate.scss */
+.rotateOutDownLeft {
+  -webkit-animation-name: rotateOutDownLeft;
+  animation-name: rotateOutDownLeft;
+}
+
+@-webkit-keyframes rotateOutDownRight {
+  0% {
+    -webkit-transform-origin: right bottom;
+    transform-origin: right bottom;
+    -webkit-transform: rotate(0);
+    transform: rotate(0);
+    opacity: 1;
+  }
+  100% {
+    -webkit-transform-origin: right bottom;
+    transform-origin: right bottom;
+    -webkit-transform: rotate(-90deg);
+    transform: rotate(-90deg);
+    opacity: 0;
+  }
+}
+@keyframes rotateOutDownRight {
+  0% {
+    -webkit-transform-origin: right bottom;
+    -ms-transform-origin: right bottom;
+    transform-origin: right bottom;
+    -webkit-transform: rotate(0);
+    -ms-transform: rotate(0);
+    transform: rotate(0);
+    opacity: 1;
+  }
+  100% {
+    -webkit-transform-origin: right bottom;
+    -ms-transform-origin: right bottom;
+    transform-origin: right bottom;
+    -webkit-transform: rotate(-90deg);
+    -ms-transform: rotate(-90deg);
+    transform: rotate(-90deg);
+    opacity: 0;
+  }
+}
+/* line 2345, ../sass/plugins/_animate.scss */
+.rotateOutDownRight {
+  -webkit-animation-name: rotateOutDownRight;
+  animation-name: rotateOutDownRight;
+}
+
+@-webkit-keyframes rotateOutUpLeft {
+  0% {
+    -webkit-transform-origin: left bottom;
+    transform-origin: left bottom;
+    -webkit-transform: rotate(0);
+    transform: rotate(0);
+    opacity: 1;
+  }
+  100% {
+    -webkit-transform-origin: left bottom;
+    transform-origin: left bottom;
+    -webkit-transform: rotate(-90deg);
+    transform: rotate(-90deg);
+    opacity: 0;
+  }
+}
+@keyframes rotateOutUpLeft {
+  0% {
+    -webkit-transform-origin: left bottom;
+    -ms-transform-origin: left bottom;
+    transform-origin: left bottom;
+    -webkit-transform: rotate(0);
+    -ms-transform: rotate(0);
+    transform: rotate(0);
+    opacity: 1;
+  }
+  100% {
+    -webkit-transform-origin: left bottom;
+    -ms-transform-origin: left bottom;
+    transform-origin: left bottom;
+    -webkit-transform: rotate(-90deg);
+    -ms-transform: rotate(-90deg);
+    transform: rotate(-90deg);
+    opacity: 0;
+  }
+}
+/* line 2390, ../sass/plugins/_animate.scss */
+.rotateOutUpLeft {
+  -webkit-animation-name: rotateOutUpLeft;
+  animation-name: rotateOutUpLeft;
+}
+
+@-webkit-keyframes rotateOutUpRight {
+  0% {
+    -webkit-transform-origin: right bottom;
+    transform-origin: right bottom;
+    -webkit-transform: rotate(0);
+    transform: rotate(0);
+    opacity: 1;
+  }
+  100% {
+    -webkit-transform-origin: right bottom;
+    transform-origin: right bottom;
+    -webkit-transform: rotate(90deg);
+    transform: rotate(90deg);
+    opacity: 0;
+  }
+}
+@keyframes rotateOutUpRight {
+  0% {
+    -webkit-transform-origin: right bottom;
+    -ms-transform-origin: right bottom;
+    transform-origin: right bottom;
+    -webkit-transform: rotate(0);
+    -ms-transform: rotate(0);
+    transform: rotate(0);
+    opacity: 1;
+  }
+  100% {
+    -webkit-transform-origin: right bottom;
+    -ms-transform-origin: right bottom;
+    transform-origin: right bottom;
+    -webkit-transform: rotate(90deg);
+    -ms-transform: rotate(90deg);
+    transform: rotate(90deg);
+    opacity: 0;
+  }
+}
+/* line 2435, ../sass/plugins/_animate.scss */
+.rotateOutUpRight {
+  -webkit-animation-name: rotateOutUpRight;
+  animation-name: rotateOutUpRight;
+}
+
+@-webkit-keyframes slideInDown {
+  0% {
+    opacity: 0;
+    -webkit-transform: translateY(-2000px);
+    transform: translateY(-2000px);
+  }
+  100% {
+    -webkit-transform: translateY(0);
+    transform: translateY(0);
+  }
+}
+@keyframes slideInDown {
+  0% {
+    opacity: 0;
+    -webkit-transform: translateY(-2000px);
+    -ms-transform: translateY(-2000px);
+    transform: translateY(-2000px);
+  }
+  100% {
+    -webkit-transform: translateY(0);
+    -ms-transform: translateY(0);
+    transform: translateY(0);
+  }
+}
+/* line 2468, ../sass/plugins/_animate.scss */
+.slideInDown {
+  -webkit-animation-name: slideInDown;
+  animation-name: slideInDown;
+}
+
+@-webkit-keyframes slideInLeft {
+  0% {
+    opacity: 0;
+    -webkit-transform: translateX(-2000px);
+    transform: translateX(-2000px);
+  }
+  100% {
+    -webkit-transform: translateX(0);
+    transform: translateX(0);
+  }
+}
+@keyframes slideInLeft {
+  0% {
+    opacity: 0;
+    -webkit-transform: translateX(-2000px);
+    -ms-transform: translateX(-2000px);
+    transform: translateX(-2000px);
+  }
+  100% {
+    -webkit-transform: translateX(0);
+    -ms-transform: translateX(0);
+    transform: translateX(0);
+  }
+}
+/* line 2501, ../sass/plugins/_animate.scss */
+.slideInLeft {
+  -webkit-animation-name: slideInLeft;
+  animation-name: slideInLeft;
+}
+
+@-webkit-keyframes slideInRight {
+  0% {
+    opacity: 0;
+    -webkit-transform: translateX(2000px);
+    transform: translateX(2000px);
+  }
+  100% {
+    -webkit-transform: translateX(0);
+    transform: translateX(0);
+  }
+}
+@keyframes slideInRight {
+  0% {
+    opacity: 0;
+    -webkit-transform: translateX(2000px);
+    -ms-transform: translateX(2000px);
+    transform: translateX(2000px);
+  }
+  100% {
+    -webkit-transform: translateX(0);
+    -ms-transform: translateX(0);
+    transform: translateX(0);
+  }
+}
+/* line 2534, ../sass/plugins/_animate.scss */
+.slideInRight {
+  -webkit-animation-name: slideInRight;
+  animation-name: slideInRight;
+}
+
+@-webkit-keyframes slideOutLeft {
+  0% {
+    -webkit-transform: translateX(0);
+    transform: translateX(0);
+  }
+  100% {
+    opacity: 0;
+    -webkit-transform: translateX(-2000px);
+    transform: translateX(-2000px);
+  }
+}
+@keyframes slideOutLeft {
+  0% {
+    -webkit-transform: translateX(0);
+    -ms-transform: translateX(0);
+    transform: translateX(0);
+  }
+  100% {
+    opacity: 0;
+    -webkit-transform: translateX(-2000px);
+    -ms-transform: translateX(-2000px);
+    transform: translateX(-2000px);
+  }
+}
+/* line 2567, ../sass/plugins/_animate.scss */
+.slideOutLeft {
+  -webkit-animation-name: slideOutLeft;
+  animation-name: slideOutLeft;
+}
+
+@-webkit-keyframes slideOutRight {
+  0% {
+    -webkit-transform: translateX(0);
+    transform: translateX(0);
+  }
+  100% {
+    opacity: 0;
+    -webkit-transform: translateX(2000px);
+    transform: translateX(2000px);
+  }
+}
+@keyframes slideOutRight {
+  0% {
+    -webkit-transform: translateX(0);
+    -ms-transform: translateX(0);
+    transform: translateX(0);
+  }
+  100% {
+    opacity: 0;
+    -webkit-transform: translateX(2000px);
+    -ms-transform: translateX(2000px);
+    transform: translateX(2000px);
+  }
+}
+/* line 2600, ../sass/plugins/_animate.scss */
+.slideOutRight {
+  -webkit-animation-name: slideOutRight;
+  animation-name: slideOutRight;
+}
+
+@-webkit-keyframes slideOutUp {
+  0% {
+    -webkit-transform: translateY(0);
+    transform: translateY(0);
+  }
+  100% {
+    opacity: 0;
+    -webkit-transform: translateY(-2000px);
+    transform: translateY(-2000px);
+  }
+}
+@keyframes slideOutUp {
+  0% {
+    -webkit-transform: translateY(0);
+    -ms-transform: translateY(0);
+    transform: translateY(0);
+  }
+  100% {
+    opacity: 0;
+    -webkit-transform: translateY(-2000px);
+    -ms-transform: translateY(-2000px);
+    transform: translateY(-2000px);
+  }
+}
+/* line 2633, ../sass/plugins/_animate.scss */
+.slideOutUp {
+  -webkit-animation-name: slideOutUp;
+  animation-name: slideOutUp;
+}
+
+@-webkit-keyframes slideInUp {
+  0% {
+    opacity: 0;
+    -webkit-transform: translateY(2000px);
+    transform: translateY(2000px);
+  }
+  100% {
+    opacity: 1;
+    -webkit-transform: translateY(0);
+    transform: translateY(0);
+  }
+}
+@keyframes slideInUp {
+  0% {
+    opacity: 0;
+    -webkit-transform: translateY(2000px);
+    -ms-transform: translateY(2000px);
+    transform: translateY(2000px);
+  }
+  100% {
+    opacity: 1;
+    -webkit-transform: translateY(0);
+    -ms-transform: translateY(0);
+    transform: translateY(0);
+  }
+}
+/* line 2668, ../sass/plugins/_animate.scss */
+.slideInUp {
+  -webkit-animation-name: slideInUp;
+  animation-name: slideInUp;
+}
+
+@-webkit-keyframes slideOutDown {
+  0% {
+    -webkit-transform: translateY(0);
+    transform: translateY(0);
+  }
+  100% {
+    opacity: 0;
+    -webkit-transform: translateY(2000px);
+    transform: translateY(2000px);
+  }
+}
+@keyframes slideOutDown {
+  0% {
+    -webkit-transform: translateY(0);
+    -ms-transform: translateY(0);
+    transform: translateY(0);
+  }
+  100% {
+    opacity: 0;
+    -webkit-transform: translateY(2000px);
+    -ms-transform: translateY(2000px);
+    transform: translateY(2000px);
+  }
+}
+/* line 2701, ../sass/plugins/_animate.scss */
+.slideOutDown {
+  -webkit-animation-name: slideOutDown;
+  animation-name: slideOutDown;
+}
+
+@-webkit-keyframes hinge {
+  0% {
+    -webkit-transform: rotate(0);
+    transform: rotate(0);
+    -webkit-transform-origin: top left;
+    transform-origin: top left;
+    -webkit-animation-timing-function: ease-in-out;
+    animation-timing-function: ease-in-out;
+  }
+  20%, 60% {
+    -webkit-transform: rotate(80deg);
+    transform: rotate(80deg);
+    -webkit-transform-origin: top left;
+    transform-origin: top left;
+    -webkit-animation-timing-function: ease-in-out;
+    animation-timing-function: ease-in-out;
+  }
+  40% {
+    -webkit-transform: rotate(60deg);
+    transform: rotate(60deg);
+    -webkit-transform-origin: top left;
+    transform-origin: top left;
+    -webkit-animation-timing-function: ease-in-out;
+    animation-timing-function: ease-in-out;
+  }
+  80% {
+    -webkit-transform: rotate(60deg) translateY(0);
+    transform: rotate(60deg) translateY(0);
+    -webkit-transform-origin: top left;
+    transform-origin: top left;
+    -webkit-animation-timing-function: ease-in-out;
+    animation-timing-function: ease-in-out;
+    opacity: 1;
+  }
+  100% {
+    -webkit-transform: translateY(700px);
+    transform: translateY(700px);
+    opacity: 0;
+  }
+}
+@keyframes hinge {
+  0% {
+    -webkit-transform: rotate(0);
+    -ms-transform: rotate(0);
+    transform: rotate(0);
+    -webkit-transform-origin: top left;
+    -ms-transform-origin: top left;
+    transform-origin: top left;
+    -webkit-animation-timing-function: ease-in-out;
+    animation-timing-function: ease-in-out;
+  }
+  20%, 60% {
+    -webkit-transform: rotate(80deg);
+    -ms-transform: rotate(80deg);
+    transform: rotate(80deg);
+    -webkit-transform-origin: top left;
+    -ms-transform-origin: top left;
+    transform-origin: top left;
+    -webkit-animation-timing-function: ease-in-out;
+    animation-timing-function: ease-in-out;
+  }
+  40% {
+    -webkit-transform: rotate(60deg);
+    -ms-transform: rotate(60deg);
+    transform: rotate(60deg);
+    -webkit-transform-origin: top left;
+    -ms-transform-origin: top left;
+    transform-origin: top left;
+    -webkit-animation-timing-function: ease-in-out;
+    animation-timing-function: ease-in-out;
+  }
+  80% {
+    -webkit-transform: rotate(60deg) translateY(0);
+    -ms-transform: rotate(60deg) translateY(0);
+    transform: rotate(60deg) translateY(0);
+    -webkit-transform-origin: top left;
+    -ms-transform-origin: top left;
+    transform-origin: top left;
+    -webkit-animation-timing-function: ease-in-out;
+    animation-timing-function: ease-in-out;
+    opacity: 1;
+  }
+  100% {
+    -webkit-transform: translateY(700px);
+    -ms-transform: translateY(700px);
+    transform: translateY(700px);
+    opacity: 0;
+  }
+}
+/* line 2805, ../sass/plugins/_animate.scss */
+.hinge {
+  -webkit-animation-name: hinge;
+  animation-name: hinge;
+}
+
+/* originally authored by Nick Pettit - https://github.com/nickpettit/glide */
+@-webkit-keyframes rollIn {
+  0% {
+    opacity: 0;
+    -webkit-transform: translateX(-100%) rotate(-120deg);
+    transform: translateX(-100%) rotate(-120deg);
+  }
+  100% {
+    opacity: 1;
+    -webkit-transform: translateX(0px) rotate(0deg);
+    transform: translateX(0px) rotate(0deg);
+  }
+}
+@keyframes rollIn {
+  0% {
+    opacity: 0;
+    -webkit-transform: translateX(-100%) rotate(-120deg);
+    -ms-transform: translateX(-100%) rotate(-120deg);
+    transform: translateX(-100%) rotate(-120deg);
+  }
+  100% {
+    opacity: 1;
+    -webkit-transform: translateX(0px) rotate(0deg);
+    -ms-transform: translateX(0px) rotate(0deg);
+    transform: translateX(0px) rotate(0deg);
+  }
+}
+/* line 2842, ../sass/plugins/_animate.scss */
+.rollIn {
+  -webkit-animation-name: rollIn;
+  animation-name: rollIn;
+}
+
+/* originally authored by Nick Pettit - https://github.com/nickpettit/glide */
+@-webkit-keyframes rollOut {
+  0% {
+    opacity: 1;
+    -webkit-transform: translateX(0px) rotate(0deg);
+    transform: translateX(0px) rotate(0deg);
+  }
+  100% {
+    opacity: 0;
+    -webkit-transform: translateX(100%) rotate(120deg);
+    transform: translateX(100%) rotate(120deg);
+  }
+}
+@keyframes rollOut {
+  0% {
+    opacity: 1;
+    -webkit-transform: translateX(0px) rotate(0deg);
+    -ms-transform: translateX(0px) rotate(0deg);
+    transform: translateX(0px) rotate(0deg);
+  }
+  100% {
+    opacity: 0;
+    -webkit-transform: translateX(100%) rotate(120deg);
+    -ms-transform: translateX(100%) rotate(120deg);
+    transform: translateX(100%) rotate(120deg);
+  }
+}
+/* line 2879, ../sass/plugins/_animate.scss */
+.rollOut {
+  -webkit-animation-name: rollOut;
+  animation-name: rollOut;
+}
+
+@-webkit-keyframes zoomIn {
+  0% {
+    opacity: 0;
+    -webkit-transform: scale(0.3);
+    transform: scale(0.3);
+  }
+  50% {
+    opacity: 1;
+  }
+}
+@keyframes zoomIn {
+  0% {
+    opacity: 0;
+    -webkit-transform: scale(0.3);
+    -ms-transform: scale(0.3);
+    transform: scale(0.3);
+  }
+  50% {
+    opacity: 1;
+  }
+}
+/* line 2909, ../sass/plugins/_animate.scss */
+.zoomIn {
+  -webkit-animation-name: zoomIn;
+  animation-name: zoomIn;
+}
+
+@-webkit-keyframes zoomInDown {
+  0% {
+    opacity: 0;
+    -webkit-transform: scale(0.1) translateY(-2000px);
+    transform: scale(0.1) translateY(-2000px);
+    -webkit-animation-timing-function: ease-in-out;
+    animation-timing-function: ease-in-out;
+  }
+  60% {
+    opacity: 1;
+    -webkit-transform: scale(0.475) translateY(60px);
+    transform: scale(0.475) translateY(60px);
+    -webkit-animation-timing-function: ease-out;
+    animation-timing-function: ease-out;
+  }
+}
+@keyframes zoomInDown {
+  0% {
+    opacity: 0;
+    -webkit-transform: scale(0.1) translateY(-2000px);
+    -ms-transform: scale(0.1) translateY(-2000px);
+    transform: scale(0.1) translateY(-2000px);
+    -webkit-animation-timing-function: ease-in-out;
+    animation-timing-function: ease-in-out;
+  }
+  60% {
+    opacity: 1;
+    -webkit-transform: scale(0.475) translateY(60px);
+    -ms-transform: scale(0.475) translateY(60px);
+    transform: scale(0.475) translateY(60px);
+    -webkit-animation-timing-function: ease-out;
+    animation-timing-function: ease-out;
+  }
+}
+/* line 2952, ../sass/plugins/_animate.scss */
+.zoomInDown {
+  -webkit-animation-name: zoomInDown;
+  animation-name: zoomInDown;
+}
+
+@-webkit-keyframes zoomInLeft {
+  0% {
+    opacity: 0;
+    -webkit-transform: scale(0.1) translateX(-2000px);
+    transform: scale(0.1) translateX(-2000px);
+    -webkit-animation-timing-function: ease-in-out;
+    animation-timing-function: ease-in-out;
+  }
+  60% {
+    opacity: 1;
+    -webkit-transform: scale(0.475) translateX(48px);
+    transform: scale(0.475) translateX(48px);
+    -webkit-animation-timing-function: ease-out;
+    animation-timing-function: ease-out;
+  }
+}
+@keyframes zoomInLeft {
+  0% {
+    opacity: 0;
+    -webkit-transform: scale(0.1) translateX(-2000px);
+    -ms-transform: scale(0.1) translateX(-2000px);
+    transform: scale(0.1) translateX(-2000px);
+    -webkit-animation-timing-function: ease-in-out;
+    animation-timing-function: ease-in-out;
+  }
+  60% {
+    opacity: 1;
+    -webkit-transform: scale(0.475) translateX(48px);
+    -ms-transform: scale(0.475) translateX(48px);
+    transform: scale(0.475) translateX(48px);
+    -webkit-animation-timing-function: ease-out;
+    animation-timing-function: ease-out;
+  }
+}
+/* line 2995, ../sass/plugins/_animate.scss */
+.zoomInLeft {
+  -webkit-animation-name: zoomInLeft;
+  animation-name: zoomInLeft;
+}
+
+@-webkit-keyframes zoomInRight {
+  0% {
+    opacity: 0;
+    -webkit-transform: scale(0.1) translateX(2000px);
+    transform: scale(0.1) translateX(2000px);
+    -webkit-animation-timing-function: ease-in-out;
+    animation-timing-function: ease-in-out;
+  }
+  60% {
+    opacity: 1;
+    -webkit-transform: scale(0.475) translateX(-48px);
+    transform: scale(0.475) translateX(-48px);
+    -webkit-animation-timing-function: ease-out;
+    animation-timing-function: ease-out;
+  }
+}
+@keyframes zoomInRight {
+  0% {
+    opacity: 0;
+    -webkit-transform: scale(0.1) translateX(2000px);
+    -ms-transform: scale(0.1) translateX(2000px);
+    transform: scale(0.1) translateX(2000px);
+    -webkit-animation-timing-function: ease-in-out;
+    animation-timing-function: ease-in-out;
+  }
+  60% {
+    opacity: 1;
+    -webkit-transform: scale(0.475) translateX(-48px);
+    -ms-transform: scale(0.475) translateX(-48px);
+    transform: scale(0.475) translateX(-48px);
+    -webkit-animation-timing-function: ease-out;
+    animation-timing-function: ease-out;
+  }
+}
+/* line 3038, ../sass/plugins/_animate.scss */
+.zoomInRight {
+  -webkit-animation-name: zoomInRight;
+  animation-name: zoomInRight;
+}
+
+@-webkit-keyframes zoomInUp {
+  0% {
+    opacity: 0;
+    -webkit-transform: scale(0.1) translateY(2000px);
+    transform: scale(0.1) translateY(2000px);
+    -webkit-animation-timing-function: ease-in-out;
+    animation-timing-function: ease-in-out;
+  }
+  60% {
+    opacity: 1;
+    -webkit-transform: scale(0.475) translateY(-60px);
+    transform: scale(0.475) translateY(-60px);
+    -webkit-animation-timing-function: ease-out;
+    animation-timing-function: ease-out;
+  }
+}
+@keyframes zoomInUp {
+  0% {
+    opacity: 0;
+    -webkit-transform: scale(0.1) translateY(2000px);
+    -ms-transform: scale(0.1) translateY(2000px);
+    transform: scale(0.1) translateY(2000px);
+    -webkit-animation-timing-function: ease-in-out;
+    animation-timing-function: ease-in-out;
+  }
+  60% {
+    opacity: 1;
+    -webkit-transform: scale(0.475) translateY(-60px);
+    -ms-transform: scale(0.475) translateY(-60px);
+    transform: scale(0.475) translateY(-60px);
+    -webkit-animation-timing-function: ease-out;
+    animation-timing-function: ease-out;
+  }
+}
+/* line 3081, ../sass/plugins/_animate.scss */
+.zoomInUp {
+  -webkit-animation-name: zoomInUp;
+  animation-name: zoomInUp;
+}
+
+@-webkit-keyframes zoomOut {
+  0% {
+    opacity: 1;
+    -webkit-transform: scale(1);
+    transform: scale(1);
+  }
+  50% {
+    opacity: 0;
+    -webkit-transform: scale(0.3);
+    transform: scale(0.3);
+  }
+  100% {
+    opacity: 0;
+  }
+}
+@keyframes zoomOut {
+  0% {
+    opacity: 1;
+    -webkit-transform: scale(1);
+    -ms-transform: scale(1);
+    transform: scale(1);
+  }
+  50% {
+    opacity: 0;
+    -webkit-transform: scale(0.3);
+    -ms-transform: scale(0.3);
+    transform: scale(0.3);
+  }
+  100% {
+    opacity: 0;
+  }
+}
+/* line 3124, ../sass/plugins/_animate.scss */
+.zoomOut {
+  -webkit-animation-name: zoomOut;
+  animation-name: zoomOut;
+}
+
+@-webkit-keyframes zoomOutDown {
+  40% {
+    opacity: 1;
+    -webkit-transform: scale(0.475) translateY(-60px);
+    transform: scale(0.475) translateY(-60px);
+    -webkit-animation-timing-function: linear;
+    animation-timing-function: linear;
+  }
+  100% {
+    opacity: 0;
+    -webkit-transform: scale(0.1) translateY(2000px);
+    transform: scale(0.1) translateY(2000px);
+    -webkit-transform-origin: center bottom;
+    transform-origin: center bottom;
+  }
+}
+@keyframes zoomOutDown {
+  40% {
+    opacity: 1;
+    -webkit-transform: scale(0.475) translateY(-60px);
+    -ms-transform: scale(0.475) translateY(-60px);
+    transform: scale(0.475) translateY(-60px);
+    -webkit-animation-timing-function: linear;
+    animation-timing-function: linear;
+  }
+  100% {
+    opacity: 0;
+    -webkit-transform: scale(0.1) translateY(2000px);
+    -ms-transform: scale(0.1) translateY(2000px);
+    transform: scale(0.1) translateY(2000px);
+    -webkit-transform-origin: center bottom;
+    -ms-transform-origin: center bottom;
+    transform-origin: center bottom;
+  }
+}
+/* line 3168, ../sass/plugins/_animate.scss */
+.zoomOutDown {
+  -webkit-animation-name: zoomOutDown;
+  animation-name: zoomOutDown;
+}
+
+@-webkit-keyframes zoomOutLeft {
+  40% {
+    opacity: 1;
+    -webkit-transform: scale(0.475) translateX(42px);
+    transform: scale(0.475) translateX(42px);
+    -webkit-animation-timing-function: linear;
+    animation-timing-function: linear;
+  }
+  100% {
+    opacity: 0;
+    -webkit-transform: scale(0.1) translateX(-2000px);
+    transform: scale(0.1) translateX(-2000px);
+    -webkit-transform-origin: left center;
+    transform-origin: left center;
+  }
+}
+@keyframes zoomOutLeft {
+  40% {
+    opacity: 1;
+    -webkit-transform: scale(0.475) translateX(42px);
+    -ms-transform: scale(0.475) translateX(42px);
+    transform: scale(0.475) translateX(42px);
+    -webkit-animation-timing-function: linear;
+    animation-timing-function: linear;
+  }
+  100% {
+    opacity: 0;
+    -webkit-transform: scale(0.1) translateX(-2000px);
+    -ms-transform: scale(0.1) translateX(-2000px);
+    transform: scale(0.1) translateX(-2000px);
+    -webkit-transform-origin: left center;
+    -ms-transform-origin: left center;
+    transform-origin: left center;
+  }
+}
+/* line 3212, ../sass/plugins/_animate.scss */
+.zoomOutLeft {
+  -webkit-animation-name: zoomOutLeft;
+  animation-name: zoomOutLeft;
+}
+
+@-webkit-keyframes zoomOutRight {
+  40% {
+    opacity: 1;
+    -webkit-transform: scale(0.475) translateX(-42px);
+    transform: scale(0.475) translateX(-42px);
+    -webkit-animation-timing-function: linear;
+    animation-timing-function: linear;
+  }
+  100% {
+    opacity: 0;
+    -webkit-transform: scale(0.1) translateX(2000px);
+    transform: scale(0.1) translateX(2000px);
+    -webkit-transform-origin: right center;
+    transform-origin: right center;
+  }
+}
+@keyframes zoomOutRight {
+  40% {
+    opacity: 1;
+    -webkit-transform: scale(0.475) translateX(-42px);
+    -ms-transform: scale(0.475) translateX(-42px);
+    transform: scale(0.475) translateX(-42px);
+    -webkit-animation-timing-function: linear;
+    animation-timing-function: linear;
+  }
+  100% {
+    opacity: 0;
+    -webkit-transform: scale(0.1) translateX(2000px);
+    -ms-transform: scale(0.1) translateX(2000px);
+    transform: scale(0.1) translateX(2000px);
+    -webkit-transform-origin: right center;
+    -ms-transform-origin: right center;
+    transform-origin: right center;
+  }
+}
+/* line 3256, ../sass/plugins/_animate.scss */
+.zoomOutRight {
+  -webkit-animation-name: zoomOutRight;
+  animation-name: zoomOutRight;
+}
+
+@-webkit-keyframes zoomOutUp {
+  40% {
+    opacity: 1;
+    -webkit-transform: scale(0.475) translateY(60px);
+    transform: scale(0.475) translateY(60px);
+    -webkit-animation-timing-function: linear;
+    animation-timing-function: linear;
+  }
+  100% {
+    opacity: 0;
+    -webkit-transform: scale(0.1) translateY(-2000px);
+    transform: scale(0.1) translateY(-2000px);
+    -webkit-transform-origin: center top;
+    transform-origin: center top;
+  }
+}
+@keyframes zoomOutUp {
+  40% {
+    opacity: 1;
+    -webkit-transform: scale(0.475) translateY(60px);
+    -ms-transform: scale(0.475) translateY(60px);
+    transform: scale(0.475) translateY(60px);
+    -webkit-animation-timing-function: linear;
+    animation-timing-function: linear;
+  }
+  100% {
+    opacity: 0;
+    -webkit-transform: scale(0.1) translateY(-2000px);
+    -ms-transform: scale(0.1) translateY(-2000px);
+    transform: scale(0.1) translateY(-2000px);
+    -webkit-transform-origin: center top;
+    -ms-transform-origin: center top;
+    transform-origin: center top;
+  }
+}
+/* line 3300, ../sass/plugins/_animate.scss */
+.zoomOutUp {
+  -webkit-animation-name: zoomOutUp;
+  animation-name: zoomOutUp;
+}
+
+/* This is the default Tooltipster theme (feel free to modify or duplicate and create multiple themes!): */
+/* line 2, ../sass/plugins/_tooltip.scss */
+.tooltipster-default {
+  border-radius: 5px;
+  border: 1px solid #cccccc;
+  background: #ededed;
+  color: #666666;
+}
+
+/* Use this next selector to style things like font-size and line-height: */
+/* line 10, ../sass/plugins/_tooltip.scss */
+.tooltipster-default .tooltipster-content {
+  font-family: "Open Sans", sans-serif;
+  font-size: 14px;
+  line-height: 16px;
+  padding: 8px 10px;
+}
+
+/* This next selector defines the color of the border on the outside of the arrow. This will automatically match the color and size of the border set on the main tooltip styles. Set display: none; if you would like a border around the tooltip but no border around the arrow */
+/* line 17, ../sass/plugins/_tooltip.scss */
+.tooltipster-default .tooltipster-arrow .tooltipster-arrow-border {
+  /* border-color: ... !important; */
+}
+
+/* If you're using the icon option, use this next selector to style them */
+/* line 22, ../sass/plugins/_tooltip.scss */
+.tooltipster-icon {
+  cursor: help;
+  margin-left: 4px;
+}
+
+/* This is the base styling required to make all Tooltipsters work */
+/* line 27, ../sass/plugins/_tooltip.scss */
+.tooltipster-base {
+  padding: 0;
+  font-size: 0;
+  line-height: 0;
+  position: absolute;
+  left: 0;
+  top: 0;
+  z-index: 9999999;
+  pointer-events: none;
+  width: auto;
+  overflow: visible;
+}
+
+/* line 39, ../sass/plugins/_tooltip.scss */
+.tooltipster-base .tooltipster-content {
+  overflow: hidden;
+}
+
+/* These next classes handle the styles for the little arrow attached to the tooltip. By default, the arrow will inherit the same colors and border as what is set on the main tooltip itself. */
+/* line 45, ../sass/plugins/_tooltip.scss */
+.tooltipster-arrow {
+  display: block;
+  text-align: center;
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index: -1;
+}
+
+/* line 55, ../sass/plugins/_tooltip.scss */
+.tooltipster-arrow span, .tooltipster-arrow-border {
+  display: block;
+  width: 0;
+  height: 0;
+  position: absolute;
+}
+
+/* line 61, ../sass/plugins/_tooltip.scss */
+.tooltipster-arrow-top span, .tooltipster-arrow-top-right span, .tooltipster-arrow-top-left span {
+  border-left: 8px solid transparent !important;
+  border-right: 8px solid transparent !important;
+  border-top: 8px solid;
+  bottom: -7px;
+}
+
+/* line 67, ../sass/plugins/_tooltip.scss */
+.tooltipster-arrow-top .tooltipster-arrow-border, .tooltipster-arrow-top-right .tooltipster-arrow-border, .tooltipster-arrow-top-left .tooltipster-arrow-border {
+  border-left: 9px solid transparent !important;
+  border-right: 9px solid transparent !important;
+  border-top: 9px solid;
+  bottom: -7px;
+}
+
+/* line 74, ../sass/plugins/_tooltip.scss */
+.tooltipster-arrow-bottom span, .tooltipster-arrow-bottom-right span, .tooltipster-arrow-bottom-left span {
+  border-left: 8px solid transparent !important;
+  border-right: 8px solid transparent !important;
+  border-bottom: 8px solid;
+  top: -7px;
+}
+
+/* line 80, ../sass/plugins/_tooltip.scss */
+.tooltipster-arrow-bottom .tooltipster-arrow-border, .tooltipster-arrow-bottom-right .tooltipster-arrow-border, .tooltipster-arrow-bottom-left .tooltipster-arrow-border {
+  border-left: 9px solid transparent !important;
+  border-right: 9px solid transparent !important;
+  border-bottom: 9px solid;
+  top: -7px;
+}
+
+/* line 86, ../sass/plugins/_tooltip.scss */
+.tooltipster-arrow-top span, .tooltipster-arrow-top .tooltipster-arrow-border, .tooltipster-arrow-bottom span, .tooltipster-arrow-bottom .tooltipster-arrow-border {
+  left: 0;
+  right: 0;
+  margin: 0 auto;
+}
+
+/* line 91, ../sass/plugins/_tooltip.scss */
+.tooltipster-arrow-top-left span, .tooltipster-arrow-bottom-left span {
+  left: 6px;
+}
+
+/* line 94, ../sass/plugins/_tooltip.scss */
+.tooltipster-arrow-top-left .tooltipster-arrow-border, .tooltipster-arrow-bottom-left .tooltipster-arrow-border {
+  left: 5px;
+}
+
+/* line 97, ../sass/plugins/_tooltip.scss */
+.tooltipster-arrow-top-right span, .tooltipster-arrow-bottom-right span {
+  right: 6px;
+}
+
+/* line 100, ../sass/plugins/_tooltip.scss */
+.tooltipster-arrow-top-right .tooltipster-arrow-border, .tooltipster-arrow-bottom-right .tooltipster-arrow-border {
+  right: 5px;
+}
+
+/* line 103, ../sass/plugins/_tooltip.scss */
+.tooltipster-arrow-left span, .tooltipster-arrow-left .tooltipster-arrow-border {
+  border-top: 8px solid transparent !important;
+  border-bottom: 8px solid transparent !important;
+  border-left: 8px solid;
+  top: 50%;
+  margin-top: -7px;
+  right: -7px;
+}
+
+/* line 111, ../sass/plugins/_tooltip.scss */
+.tooltipster-arrow-left .tooltipster-arrow-border {
+  border-top: 9px solid transparent !important;
+  border-bottom: 9px solid transparent !important;
+  border-left: 9px solid;
+  margin-top: -8px;
+}
+
+/* line 117, ../sass/plugins/_tooltip.scss */
+.tooltipster-arrow-right span, .tooltipster-arrow-right .tooltipster-arrow-border {
+  border-top: 8px solid transparent !important;
+  border-bottom: 8px solid transparent !important;
+  border-right: 8px solid;
+  top: 50%;
+  margin-top: -7px;
+  left: -7px;
+}
+
+/* line 125, ../sass/plugins/_tooltip.scss */
+.tooltipster-arrow-right .tooltipster-arrow-border {
+  border-top: 9px solid transparent !important;
+  border-bottom: 9px solid transparent !important;
+  border-right: 9px solid;
+  margin-top: -8px;
+}
+
+/* Some CSS magic for the awesome animations - feel free to make your own custom animations and reference it in your Tooltipster settings! */
+/* line 135, ../sass/plugins/_tooltip.scss */
+.tooltipster-fade {
+  opacity: 0;
+  -webkit-transition-property: opacity;
+  -moz-transition-property: opacity;
+  -o-transition-property: opacity;
+  -ms-transition-property: opacity;
+  transition-property: opacity;
+}
+
+/* line 143, ../sass/plugins/_tooltip.scss */
+.tooltipster-fade-show {
+  opacity: 1;
+}
+
+/* line 147, ../sass/plugins/_tooltip.scss */
+.tooltipster-grow {
+  -webkit-transform: scale(0, 0);
+  -moz-transform: scale(0, 0);
+  -o-transform: scale(0, 0);
+  -ms-transform: scale(0, 0);
+  transform: scale(0, 0);
+  -webkit-transition-property: -webkit-transform;
+  -moz-transition-property: -moz-transform;
+  -o-transition-property: -o-transform;
+  -ms-transition-property: -ms-transform;
+  transition-property: transform;
+  -webkit-backface-visibility: hidden;
+}
+
+/* line 160, ../sass/plugins/_tooltip.scss */
+.tooltipster-grow-show {
+  -webkit-transform: scale(1, 1);
+  -moz-transform: scale(1, 1);
+  -o-transform: scale(1, 1);
+  -ms-transform: scale(1, 1);
+  transform: scale(1, 1);
+  -webkit-transition-timing-function: cubic-bezier(0.175, 0.885, 0.32, 1);
+  -webkit-transition-timing-function: cubic-bezier(0.175, 0.885, 0.32, 1.15);
+  -moz-transition-timing-function: cubic-bezier(0.175, 0.885, 0.32, 1.15);
+  -ms-transition-timing-function: cubic-bezier(0.175, 0.885, 0.32, 1.15);
+  -o-transition-timing-function: cubic-bezier(0.175, 0.885, 0.32, 1.15);
+  transition-timing-function: cubic-bezier(0.175, 0.885, 0.32, 1.15);
+}
+
+/* line 174, ../sass/plugins/_tooltip.scss */
+.tooltipster-swing {
+  opacity: 0;
+  -webkit-transform: rotateZ(4deg);
+  -moz-transform: rotateZ(4deg);
+  -o-transform: rotateZ(4deg);
+  -ms-transform: rotateZ(4deg);
+  transform: rotateZ(4deg);
+  -webkit-transition-property: -webkit-transform, opacity;
+  -moz-transition-property: -moz-transform;
+  -o-transition-property: -o-transform;
+  -ms-transition-property: -ms-transform;
+  transition-property: transform;
+}
+
+/* line 187, ../sass/plugins/_tooltip.scss */
+.tooltipster-swing-show {
+  opacity: 1;
+  -webkit-transform: rotateZ(0deg);
+  -moz-transform: rotateZ(0deg);
+  -o-transform: rotateZ(0deg);
+  -ms-transform: rotateZ(0deg);
+  transform: rotateZ(0deg);
+  -webkit-transition-timing-function: cubic-bezier(0.23, 0.635, 0.495, 1);
+  -webkit-transition-timing-function: cubic-bezier(0.23, 0.635, 0.495, 2.4);
+  -moz-transition-timing-function: cubic-bezier(0.23, 0.635, 0.495, 2.4);
+  -ms-transition-timing-function: cubic-bezier(0.23, 0.635, 0.495, 2.4);
+  -o-transition-timing-function: cubic-bezier(0.23, 0.635, 0.495, 2.4);
+  transition-timing-function: cubic-bezier(0.23, 0.635, 0.495, 2.4);
+}
+
+/* line 202, ../sass/plugins/_tooltip.scss */
+.tooltipster-fall {
+  top: 0;
+  -webkit-transition-property: top;
+  -moz-transition-property: top;
+  -o-transition-property: top;
+  -ms-transition-property: top;
+  transition-property: top;
+  -webkit-transition-timing-function: cubic-bezier(0.175, 0.885, 0.32, 1);
+  -webkit-transition-timing-function: cubic-bezier(0.175, 0.885, 0.32, 1.15);
+  -moz-transition-timing-function: cubic-bezier(0.175, 0.885, 0.32, 1.15);
+  -ms-transition-timing-function: cubic-bezier(0.175, 0.885, 0.32, 1.15);
+  -o-transition-timing-function: cubic-bezier(0.175, 0.885, 0.32, 1.15);
+  transition-timing-function: cubic-bezier(0.175, 0.885, 0.32, 1.15);
+}
+
+/* line 218, ../sass/plugins/_tooltip.scss */
+.tooltipster-fall.tooltipster-dying {
+  -webkit-transition-property: all;
+  -moz-transition-property: all;
+  -o-transition-property: all;
+  -ms-transition-property: all;
+  transition-property: all;
+  top: 0px !important;
+  opacity: 0;
+}
+
+/* line 228, ../sass/plugins/_tooltip.scss */
+.tooltipster-slide {
+  left: -40px;
+  -webkit-transition-property: left;
+  -moz-transition-property: left;
+  -o-transition-property: left;
+  -ms-transition-property: left;
+  transition-property: left;
+  -webkit-transition-timing-function: cubic-bezier(0.175, 0.885, 0.32, 1);
+  -webkit-transition-timing-function: cubic-bezier(0.175, 0.885, 0.32, 1.15);
+  -moz-transition-timing-function: cubic-bezier(0.175, 0.885, 0.32, 1.15);
+  -ms-transition-timing-function: cubic-bezier(0.175, 0.885, 0.32, 1.15);
+  -o-transition-timing-function: cubic-bezier(0.175, 0.885, 0.32, 1.15);
+  transition-timing-function: cubic-bezier(0.175, 0.885, 0.32, 1.15);
+}
+
+/* line 244, ../sass/plugins/_tooltip.scss */
+.tooltipster-slide.tooltipster-dying {
+  -webkit-transition-property: all;
+  -moz-transition-property: all;
+  -o-transition-property: all;
+  -ms-transition-property: all;
+  transition-property: all;
+  left: 0px !important;
+  opacity: 0;
+}
+
+/* CSS transition for when contenting is changing in a tooltip that is still open. The only properties that will NOT transition are: width, height, top, and left */
+/* line 256, ../sass/plugins/_tooltip.scss */
+.tooltipster-content-changing {
+  opacity: 0.5;
+  -webkit-transform: scale(1.1, 1.1);
+  -moz-transform: scale(1.1, 1.1);
+  -o-transform: scale(1.1, 1.1);
+  -ms-transform: scale(1.1, 1.1);
+  transform: scale(1.1, 1.1);
+}
+
+/* header
+   ========================================================================== */
+/* line 3, ../sass/sections/_header.scss */
+header {
+  width: 100%;
+  min-height: 425px;
+  overflow: hidden;
+}
+@media screen and (max-width: 880px) {
+  /* line 3, ../sass/sections/_header.scss */
+  header {
+    padding-top: 20px;
+  }
+}
+@media screen and (max-width: 768px) {
+  /* line 12, ../sass/sections/_header.scss */
+  header .container {
+    padding: 0;
+  }
+}
+/* line 18, ../sass/sections/_header.scss */
+header .image {
+  width: 100%;
+  min-height: 425px;
+  background: url(../images/media/header.jpg) no-repeat;
+  background-size: cover;
+  position: relative;
+  margin-top: 77px;
+}
+/* line 26, ../sass/sections/_header.scss */
+header .image .overlay {
+  font-family: "Open Sans", sans-serif;
+  font-size: 14px;
+  max-width: 555px;
+  width: 100%;
+  min-height: 225px;
+  background: rgba(0, 0, 0, 0.6);
+  margin: auto;
+  padding: 20px;
+  position: absolute;
+  display: block;
+  left: 50%;
+  top: 50%;
+  margin-top: -130px;
+  margin-left: -277px;
+  -moz-box-sizing: border-box;
+  -webkit-box-sizing: border-box;
+  box-sizing: border-box;
+}
+@media screen and (max-width: 550px) {
+  /* line 26, ../sass/sections/_header.scss */
+  header .image .overlay {
+    left: 0;
+    margin-left: 0;
+  }
+  /* line 47, ../sass/sections/_header.scss */
+  header .image .overlay h1 {
+    font-size: 18px;
+  }
+}
+/* line 53, ../sass/sections/_header.scss */
+header .image.volendam {
+  background: url(../images/media/header_volendam.jpg) no-repeat;
+  background-size: cover;
+}
+/* line 58, ../sass/sections/_header.scss */
+header .image.volendam .overlay {
+  min-height: 150px;
+  background: rgba(0, 0, 0, 0.6);
+  margin-top: -75px;
+  -moz-box-sizing: border-box;
+  -webkit-box-sizing: border-box;
+  box-sizing: border-box;
+}
+@media screen and (max-width: 550px) {
+  /* line 58, ../sass/sections/_header.scss */
+  header .image.volendam .overlay {
+    left: 0;
+    margin-left: 0;
+  }
+}
+/* line 74, ../sass/sections/_header.scss */
+header .image h1 {
+  color: #ffffff;
+  text-align: center;
+  margin-top: 0px;
+}
+/* line 79, ../sass/sections/_header.scss */
+header .image p {
+  color: #ffffff;
+  font-size: 14px;
+  text-align: center;
+}
+
+/* footer
+   ========================================================================== */
+/* line 4, ../sass/sections/_footer.scss */
+footer {
+  background: #e6e4e4;
+  width: 100%;
+  min-height: 264px;
+  padding: 40px 0;
+  -moz-box-sizing: border-box;
+  -webkit-box-sizing: border-box;
+  box-sizing: border-box;
+}
+/* line 11, ../sass/sections/_footer.scss */
+footer .container {
+  overflow: hidden;
+}
+/* line 18, ../sass/sections/_footer.scss */
+footer .col-25:first-of-type a {
+  display: block;
+}
+/* line 21, ../sass/sections/_footer.scss */
+footer .col-25:first-of-type a img {
+  display: block;
+  max-width: 100%;
+  margin-bottom: 35px;
+  opacity: 1;
+  -moz-transition: opacity 0.2s;
+  -o-transition: opacity 0.2s;
+  -webkit-transition: opacity 0.2s;
+  transition: opacity 0.2s;
+}
+@media screen and (max-width: 480px) {
+  /* line 21, ../sass/sections/_footer.scss */
+  footer .col-25:first-of-type a img {
+    margin: 0 auto 35px auto;
+  }
+}
+/* line 32, ../sass/sections/_footer.scss */
+footer .col-25:first-of-type a img:hover {
+  opacity: 0.5;
+  -moz-transition: opacity 0.2s;
+  -o-transition: opacity 0.2s;
+  -webkit-transition: opacity 0.2s;
+  transition: opacity 0.2s;
+}
+/* line 40, ../sass/sections/_footer.scss */
+footer .col-25:last-of-type {
+  float: right;
+}
+/* line 43, ../sass/sections/_footer.scss */
+footer .col-25:last-of-type h2 {
+  border-bottom: 0;
+}
+/* line 47, ../sass/sections/_footer.scss */
+footer .col-25:last-of-type ul {
+  list-style: none;
+  margin: 20px 0 0 0;
+}
+/* line 51, ../sass/sections/_footer.scss */
+footer .col-25:last-of-type ul li {
+  display: block;
+}
+/* line 54, ../sass/sections/_footer.scss */
+footer .col-25:last-of-type ul li:first-of-type {
+  margin-bottom: 20px;
+}
+/* line 58, ../sass/sections/_footer.scss */
+footer .col-25:last-of-type ul li a {
+  font: 14px "Open Sans", sans-serif;
+  font-weight: 400;
+  color: #333333;
+  text-decoration: none;
+}
+
+/* line 70, ../sass/sections/_footer.scss */
+.bar {
+  width: 100%;
+  min-height: 50px;
+  background: #333333;
+  text-align: center;
+  font: 14px "Open Sans", sans-serif;
+  color: #ffffff;
+  padding: 16px 20px;
+  -moz-box-sizing: border-box;
+  -webkit-box-sizing: border-box;
+  box-sizing: border-box;
+}
+
+/* Sections
+   ========================================================================== */
+/* line 4, ../sass/sections/_sections.scss */
+section {
+  width: 100%;
+  margin: 0 auto;
+  overflow: hidden;
+  /* plaatsen
+     ========================================================================== */
+  /* Info
+     ========================================================================== */
+  /* Locaties
+     ========================================================================== */
+  /* Agenda
+     ========================================================================== */
+}
+/* line 4, ../sass/sections/_plaatsen.scss */
+section#places {
+  margin-top: 30px;
+}
+/* line 7, ../sass/sections/_plaatsen.scss */
+section#places .first {
+  margin-left: 0px;
+}
+/* line 10, ../sass/sections/_plaatsen.scss */
+section#places .last {
+  margin-right: 0px;
+}
+/* line 14, ../sass/sections/_plaatsen.scss */
+section#places .col-33 {
+  height: 310px;
+  margin-bottom: 30px;
+}
+@media screen and (max-width: 1024px) {
+  /* line 14, ../sass/sections/_plaatsen.scss */
+  section#places .col-33 {
+    height: 275px;
+  }
+}
+@media screen and (max-width: 925px) {
+  /* line 14, ../sass/sections/_plaatsen.scss */
+  section#places .col-33 {
+    height: 275px;
+  }
+}
+@media screen and (max-width: 660px) {
+  /* line 14, ../sass/sections/_plaatsen.scss */
+  section#places .col-33 {
+    height: 250px;
+  }
+}
+@media screen and (max-width: 480px) {
+  /* line 14, ../sass/sections/_plaatsen.scss */
+  section#places .col-33 {
+    height: 360px;
+  }
+}
+@media screen and (max-width: 380px) {
+  /* line 14, ../sass/sections/_plaatsen.scss */
+  section#places .col-33 {
+    height: 330px;
+  }
+}
+/* line 37, ../sass/sections/_plaatsen.scss */
+section#places .col-33.volendam {
+  background: url(../images/media/plaatsen/volendam.jpg) no-repeat;
+  background-size: cover;
+}
+@media screen and (max-width: 925px) {
+  /* line 37, ../sass/sections/_plaatsen.scss */
+  section#places .col-33.volendam {
+    margin-right: 0px;
+  }
+}
+/* line 45, ../sass/sections/_plaatsen.scss */
+section#places .col-33.edam {
+  background: url(../images/media/plaatsen/edam.jpg) no-repeat;
+  background-size: cover;
+}
+/* line 50, ../sass/sections/_plaatsen.scss */
+section#places .col-33.warder {
+  background: url(../images/media/plaatsen/warder.jpg) no-repeat;
+  background-size: cover;
+  margin-right: 0px;
+}
+@media screen and (max-width: 925px) {
+  /* line 50, ../sass/sections/_plaatsen.scss */
+  section#places .col-33.warder {
+    margin-left: 0px;
+    margin-right: 1%;
+  }
+}
+/* line 61, ../sass/sections/_plaatsen.scss */
+section#places .col-33.kwadijk {
+  background: url(../images/media/plaatsen/kwadijk.jpg) no-repeat;
+  background-size: cover;
+  margin-left: 0px;
+}
+@media screen and (max-width: 925px) {
+  /* line 61, ../sass/sections/_plaatsen.scss */
+  section#places .col-33.kwadijk {
+    margin-left: 1%;
+    margin-right: 0px;
+  }
+}
+/* line 71, ../sass/sections/_plaatsen.scss */
+section#places .col-33.oosthuizen {
+  background: url(../images/media/plaatsen/oosthuizen.jpg) no-repeat;
+  background-size: cover;
+}
+@media screen and (max-width: 925px) {
+  /* line 71, ../sass/sections/_plaatsen.scss */
+  section#places .col-33.oosthuizen {
+    margin-left: 0px;
+  }
+}
+/* line 79, ../sass/sections/_plaatsen.scss */
+section#places .col-33.schardam {
+  background: url(../images/media/plaatsen/schardam.jpg) no-repeat;
+  background-size: cover;
+  margin-right: 0px;
+}
+/* line 84, ../sass/sections/_plaatsen.scss */
+section#places .col-33.beets {
+  background: url(../images/media/plaatsen/beets.jpg) no-repeat;
+  background-size: cover;
+  margin-left: 0px;
+}
+/* line 89, ../sass/sections/_plaatsen.scss */
+section#places .col-33.middelie {
+  background: url(../images/media/plaatsen/middelie.jpg) no-repeat;
+  background-size: cover;
+}
+@media screen and (max-width: 925px) {
+  /* line 89, ../sass/sections/_plaatsen.scss */
+  section#places .col-33.middelie {
+    margin-right: 0px;
+  }
+}
+/* line 97, ../sass/sections/_plaatsen.scss */
+section#places .col-33.hobrede {
+  background: url(../images/media/plaatsen/hobrede.jpg) no-repeat;
+  background-size: cover;
+}
+@media screen and (max-width: 925px) {
+  /* line 97, ../sass/sections/_plaatsen.scss */
+  section#places .col-33.hobrede {
+    margin-left: 0px;
+    margin-right: 0px;
+    width: 100%;
+    height: 560px;
+  }
+}
+/* line 4, ../sass/sections/_info.scss */
+section#info {
+  background-image: url("../images/media/info/header.jpg");
+  background-attachment: fixed;
+  background-size: cover;
+}
+/* line 9, ../sass/sections/_info.scss */
+section#info article {
+  background: #e6e4e4;
+  width: 100%;
+  padding: 50px 0;
+  display: block;
+  overflow: hidden;
+  z-index: 999;
+  -moz-box-sizing: border-box;
+  -webkit-box-sizing: border-box;
+  box-sizing: border-box;
+}
+/* line 19, ../sass/sections/_info.scss */
+section#info aside {
+  width: 100%;
+  height: 340px;
+  display: block;
+}
+@media screen and (max-width: 1024px) {
+  /* line 4, ../sass/sections/_info.scss */
+  section#info {
+    background-image: url("../images/media/indfo/header.jpg") no-repeat;
+    background-attachment: inherit;
+    background-position: bottom;
+    background-size: 1024px;
+  }
+}
+@media screen and (max-width: 880px) {
+  /* line 4, ../sass/sections/_info.scss */
+  section#info {
+    background-image: url("../images/media/indfo/header.jpg") no-repeat;
+    background-attachment: inherit;
+    background-position: bottom;
+    background-size: 880px;
+  }
+}
+@media screen and (max-width: 640px) {
+  /* line 4, ../sass/sections/_info.scss */
+  section#info {
+    background-size: 640px;
+    background-attachment: inherit;
+    background-position: bottom;
+  }
+  /* line 41, ../sass/sections/_info.scss */
+  section#info .col-50 {
+    width: 100%;
+    padding: 0;
+    margin-bottom: 30px;
+  }
+  /* line 46, ../sass/sections/_info.scss */
+  section#info .col-50:last-of-type {
+    margin-bottom: 0;
+  }
+}
+/* line 3, ../sass/sections/_inschrijven.scss */
+section#inschrijven article {
+  background: #ffffff;
+  width: 100%;
+  padding: 50px 0;
+  display: block;
+  overflow: hidden;
+  z-index: 999;
+  -moz-box-sizing: border-box;
+  -webkit-box-sizing: border-box;
+  box-sizing: border-box;
+}
+/* line 13, ../sass/sections/_inschrijven.scss */
+section#inschrijven aside {
+  width: 100%;
+  height: 240px;
+  display: block;
+}
+@media screen and (max-width: 640px) {
+  /* line 20, ../sass/sections/_inschrijven.scss */
+  section#inschrijven .col-50 {
+    width: 100%;
+    padding: 0;
+    margin-bottom: 30px;
+  }
+  /* line 25, ../sass/sections/_inschrijven.scss */
+  section#inschrijven .col-50:last-of-type {
+    margin-bottom: 0;
+  }
+}
+/* line 3, ../sass/sections/_profile.scss */
+section#profile a {
+  text-decoration: none;
+  color: #333333;
+}
+/* line 7, ../sass/sections/_profile.scss */
+section#profile a:hover, section#profile a:active {
+  color: #00abda;
+  -moz-transition: color 0.4s;
+  -o-transition: color 0.4s;
+  -webkit-transition: color 0.4s;
+  transition: color 0.4s;
+}
+/* line 14, ../sass/sections/_profile.scss */
+section#profile article {
+  background: #ffffff;
+  width: 100%;
+  padding: 50px 0;
+  display: block;
+  overflow: hidden;
+  z-index: 999;
+  -moz-box-sizing: border-box;
+  -webkit-box-sizing: border-box;
+  box-sizing: border-box;
+}
+/* line 23, ../sass/sections/_profile.scss */
+section#profile table {
+  font-family: "Open Sans", sans-serif;
+  font-size: 14px;
+  color: #333333;
+  margin-top: 15px;
+}
+/* line 29, ../sass/sections/_profile.scss */
+section#profile td {
+  width: 100px;
+  height: 15px;
+}
+/* line 33, ../sass/sections/_profile.scss */
+section#profile .bold {
+  font-weight: bold;
+}
+/* line 37, ../sass/sections/_profile.scss */
+section#profile .google-maps {
+  float: left;
+  height: 300px;
+  width: 100%;
+  position: relative;
+}
+/* line 44, ../sass/sections/_profile.scss */
+section#profile iframe {
+  width: 100%;
+  height: 300px;
+}
+/* line 49, ../sass/sections/_profile.scss */
+section#profile .iframe-area {
+  position: absolute;
+  text-align: center;
+  line-height: 400px;
+  top: 0%;
+  left: 0px;
+  width: 100%;
+  height: 100%;
+  background: rgba(248, 248, 248, 0.2);
+  z-index: 2;
+  cursor: zoom-in;
+  -moz-transition: all 0.5s;
+  -o-transition: all 0.5s;
+  -webkit-transition: all 0.5s;
+  transition: all 0.5s;
+}
+/* line 62, ../sass/sections/_profile.scss */
+section#profile .iframe-area.lock {
+  line-height: 40px;
+  text-align: center;
+  box-shadow: 0 0 5px rgba(0, 0, 0, 0.3);
+  position: absolute;
+  top: 211px;
+  left: 12px;
+  border-radius: 2px;
+  width: 30px;
+  height: 30px;
+  z-index: 2;
+  cursor: pointer;
+  background: url(../images/media/lock.png) rgba(248, 248, 248, 0.2) no-repeat 7px 6px;
+  -moz-transition: all 0.5s;
+  -o-transition: all 0.5s;
+  -webkit-transition: all 0.5s;
+  transition: all 0.5s;
+}
+@media screen and (max-width: 640px) {
+  /* line 83, ../sass/sections/_profile.scss */
+  section#profile .col-50 {
+    width: 100%;
+    padding: 0;
+    margin-bottom: 30px;
+  }
+  /* line 88, ../sass/sections/_profile.scss */
+  section#profile .col-50:last-of-type {
+    margin-bottom: 0;
+  }
+}
+/* line 4, ../sass/sections/_locations.scss */
+section#locations {
+  margin: 40px 0;
+}
+/* line 7, ../sass/sections/_locations.scss */
+section#locations aside {
+  width: 100%;
+  display: block;
+  overflow: hidden;
+}
+/* line 12, ../sass/sections/_locations.scss */
+section#locations aside .btn {
+  background: transparent;
+  color: #333333 !important;
+  width: auto;
+  float: left;
+  margin: 0 10px;
+  cursor: pointer;
+  -moz-transition: background 0.2s, color 0.2s;
+  -o-transition: background 0.2s, color 0.2s;
+  -webkit-transition: background 0.2s, color 0.2s;
+  transition: background 0.2s, color 0.2s;
+}
+/* line 21, ../sass/sections/_locations.scss */
+section#locations aside .btn.active, section#locations aside .btn:hover {
+  background: #00bff3;
+  color: #ffffff !important;
+  -moz-transition: background 0.2s, color 0.2s;
+  -o-transition: background 0.2s, color 0.2s;
+  -webkit-transition: background 0.2s, color 0.2s;
+  transition: background 0.2s, color 0.2s;
+}
+/* line 28, ../sass/sections/_locations.scss */
+section#locations aside .btn:first-of-type {
+  margin-left: 0;
+}
+/* line 32, ../sass/sections/_locations.scss */
+section#locations aside .btn:last-of-type {
+  margin-right: 0;
+}
+/* line 38, ../sass/sections/_locations.scss */
+section#locations .thumbs {
+  width: 100%;
+  display: block;
+  overflow: hidden;
+  margin-top: 40px;
+}
+/* line 44, ../sass/sections/_locations.scss */
+section#locations .thumbs .col-25 {
+  height: 255px;
+  margin-bottom: 30px;
+}
+/* line 48, ../sass/sections/_locations.scss */
+section#locations .thumbs .col-25:nth-of-type(4n) {
+  margin-right: 0;
+}
+/* line 52, ../sass/sections/_locations.scss */
+section#locations .thumbs .col-25:nth-of-type(5n) {
+  margin-left: 0;
+}
+@media screen and (max-width: 1024px) {
+  /* line 44, ../sass/sections/_locations.scss */
+  section#locations .thumbs .col-25 {
+    height: 205px;
+  }
+}
+@media screen and (max-width: 925px) {
+  /* line 44, ../sass/sections/_locations.scss */
+  section#locations .thumbs .col-25 {
+    height: 403px;
+  }
+  /* line 62, ../sass/sections/_locations.scss */
+  section#locations .thumbs .col-25:nth-of-type(0n) {
+    margin-left: 0;
+  }
+  /* line 65, ../sass/sections/_locations.scss */
+  section#locations .thumbs .col-25:nth-of-type(2n) {
+    margin-right: 0;
+  }
+  /* line 69, ../sass/sections/_locations.scss */
+  section#locations .thumbs .col-25:nth-of-type(3n) {
+    margin-left: 0;
+  }
+  /* line 72, ../sass/sections/_locations.scss */
+  section#locations .thumbs .col-25:nth-of-type(4n) {
+    margin-right: 0;
+  }
+  /* line 76, ../sass/sections/_locations.scss */
+  section#locations .thumbs .col-25:nth-of-type(5n) {
+    margin-left: 0;
+  }
+  /* line 79, ../sass/sections/_locations.scss */
+  section#locations .thumbs .col-25:nth-of-type(6n) {
+    margin-right: 0;
+    margin-left: 1%;
+  }
+  /* line 84, ../sass/sections/_locations.scss */
+  section#locations .thumbs .col-25:nth-of-type(7n) {
+    margin-left: 0;
+    margin-right: 1%;
+  }
+  /* line 88, ../sass/sections/_locations.scss */
+  section#locations .thumbs .col-25:nth-of-type(8n) {
+    margin-right: 0;
+    margin-left: 1%;
+  }
+}
+@media screen and (max-width: 835px) {
+  /* line 44, ../sass/sections/_locations.scss */
+  section#locations .thumbs .col-25 {
+    height: 340px;
+  }
+}
+@media screen and (max-width: 660px) {
+  /* line 44, ../sass/sections/_locations.scss */
+  section#locations .thumbs .col-25 {
+    height: 270px;
+  }
+}
+@media screen and (max-width: 480px) {
+  /* line 44, ../sass/sections/_locations.scss */
+  section#locations .thumbs .col-25 {
+    height: 360px;
+  }
+}
+@media screen and (max-width: 380px) {
+  /* line 44, ../sass/sections/_locations.scss */
+  section#locations .thumbs .col-25 {
+    height: 330px;
+  }
+}
+/* line 108, ../sass/sections/_locations.scss */
+section#locations .thumbs .col-25 .overlay p {
+  margin: 0;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  overflow: hidden;
+}
+/* line 118, ../sass/sections/_locations.scss */
+section#locations .pagination {
+  list-style: none;
+  display: block;
+  margin: 0 auto;
+  text-align: center;
+}
+/* line 124, ../sass/sections/_locations.scss */
+section#locations .pagination li {
+  display: inline;
+}
+/* line 127, ../sass/sections/_locations.scss */
+section#locations .pagination li a {
+  font: 14px "Open Sans", sans-serif;
+  font-weight: 400;
+  color: #333333;
+  text-decoration: none;
+  margin: 0 5px;
+  display: inline-block;
+}
+/* line 135, ../sass/sections/_locations.scss */
+section#locations .pagination li a.active {
+  font-weight: 700;
+}
+/* line 6, ../sass/sections/_agenda.scss */
+section#agenda .agenda {
+  width: 100%;
+  min-height: 500px;
+  background: #e6e4e4;
+  margin: 0 auto;
+  position: relative;
+  padding: 50px 305px 50px 50px;
+  margin: 40px 0;
+  -moz-box-sizing: border-box;
+  -webkit-box-sizing: border-box;
+  box-sizing: border-box;
+  /* Side Menu */
+}
+@media screen and (max-width: 930px) {
+  /* line 6, ../sass/sections/_agenda.scss */
+  section#agenda .agenda {
+    display: none;
+  }
+}
+/* line 20, ../sass/sections/_agenda.scss */
+section#agenda .agenda .months {
+  display: block;
+  overflow: hidden;
+}
+/* line 24, ../sass/sections/_agenda.scss */
+section#agenda .agenda .months .col-33 {
+  width: 33%;
+  margin: 0;
+  background: none;
+  font: 24px "Open Sans", sans-serif;
+  font-weight: 400;
+  color: #677480;
+  text-transform: uppercase;
+  text-align: center;
+  float: left;
+}
+/* line 35, ../sass/sections/_agenda.scss */
+section#agenda .agenda .months .col-33:first-of-type {
+  font: 16px "Open Sans", sans-serif;
+  font-weight: 400;
+  text-align: left;
+  line-height: 2.1;
+}
+/* line 41, ../sass/sections/_agenda.scss */
+section#agenda .agenda .months .col-33:first-of-type a {
+  color: #00bff3;
+  text-decoration: none;
+}
+/* line 45, ../sass/sections/_agenda.scss */
+section#agenda .agenda .months .col-33:first-of-type a:hover {
+  background: none;
+}
+/* line 51, ../sass/sections/_agenda.scss */
+section#agenda .agenda .months .col-33.last {
+  text-align: right !important;
+  font: 16px "Open Sans", sans-serif;
+  font-weight: 400;
+  line-height: 2.1;
+}
+/* line 57, ../sass/sections/_agenda.scss */
+section#agenda .agenda .months .col-33.last a {
+  color: #00bff3;
+  text-decoration: none;
+}
+/* line 65, ../sass/sections/_agenda.scss */
+section#agenda .agenda .content {
+  width: 100%;
+  overflow: hidden;
+  margin: 70px auto 0;
+  display: block;
+}
+/* line 71, ../sass/sections/_agenda.scss */
+section#agenda .agenda .content .days {
+  display: block;
+  overflow: hidden;
+}
+/* line 76, ../sass/sections/_agenda.scss */
+section#agenda .agenda .content .alldays {
+  display: block;
+  overflow: hidden;
+  margin-top: 40px;
+}
+/* line 81, ../sass/sections/_agenda.scss */
+section#agenda .agenda .content .alldays .col-14 {
+  font-size: 16px;
+  margin-bottom: 15px;
+  display: block;
+  border-bottom: 2px solid transparent;
+  -moz-box-sizing: border-box;
+  -webkit-box-sizing: border-box;
+  box-sizing: border-box;
+  -moz-transition: background 0.2s;
+  -o-transition: background 0.2s;
+  -webkit-transition: background 0.2s;
+  transition: background 0.2s;
+}
+/* line 89, ../sass/sections/_agenda.scss */
+section#agenda .agenda .content .alldays .col-14 span {
+  width: 30px;
+  height: 30px;
+  margin: 0 auto;
+  position: relative;
+  display: block;
+  line-height: 1.9;
+  cursor: pointer;
+  -moz-box-sizing: border-box;
+  -webkit-box-sizing: border-box;
+  box-sizing: border-box;
+}
+/* line 99, ../sass/sections/_agenda.scss */
+section#agenda .agenda .content .alldays .col-14 span.active {
+  background: #00bff3;
+  color: #ffffff;
+  -moz-transition: background 0.2s;
+  -o-transition: background 0.2s;
+  -webkit-transition: background 0.2s;
+  transition: background 0.2s;
+}
+/* line 105, ../sass/sections/_agenda.scss */
+section#agenda .agenda .content .alldays .col-14 span.current {
+  background: #ff7f66;
+  color: #ffffff;
+  -moz-border-radius: 50%;
+  -webkit-border-radius: 50%;
+  border-radius: 50%;
+}
+/* line 114, ../sass/sections/_agenda.scss */
+section#agenda .agenda .content .col-14 {
+  width: 14%;
+  float: left;
+  font: 22px "Open Sans", sans-serif;
+  font-weight: 400;
+  color: #3e454c;
+  text-transform: uppercase;
+  text-align: center;
+}
+/* line 127, ../sass/sections/_agenda.scss */
+section#agenda .agenda aside {
+  background: #3e454c;
+  width: 255px;
+  height: 508px;
+  position: absolute;
+  right: 0;
+  top: 0;
+  padding: 50px 0;
+  overflow-y: scroll;
+  -moz-box-sizing: border-box;
+  -webkit-box-sizing: border-box;
+  box-sizing: border-box;
+}
+/* line 138, ../sass/sections/_agenda.scss */
+section#agenda .agenda aside h4, section#agenda .agenda aside h5 {
+  font: 16px "Open Sans", sans-serif;
+  font-weight: 400;
+  text-transform: uppercase;
+  color: #00bff3;
+  letter-spacing: 1px;
+  text-align: center;
+  margin-bottom: 0;
+}
+/* line 148, ../sass/sections/_agenda.scss */
+section#agenda .agenda aside h5 {
+  color: #677480;
+  margin-top: 0px;
+}
+/* line 154, ../sass/sections/_agenda.scss */
+section#agenda .agenda aside .row {
+  width: 100%;
+  border-bottom: 1px solid #8a98a7;
+  overflow: hidden;
+  font: 14px "Open Sans", sans-serif;
+  font-weight: 400;
+  color: #8a98a7;
+  margin-bottom: 14px;
+  cursor: pointer;
+}
+/* line 164, ../sass/sections/_agenda.scss */
+section#agenda .agenda aside .row p {
+  font: 12px "Open Sans", sans-serif;
+  font-weight: 400;
+  font-style: italic;
+  color: #8a98a7;
+  margin: 0 26px 0;
+  padding-bottom: 20px;
+  margin-bottom: 0;
+  display: none;
+  float: left;
+  -moz-box-sizing: border-box;
+  -webkit-box-sizing: border-box;
+  box-sizing: border-box;
+}
+/* line 176, ../sass/sections/_agenda.scss */
+section#agenda .agenda aside .row p a {
+  display: block;
+  font-style: normal;
+  font-weight: 700;
+  color: #00bff3;
+  text-decoration: none;
+}
+/* line 184, ../sass/sections/_agenda.scss */
+section#agenda .agenda aside .row p p {
+  margin-left: 0 !important;
+}
+/* line 189, ../sass/sections/_agenda.scss */
+section#agenda .agenda aside .row:first-of-type {
+  margin-top: 40px;
+}
+/* line 193, ../sass/sections/_agenda.scss */
+section#agenda .agenda aside .row .col-25 {
+  background: none;
+  float: left;
+  text-align: right;
+}
+/* line 199, ../sass/sections/_agenda.scss */
+section#agenda .agenda aside .row .col-75 {
+  margin-bottom: 10px;
+}
+/* line 2, ../sass/sections/_contact.scss */
+section#contact article {
+  background: #ffffff;
+  width: 100%;
+  padding: 50px 0;
+  display: block;
+  overflow: hidden;
+  z-index: 999;
+  -moz-box-sizing: border-box;
+  -webkit-box-sizing: border-box;
+  box-sizing: border-box;
+}
+@media screen and (max-width: 640px) {
+  /* line 13, ../sass/sections/_contact.scss */
+  section#contact .col-50 {
+    width: 100%;
+    padding: 0;
+    margin-bottom: 30px;
+  }
+  /* line 18, ../sass/sections/_contact.scss */
+  section#contact .col-50:last-of-type {
+    margin-bottom: 0;
+  }
+}
+/* line 1, ../sass/sections/_user.scss */
+section#user-panel {
+  width: 32px;
+  background: #3e454c;
+  height: initial;
+  margin: 0;
+  position: fixed;
+  z-index: 999;
+  top: 10px;
+  left: 0;
+}
+@media screen and (max-width: 900px) {
+  /* line 1, ../sass/sections/_user.scss */
+  section#user-panel {
+    top: 60px;
+  }
+}
+/* line 15, ../sass/sections/_user.scss */
+section#user-panel div {
+  height: 32px;
+  position: relative;
+  cursor: pointer;
+  -moz-box-sizing: border-box;
+  -webkit-box-sizing: border-box;
+  box-sizing: border-box;
+}
+/* line 21, ../sass/sections/_user.scss */
+section#user-panel span {
+  display: block;
+  height: 100%;
+  width: 100%;
+}
+/* line 26, ../sass/sections/_user.scss */
+section#user-panel .user {
+  background: url(../images/icons/user.png) no-repeat 8px 8px #3e454c;
+  background-size: 16px;
+}
+/* line 30, ../sass/sections/_user.scss */
+section#user-panel .user:hover, section#user-panel .user:active {
+  background: url(../images/icons/user.png) no-repeat 8px 8px #555f68;
+  -moz-transition: background 0.2s;
+  -o-transition: background 0.2s;
+  -webkit-transition: background 0.2s;
+  transition: background 0.2s;
+  background-size: 16px;
+}
+/* line 38, ../sass/sections/_user.scss */
+section#user-panel .edit {
+  background: url(../images/icons/edit.png) no-repeat 8px 8px #3e454c;
+  background-size: 16px;
+}
+/* line 42, ../sass/sections/_user.scss */
+section#user-panel .edit:hover, section#user-panel .edit:active {
+  background: url(../images/icons/edit.png) no-repeat 8px 8px #555f68;
+  -moz-transition: background 0.2s;
+  -o-transition: background 0.2s;
+  -webkit-transition: background 0.2s;
+  transition: background 0.2s;
+  background-size: 16px;
+}
+/* line 49, ../sass/sections/_user.scss */
+section#user-panel .calender {
+  background: url(../images/icons/calender.png) no-repeat 8px 8px #3e454c;
+  background-size: 16px;
+}
+/* line 53, ../sass/sections/_user.scss */
+section#user-panel .calender:hover, section#user-panel .calender:active {
+  background: url(../images/icons/calender.png) no-repeat 8px 8px #555f68;
+  -moz-transition: background 0.2s;
+  -o-transition: background 0.2s;
+  -webkit-transition: background 0.2s;
+  transition: background 0.2s;
+  background-size: 16px;
+}
+/* line 60, ../sass/sections/_user.scss */
+section#user-panel .log-out {
+  background: url(../images/icons/log-out.png) no-repeat 8px 8px #3e454c;
+  background-size: 16px;
+}
+/* line 64, ../sass/sections/_user.scss */
+section#user-panel .log-out:hover, section#user-panel .log-out:active {
+  background: url(../images/icons/log-out.png) no-repeat 8px 8px #555f68;
+  -moz-transition: background 0.2s;
+  -o-transition: background 0.2s;
+  -webkit-transition: background 0.2s;
+  transition: background 0.2s;
+  background-size: 16px;
+}
+/* line 3, ../sass/sections/_404.scss */
+section#error_404 .col-100 {
+  width: 100%;
+  height: 650px;
+  background: url(../images/media/404.png) no-repeat;
+  background-size: cover;
+  margin: 80px 0px 50px 0px;
+}
+/* line 11, ../sass/sections/_404.scss */
+section#error_404 .overlay {
+  font-family: "Open Sans", sans-serif;
+  font-size: 14px;
+  max-width: 555px;
+  width: 100%;
+  min-height: 225px;
+  background: rgba(0, 0, 0, 0.6);
+  margin: auto;
+  padding: 20px 20px 50px 20px;
+  position: absolute;
+  display: block;
+  left: 50%;
+  top: 50%;
+  margin-top: -130px;
+  margin-left: -277px;
+  -moz-box-sizing: border-box;
+  -webkit-box-sizing: border-box;
+  box-sizing: border-box;
+}
+@media screen and (max-width: 1024px) {
+  /* line 11, ../sass/sections/_404.scss */
+  section#error_404 .overlay {
+    margin-top: -175px;
+  }
+}
+@media screen and (max-width: 737px) {
+  /* line 11, ../sass/sections/_404.scss */
+  section#error_404 .overlay {
+    margin-top: -20px;
+  }
+}
+@media screen and (max-width: 600px) {
+  /* line 11, ../sass/sections/_404.scss */
+  section#error_404 .overlay {
+    max-width: 455px;
+    margin-top: -130px;
+    margin-left: -227px;
+  }
+}
+@media screen and (max-width: 496px) {
+  /* line 11, ../sass/sections/_404.scss */
+  section#error_404 .overlay {
+    max-width: 334px;
+    margin-top: -130px;
+    margin-left: -167px;
+    padding: 15px 15px 50px 15px;
+  }
+}
+@media screen and (max-width: 374px) {
+  /* line 11, ../sass/sections/_404.scss */
+  section#error_404 .overlay {
+    max-width: 280px;
+    margin-top: -50px;
+    margin-left: -140px;
+  }
+}
+/* line 55, ../sass/sections/_404.scss */
+section#error_404 .overlay h1 {
+  color: #ffffff;
+  text-align: center;
+  margin-top: 0px;
+  font-size: 32px;
+}
+@media screen and (max-width: 498px) {
+  /* line 55, ../sass/sections/_404.scss */
+  section#error_404 .overlay h1 {
+    font-size: 24px;
+  }
+}
+/* line 65, ../sass/sections/_404.scss */
+section#error_404 .overlay p {
+  margin-bottom: 0px;
+  margin-top: 20px;
+  color: #ffffff;
+  font-size: 32px;
+  text-align: center;
+}
+/* line 2, ../sass/sections/_search.scss */
+section#search a {
+  text-decoration: none;
+  color: #333333;
+  display: block;
+}
+/* line 7, ../sass/sections/_search.scss */
+section#search a:hover, section#search a:active {
+  color: #00abda;
+  -moz-transition: color 0.4s;
+  -o-transition: color 0.4s;
+  -webkit-transition: color 0.4s;
+  transition: color 0.4s;
+}
+/* line 13, ../sass/sections/_search.scss */
+section#search article {
+  background: #ffffff;
+  width: 100%;
+  padding: 50px 0;
+  display: block;
+  z-index: 999;
+  -moz-box-sizing: border-box;
+  -webkit-box-sizing: border-box;
+  box-sizing: border-box;
+  float: left;
+  margin-top: 20px;
+}
+/* line 23, ../sass/sections/_search.scss */
+section#search h2 {
+  float: left;
+}
+/* line 26, ../sass/sections/_search.scss */
+section#search .active-search {
+  display: block !important;
+}
+/* line 29, ../sass/sections/_search.scss */
+section#search .search-keyword {
+  float: left;
+  margin-top: 21px;
+  font-weight: bold;
+  font-size: 20px;
+  color: #333333;
+  text-transform: uppercase;
+  margin-left: 10px;
+}
+/* line 39, ../sass/sections/_search.scss */
+section#search .search-result {
+  width: 100%;
+  float: left;
+  padding: 20px 0px 30px 0px;
+  border-bottom: 1px solid #D8D6D6;
+}
+/* line 45, ../sass/sections/_search.scss */
+section#search .search-result h3 {
+  margin: 0px;
+}
+/* line 48, ../sass/sections/_search.scss */
+section#search .search-result p {
+  font-size: 14px;
+  color: #333333;
+  font-family: "Open Sans", sans-serif;
+  margin: 0;
+  overflow: hidden;
+  display: block;
+  /* Fallback for non-webkit */
+  display: -webkit-box;
+  max-width: 100%;
+  height: 14px 1.4 2;
+  /* Fallback for non-webkit */
+  line-height: 1.4;
+  -webkit-line-clamp: 2;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}

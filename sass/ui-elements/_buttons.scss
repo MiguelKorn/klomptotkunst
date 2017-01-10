@@ -1,0 +1,46 @@
+/* ==========================================================================
+	 buttons
+	 ========================================================================== */
+		 .overlay{
+		 	.btn{
+		 		display: block;
+		 		padding: 10px;
+		 		background: $blue;
+		 		text-align: center;
+		 		color:$white;
+		 		width: 180px;
+		 		text-decoration: none;
+		 		font-family: $font-family;
+		 		font-size: 18px;
+		 		margin: auto;
+		 		@include transition(background .20s);
+
+		 		&:hover,
+		 		&:active{
+		 			background: darken($blue, 10%);
+		 			@include transition(background .20s);
+		 		}
+		 	}
+		 }
+
+		 .btn,
+		 input[type="submit"] {
+		 	display: block;
+		 	padding: 10px;
+		 	background: $blue;
+		 	text-align: center;
+		 	color:$white !important;
+		 	border-radius:0;
+		 	width: 180px;
+		 	text-decoration: none;
+		 	font-family: $font-family;
+		 	font-size: 18px;
+		 	border:0;
+		 	@include transition(background .20s);
+
+		 	&:hover,
+		 	&:active{
+		 		background: darken($blue, 10%);
+		 		@include transition(background .20s);
+		 	}
+		 }

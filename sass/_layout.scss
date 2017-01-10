@@ -1,0 +1,189 @@
+/* Layout
+   ========================================================================== */
+
+.container {
+	max-width: 1200px;
+	width: 100%;
+	margin: 0 auto;
+	padding: 0px 50px;
+	@include box-sizing(border-box);
+
+		@media screen and (max-width:768px){
+			padding:0px 20px;
+		}
+}
+.col-25{
+	width:23.5%;
+	margin: 0 1%;
+	float: left;
+	position: relative;
+	background:$gray;
+	@include box-sizing(border-box);
+
+		@media screen and (max-width:925px){
+			width:49%;
+		}
+		@media screen and (max-width:480px){
+			width:100%;
+			margin:0;
+		}
+
+	&:first-of-type{
+		margin-left: 0;
+	}
+	&:last-of-type{
+		margin-right: 0;
+	}
+	
+	a {
+		  height: 100%;
+		  width: 100%;
+		  display: block;
+	}
+
+	.overlay{
+		background:$blackrgb-dark;
+        margin:auto;
+        width: 100%;
+        @include box-sizing(border-box);
+        padding:20px;
+        border-bottom:2px solid $blue;
+        position: absolute;
+        bottom:40px;
+
+
+    	h3{
+    		color:$white;
+    		margin-top: 0px;
+    		margin-bottom: 0px;
+    		margin-top: -13px;
+    	}
+
+    	p{
+    		font-size: $font-size;
+    		color: $white;
+    		font-family: $font-family;
+    		margin:0;
+    	}
+	}
+
+}
+
+.col-33{
+	width:32%;
+	margin: 0 1%;
+	float: left;
+	position: relative;
+	background:$white;
+	@include box-sizing(border-box);
+
+		@media screen and (max-width:925px){
+			width:49%;
+		}
+		@media screen and (max-width:480px){
+			width:100%;
+			margin:0;
+		}
+
+		&:first-of-type{
+			margin-left: 0;
+		}
+		&:last-of-type{
+			margin-right: 0;
+		}
+		
+		a {
+			  height: 100%;
+			  width: 100%;
+			  display: block;
+		}
+
+		.overlay{
+			background:$blackrgb-dark;
+	        margin:auto;
+	        width: 100%;
+	        @include box-sizing(border-box);
+	        padding:20px;
+	        border-bottom:2px solid $blue;
+	        position: absolute;
+	        bottom:40px;
+
+	    	h3{
+	    		color:$white;
+	    		margin-top: 0px;
+	    		margin-bottom: 0px;
+	    		margin-top: -13px;
+	    	}
+
+	    	p{
+	    		font-size: $font-size;
+	    		color: $white;
+	    		font-family: $font-family;
+	    		margin:0;
+	    		overflow: hidden;
+	    		display: block; /* Fallback for non-webkit */
+	    		display: -webkit-box;
+	    		max-width: 100%;
+	    		height: $font-size $line-height $lines-to-show; /* Fallback for non-webkit */
+	    		line-height: $line-height;
+	    		-webkit-line-clamp: $lines-to-show;
+	    		-webkit-box-orient: vertical;
+	    		overflow: hidden;
+	    		text-overflow: ellipsis;
+	    	}
+	    }
+}
+.col-33 a:hover{
+	background: rgba(255, 255, 255, 0.2);
+	@include transition(background .20s);
+}
+
+.col-50 {
+	width: 50%;
+	float: left;
+	padding: 0 20px;
+	@include box-sizing(border-box);
+
+	&:first-of-type {
+		padding-left: 0;
+	}
+
+	&:last-of-type {
+		padding-right: 0;
+	}
+}
+
+
+.search-container {
+	background: $subnav;
+	width: 100%;
+	height: 75px;
+	position: relative;
+	top: 0;
+	left: 0;
+	z-index: 999;
+	display: none;
+	padding-top: 10px;
+	@include box-sizing(border-box);
+
+	@media screen and (max-width: 880px) {
+		display: none !important;
+	}
+}
+
+
+.col-75 {
+	width: 75%;
+	padding: 0 10px 0 16px;
+	float: left;
+	position: relative;
+	@include box-sizing(border-box);
+}
+
+.col-100{
+   width: 100%;
+   background: $white;
+}
+.active-search {
+   display: block;
+}

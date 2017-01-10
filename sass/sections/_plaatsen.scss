@@ -1,0 +1,109 @@
+/* plaatsen
+   ========================================================================== */
+
+   &#places {
+	margin-top:30px;
+
+      .first{
+         margin-left: 0px;
+      }
+      .last{
+         margin-right: 0px;
+      }
+
+   	.col-33 {
+		height: 310px;
+		margin-bottom: 30px;
+
+
+
+			@media screen and (max-width:1024px){
+				height: 275px;
+			}
+         @media screen and (max-width:925px){
+            height: 275px;
+         }
+			@media screen and (max-width:660px){
+				height: 250px;
+			}
+			@media screen and (max-width:480px){
+				height: 360px;
+			}
+			@media screen and (max-width:380px){
+				height: 330px;
+			}
+
+
+   		&.volendam {
+   			background: url(../images/media/plaatsen/volendam.jpg) no-repeat; 
+            background-size: cover;
+
+               @media screen and (max-width:925px){
+                  margin-right: 0px;
+               }
+   		}
+   		&.edam {
+   			background: url(../images/media/plaatsen/edam.jpg) no-repeat; 
+            background-size: cover;
+   		}
+
+   		&.warder {
+   			background: url(../images/media/plaatsen/warder.jpg) no-repeat; 
+            background-size: cover;
+            margin-right: 0px;
+
+               @media screen and (max-width:925px){
+                  margin-left: 0px;
+                  margin-right: 1%;
+               }
+
+   		}
+   		&.kwadijk {
+   			background: url(../images/media/plaatsen/kwadijk.jpg) no-repeat; 
+            background-size: cover;
+            margin-left: 0px;
+
+               @media screen and (max-width:925px){
+                  margin-left: 1%;
+                  margin-right: 0px;
+               }
+   		}
+   		&.oosthuizen {
+   			background: url(../images/media/plaatsen/oosthuizen.jpg) no-repeat; 
+            background-size: cover;
+
+               @media screen and (max-width:925px){
+                  margin-left: 0px;
+               }
+   		}
+   		&.schardam {
+   			background: url(../images/media/plaatsen/schardam.jpg) no-repeat; 
+            background-size: cover;
+            margin-right: 0px;
+   		}
+   		&.beets {
+   			background: url(../images/media/plaatsen/beets.jpg) no-repeat; 
+            background-size: cover;
+            margin-left: 0px;
+   		}
+   		&.middelie {
+   			background: url(../images/media/plaatsen/middelie.jpg) no-repeat; 
+            background-size: cover;
+
+            @media screen and (max-width:925px){
+               margin-right: 0px;
+            }
+   		}
+         &.hobrede {
+            background: url(../images/media/plaatsen/hobrede.jpg) no-repeat; 
+            background-size: cover;
+
+               @media screen and (max-width:925px){
+                  margin-left: 0px;
+                  margin-right: 0px;
+                  width: 100%;
+                  height: 560px;
+               }
+         }
+   	}
+   }

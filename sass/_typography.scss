@@ -1,0 +1,35 @@
+/* fonts
+   ========================================================================== */
+   @import url(http://fonts.googleapis.com/css?family=Open+Sans:400,300,700,600);
+   
+/* headings
+   ========================================================================== */
+h1 {
+   font: 30px $font-family;
+	text-align: left;
+	font-weight: $bold;
+}
+
+h2 {
+   display: inline-block;
+   font: 20px $font-family;
+   font-weight: $bold;
+   color: $black;
+   text-align: left;
+   text-transform: uppercase;
+   border-bottom: 2px solid $blue;  
+}
+
+h3 {
+   font: 20px $font-family; 
+	text-align: left;
+   font-weight: $bold;
+}
+
+p {
+   width: 100%;
+   font: $font-size $font-family;
+   font-weight: $normal;
+   color: $black;
+   line-height: 1.6;
+}

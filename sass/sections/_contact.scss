@@ -1,0 +1,23 @@
+   &#contact {
+		article {
+			background: $white;
+			width: 100%;
+			padding: 50px 0;
+			display: block;
+			overflow: hidden;
+			z-index: 999;
+			@include box-sizing(border-box);
+		}
+
+		@media screen and (max-width: 640px) {
+			.col-50 {
+				width: 100%;
+				padding: 0;
+				margin-bottom: 30px;
+
+				&:last-of-type {
+					margin-bottom: 0;
+				}
+			}
+		}
+   }

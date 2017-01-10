@@ -1,0 +1,141 @@
+/* ==========================================================================
+	 forms
+	 ========================================================================== */
+
+#error{
+	padding: 10px;
+	background: $error;
+	color: $white;
+	text-align: center;
+	margin-bottom: 20px;
+	font-size: $font-size;
+}
+#succses{
+	padding: 10px;
+	background: $succses;
+	color: $white;
+	text-align: center;
+	margin-bottom: 20px;
+	font-size: $font-size;
+}
+
+input[type="text"] {
+	background: lighten($agenda, 5%);
+	max-width: 250px;
+	width: 100%;
+	height: 36px;
+	padding: 10px;
+	border: 0;
+	color: $agenda-light;
+	font: $font-size $font-family;
+	font-weight: $normal;
+	@include box-sizing(border-box);
+
+	&#searchfield {
+		background: $white;
+		border: 1px solid $gray-dark;
+		max-width: 500px;
+		width: 100%;
+		margin: 10px auto;
+	}
+}
+
+#postsearch {
+	padding: 6px 10px;
+	margin: 10px 0 0 10px;
+	display: inline;
+}
+
+.centerform {
+	width: 100%;
+	overflow: hidden;
+	text-align: center;
+}
+
+#contact,
+#inschrijven{
+
+	input[type="text"] {
+		background: $white;
+		max-width: 250px;
+		width: 100%;
+		margin-bottom: 20px;
+		margin-left: 20px;
+		height: 36px;
+		padding: 10px 10px 0px 10px;
+		border: 0;
+		border-radius:0;
+		border-bottom:2px solid $gray;
+		color: $black;
+		font: $font-size $font-family;
+		font-weight: $normal;
+		@include box-sizing(border-box);
+		@include transition(border-bottom .6s);
+
+		@media screen and (max-width:1190px){
+			width:47%;
+		}
+		@media screen and (max-width:945px){
+			width:100%;
+			margin-left:0px;
+			max-width: 100%;
+		}
+
+	}
+	input[type="text"]:focus{
+		@include transition(border-bottom .6s);
+		border-bottom:2px solid $blue;
+
+	}
+	textarea{
+		background: $white;
+		width: 100%;
+		margin-bottom: 20px;
+		margin-left: 20px;
+		height: 36px;
+		overflow: hidden;
+		padding: 10px 10px 4px 10px;
+		border: 0;
+		margin-left:0px;
+		border-radius:0;
+		border-bottom:2px solid $gray;
+		color: $black;
+		font: $font-size $font-family;
+		font-weight: $normal;
+		@include box-sizing(border-box);
+		@include transition(border-bottom .6s);
+	}
+	textarea[type="text"]:focus{
+		@include transition(border-bottom .6s);
+		border-bottom:2px solid $blue;
+
+	}
+	select{
+		background: $gray;
+		max-width: 250px;
+		width: 100%;
+		margin:20px 0px 30px 20px;
+		height: 36px;
+		border: 0;
+   		border-radius: 0;
+		padding: 0px 10px;
+		color: $black;
+		font: $font-size $font-family;
+		font-weight: $normal;
+
+		@media screen and (max-width:1190px){
+			width:47%;
+		}
+		@media screen and (max-width:945px){
+			width:100%;
+			margin-left:0px;
+			max-width: 100%;
+		}
+
+	}
+
+	.first{
+		margin-left: 0px !important;
+	}
+
+}

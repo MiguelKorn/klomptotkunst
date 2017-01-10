@@ -1,0 +1,85 @@
+/* header
+   ========================================================================== */
+   header{
+	   	width: 100%;
+	   	min-height: 425px;
+        overflow: hidden;
+
+        @media screen and (max-width: 880px) {
+            padding-top: 20px;
+        }
+
+        .container {
+            @media screen and (max-width: 768px) {
+                padding: 0;
+            }
+        }
+
+        .image {
+            width: 100%;
+            min-height: 425px;
+            background: url(../images/media/header.jpg) no-repeat; 
+            background-size: cover;
+            position: relative;
+            margin-top: 77px;
+
+            .overlay{
+                font-family: $font-family;
+                font-size: $font-size;
+                max-width: 555px;
+                width: 100%;
+                min-height: 225px;
+                background:$blackrgb-dark;
+                margin:auto;
+                padding:20px;
+                position: absolute;
+                display: block;
+                left: 50%;
+                top: 50%;
+                margin-top: -130px;
+                margin-left: -277px;
+                @include box-sizing(border-box);
+
+                    @media screen and (max-width:550px){
+                        left:0;
+                        margin-left: 0;
+
+                        h1 {
+                            font-size: 18px;
+                        }
+                    }
+            }
+
+            &.volendam {
+                background: url(../images/media/header_volendam.jpg) no-repeat; 
+                background-size: cover;
+
+
+                .overlay{
+                    min-height: 150px;
+                    background:$blackrgb-dark;
+                    margin-top: -75px;
+                    @include box-sizing(border-box);
+
+                        @media screen and (max-width:550px){
+                            left:0;
+                            margin-left: 0;
+                        }
+                }
+
+
+
+
+            }
+            h1{
+                color: $white;
+                text-align: center;
+                margin-top: 0px;
+            }
+            p{
+                color: $white;
+                font-size: $font-size;
+                text-align: center;
+            }
+        }
+   }	
