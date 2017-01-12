@@ -1,7 +1,4 @@
-<?php @include('partials/head.php'); ?>
-<?php @include('partials/nav.php'); ?>
-
-    <!-- Header -->
+<!-- Header -->
             <header>
                 <div class="container">
                     <div class="image" style="background: url('images/media/header_edam.jpg') center;">
@@ -117,8 +114,4 @@
 			</div>
 		</section>
 	<!-- End Locaties -->
-
-
-
-<?php @include('partials/footer.php'); ?>
 

@@ -1,8 +1,4 @@
-<?php @include('partials/head.php'); ?>
-<?php @include('partials/nav.php'); ?>
-
-
-    <!-- Header -->
+<!-- Header -->
             <header>
                 <div class="container">
                     <div class="image">
@@ -103,6 +99,3 @@
         </div>
     </section>
     <!-- End Agenda -->
-
-
-<?php @include('partials/footer.php'); ?>

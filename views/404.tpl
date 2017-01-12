@@ -1,10 +1,4 @@
-<?php @include('partials/head.php'); ?>
-<?php @include('partials/search-bar.php'); ?>
-<?php @include('partials/nav.php'); ?>
-
-
-
-	<!-- profile -->
+<!-- profile -->
      <section id="error_404">
      	<div class="container">
      		<div class="col-100">
@@ -19,6 +13,4 @@
     </section>
 
         <!-- End profile -->
-
-<?php @include('partials/footer.php'); ?>
 

@@ -1,8 +1,4 @@
-<?php @include('partials/head.php'); ?>
-<?php @include('partials/search-bar.php'); ?>
-<?php @include('partials/nav.php'); ?>
-
-    <!-- Header -->
+<!-- Header -->
             <header>
                 <div class="container">
                     <div class="image volendam">
@@ -83,6 +79,4 @@
         </section>
 
         <!-- End profile -->
-
-<?php @include('partials/footer.php'); ?>
 
