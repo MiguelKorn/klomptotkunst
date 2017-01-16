@@ -7,9 +7,12 @@ require 'libs/Smarty.class.php';
 // Initialize
 include 'includes/bootstrap.php';
 
-// include helpers
+// require helpers
 require_once 'helpers/Database.php';
 require_once 'helpers/Model.php';
+
+// autoload php mailer
+require_once 'libs/PHPMailer-5.2.22/PHPMailerAutoload.php';
 
 include 'model/Landingspage.php';
 $landingspage = new Landingspage();
@@ -19,6 +22,9 @@ $action = isset($_GET['action']) ? $_GET['action'] : 'home';
 
 // get action from url
 $lang = isset($_GET['lang']) ? $_GET['lang'] : 'nl';
+
+// get location from url
+$loc = isset($_GET['loc']) ? $_GET['loc'] : 'edam';
 
 // display header, nav, search-bar
 if ($action == 'agenda' || $action == 'profile' || $action == 'search') {
@@ -46,6 +52,34 @@ switch ($action) {
         $templateParser->display('contact.tpl');
         break;
     case 'locations':
+        switch ($loc) {
+            case 'edam':
+
+                break;
+            case 'volendam':
+
+                break;
+            case 'warder':
+
+                break;
+            case 'kwadijk':
+
+                break;
+            case 'oosthuizen':
+
+                break;
+            case 'schardam':
+
+                break;
+            case 'beets':
+
+                break;
+            case 'middelie':
+
+                break;
+            case 'hobrede':
+
+        }
         $templateParser->display('locations.tpl');
         break;
     case 'profile':
