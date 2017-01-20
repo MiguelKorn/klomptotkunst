@@ -135,7 +135,7 @@ switch ($action) {
 
                         $_SESSION['user_id'] = $user_id;
 
-                        // u are logged in
+                        echo "logged in";
 
 
                         
