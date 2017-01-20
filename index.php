@@ -34,18 +34,23 @@ $lang = isset($_GET['lang']) ? $_GET['lang'] : 'nl';
 $loc = isset($_GET['loc']) ? $_GET['loc'] : 'edam';
 
 // display header, nav, search-bar
-if ($action == 'agenda' || $action == 'profile' || $action == 'search') {
-    //search only header
-    if ($action == 'search') {
-        $templateParser->display('partials/head.tpl');
+if ($action != 'cms') {
+    if ($action == 'agenda' || $action == 'profile' || $action == 'search') {
+        //search only header
+        if ($action == 'search') {
+            $templateParser->display('partials/head.tpl');
+        } else {
+            $templateParser->display('partials/head.tpl');
+            $templateParser->display('partials/nav.tpl');
+        }
     } else {
         $templateParser->display('partials/head.tpl');
+        $templateParser->display('partials/search-bar.tpl');
         $templateParser->display('partials/nav.tpl');
     }
-} else {
-    $templateParser->display('partials/head.tpl');
-    $templateParser->display('partials/search-bar.tpl');
-    $templateParser->display('partials/nav.tpl');
+}
+else {
+    $templateParser->display('cms/partials/cms-head.tpl');
 }
 
 switch ($action) {
@@ -96,52 +101,37 @@ switch ($action) {
         $templateParser->display('search.tpl');
         break;
     case 'cms':
-        switch ($cms_action){
+        switch ($cms_action) {
             case 'login':
+                $templateParser->display('cms/login.tpl');
                 break;
             case 'check_login':
 
-                if(!isset($_POST['username'], $_POST['password']))
-                {
+                if (!isset($_POST['username'], $_POST['password'])) {
                     $message = 'Vul een geldig username en password in!';
-                }
-
-                elseif (strlen($_POST['username']) > 20 || strlen($_POST['username']) < 4)
-                {
+                } elseif (strlen($_POST['username']) > 20 || strlen($_POST['username']) < 4) {
                     $message = 'Ongeldige lengte voor username!';
-                }
-
-                elseif (strlen($_POST['password']) > 20 || strlen($_POST['password']) < 4)
-                {
+                } elseif (strlen($_POST['password']) > 20 || strlen($_POST['password']) < 4) {
                     $message = 'Ongeldige lengte voor password!';
-                }
-
-                elseif (ctype_alnum($_POST['username']) != true)
-                {
+                } elseif (ctype_alnum($_POST['username']) != true) {
                     $message = 'Username mag alleen uit cijfers en letters bestaan!';
-                }
-
-                elseif (ctype_alnum($_POST['password']) != true)
-                {
+                } elseif (ctype_alnum($_POST['password']) != true) {
                     $message = 'Password mag alleen uit cijfers en letters bestaan!';
-                }
+                } else {
+                    $username = filter_var($_POST['username'], FILTER_SANITIZE_STRING);
+                    $password = filter_var($_POST['password'], FILTER_SANITIZE_STRING);
 
-                else{
-                    $username = filter_var($_POST['username'], FILTERSANITIZE_STRING);
-                    $password = filter_var($_POST['password'], FILTERSANITIZE_STRING);
-
-                    $password = sha1 ($password);
+                    $password = sha1($password);
 
                     $login = new Login();
 
-                    $user_id = $login->logUserIn($username,$password);
+                    $user_id = $login->logUserIn($username, $password);
 
-                    if($user_id == false){
+                    if ($user_id == false) {
 
                         //failed
 
-                    }
-                    else{
+                    } else {
 
                         $_SESSION['user_id'] = $user_id;
 
@@ -149,7 +139,6 @@ switch ($action) {
 
                     }
                 }
-
 
 
                 break;
@@ -165,5 +154,10 @@ switch ($action) {
 }
 
 // display footer
-include_once 'views/partials/footer.php';
+if ($action != 'cms') {
+    include_once 'views/partials/footer.php';
+}
+else {
+    $templateParser->display('cms/partials/cms-footer.tpl');
+}
 

@@ -58,8 +58,8 @@
     </ul>
     <!-- End Mobile subnav -->
 
-    <a href="agenda.php" id="agenda">Agenda</a>
-    <a href="contact.php">Contact</a>
+    <a href="?action=agenda" id="agenda">Agenda</a>
+    <a href="?action=contact">Contact</a>
 
     <form action="#" method="POST">
         <!-- <div class="search-btn"></div> -->
