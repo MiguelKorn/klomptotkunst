@@ -1,0 +1,1 @@
+<a href="?action=cms&cms_action=logout">logout</a>

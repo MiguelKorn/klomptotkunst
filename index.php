@@ -1,4 +1,5 @@
 <?php
+ob_start();
 session_start();
 
 // Get username, password from database
@@ -25,10 +26,23 @@ include 'model/Login.php';
 // get action from url
 $action = isset($_GET['action']) ? $_GET['action'] : 'home';
 
-$cms_action = isset($_SESSION['user_id']) ? 'home' : 'login';
+//$cms_action = isset($_GET['cms_action']) ? $_GET['cms_action'] : 'login';
+
+if(isset($_SESSION['user_id'])) {
+    if(isset($_GET['cms_action']) && $_GET['cms_action'] != 'login') {
+        $cms_action = $_GET['cms_action'];
+    }
+    else {
+        $cms_action = 'home';
+    }
+}
+else {
+    $cms_action = 'login';
+}
+
 
 // get action from url
-$lang = isset($_GET['lang']) ? $_GET['lang'] : 'nl';
+$lang = isset($_SESSION['lang']) ? $_SESSION['lang'] : 'nl';
 
 // get location from url
 $loc = isset($_GET['loc']) ? $_GET['loc'] : 'edam';
@@ -48,14 +62,30 @@ if ($action != 'cms') {
         $templateParser->display('partials/search-bar.tpl');
         $templateParser->display('partials/nav.tpl');
     }
-}
-else {
+} else {
     $templateParser->display('cms/partials/cms-head.tpl');
 }
 
 switch ($action) {
     case 'home':
         $templateParser->display('index.tpl');
+
+
+        break;
+    case 'register':
+        $templateParser->display('register.tpl');
+
+        if($_SERVER['REQUEST_METHOD'] == 'POST') {
+            echo $_POST['voornaam'].'<br>';
+            echo $_POST['achternaam'].'<br>';
+            echo $_POST['telefoon'].'<br>';
+            echo $_POST['e-mail'].'<br>';
+            echo $_POST['naam-organisatie'].'<br>';
+            echo $_POST['website'].'<br>';
+            echo $_POST['type'].'<br>';
+            echo $_POST['plaats'].'<br>';
+        }
+
         break;
     case 'check_register':
 
@@ -120,47 +150,65 @@ switch ($action) {
         switch ($cms_action) {
             case 'login':
                 $templateParser->display('cms/login.tpl');
-                break;
-            case 'check_login':
 
-                if (!isset($_POST['username'], $_POST['password'])) {
-                    $message = 'Vul een geldig username en password in!';
-                } elseif (strlen($_POST['username']) > 20 || strlen($_POST['username']) < 4) {
-                    $message = 'Ongeldige lengte voor username!';
-                } elseif (strlen($_POST['password']) > 20 || strlen($_POST['password']) < 4) {
-                    $message = 'Ongeldige lengte voor password!';
-                } elseif (ctype_alnum($_POST['username']) != true) {
-                    $message = 'Username mag alleen uit cijfers en letters bestaan!';
-                } elseif (ctype_alnum($_POST['password']) != true) {
-                    $message = 'Password mag alleen uit cijfers en letters bestaan!';
-                } else {
-                    $username = filter_var($_POST['username'], FILTER_SANITIZE_STRING);
-                    $password = filter_var($_POST['password'], FILTER_SANITIZE_STRING);
+                if($_SERVER['REQUEST_METHOD'] == 'POST') {
 
-                    $password = sha1($password);
+                    echo $_POST['usermail'];
+                    echo $_POST['userpass'];
 
-                    $login = new Login();
-
-                    $user_id = $login->logUserIn($username, $password);
-
-                    if ($user_id == false) {
-
-                        //failed
-
+                    if (!isset($_POST['usermail'], $_POST['userpass'])) {
+                        $message = 'Vul een geldig usermail en userpass in!';
+                    } elseif (strlen($_POST['userpass']) > 20 || strlen($_POST['userpass']) < 4) {
+                        $message = 'Ongeldige lengte voor userpass!';
+                    } elseif (!filter_var($_POST['usermail'], FILTER_VALIDATE_EMAIL)) {
+                        $message = 'usermail not valid!';
+                    } elseif (ctype_alnum($_POST['userpass']) != true) {
+                        $message = 'userpass mag alleen uit cijfers en letters bestaan!';
                     } else {
+                        $login = new Login();
 
-                        $_SESSION['user_id'] = $user_id;
+                        $usermail = filter_var($_POST['usermail'], FILTER_SANITIZE_STRING);
+                        $userpass = filter_var($_POST['userpass'], FILTER_SANITIZE_STRING);
 
+                        $usermail = $login->checkInput($usermail);
+                        $userpass = $login->checkInput($userpass);
+
+                        $userpass = sha1($userpass);
+
+                        $user_id = $login->logUserIn($usermail, $userpass);
+
+                        if ($user_id == false) {
+
+<<<<<<< HEAD
                         echo "logged in";
 
 
                         
-                    }
-                }
+=======
+                            //failed
+                            $message = 'failed';
 
+                        } else {
+                            $message = 'not failed';
+                            $_SESSION['user_id'] = $user_id;
+                            //logged in
+                            $cms_action = 'home';
+                            header("Refresh:0");
+                        }
+>>>>>>> master
+                    }
+
+                    echo $message;
+                }
 
                 break;
             case 'home':
+                echo 'homepage';
+                $templateParser->display('cms/home.tpl');
+                break;
+            case 'logout':
+                echo 'logout';
+                unset($_SESSION['user_id']);
                 break;
             default:
 
@@ -174,8 +222,7 @@ switch ($action) {
 // display footer
 if ($action != 'cms') {
     include_once 'views/partials/footer.php';
-}
-else {
+} else {
     $templateParser->display('cms/partials/cms-footer.tpl');
 }
 
