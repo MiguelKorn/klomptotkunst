@@ -2,17 +2,24 @@
 class Login extends Model
 {
 
-    function logUserIn($username, $password) {
+    function logUserIn($usermail, $userpass) {
 
-        $stmt = $db->prepare("SELECT `id`, `name`, `pass` FROM `users` WHERE `name` = :username AND pass = :password");
+        $stmt = $this->db->prepare("SELECT `id`, `email`, `pass` FROM `users` WHERE `email` = :usermail AND pass = :userpass");
 
-        $stmt->bindparam(':username', $username, PDO::PARAM_STR);
-        $stmt->bindparam(':password', $password, PDO::PARAM_STR, 40);
+        $stmt->bindparam(':usermail', $usermail, PDO::PARAM_STR);
+        $stmt->bindparam(':userpass', $userpass, PDO::PARAM_STR);
 
         $stmt->execute();
 
         return $stmt->fetchColumn();
 
+    }
+
+    function checkInput($data) {
+        $data = trim($data);
+        $data = stripslashes($data);
+        $data = htmlspecialchars($data);
+        return $data;
     }
 
 }
