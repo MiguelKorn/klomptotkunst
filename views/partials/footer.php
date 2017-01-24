@@ -4,10 +4,10 @@
 
             <div class="col-25">
                 <a href="http://www.edam-volendam.nl/" target="_blank">
-                    <img src="images/logo.png" alt="Gemeente Edam Volendam">
+                    <img src="assets/images/logo.png" alt="Gemeente Edam Volendam">
                 </a>
                 <a href="http://www.euroart.eu/" target="_blank">
-                    <img src="images/euroart-logo.png" alt="Euroart">
+                    <img src="assets/images/euroart-logo.png" alt="Euroart">
                 </a>
             </div>
 
@@ -35,11 +35,11 @@
     	</script>
 
         <!-- JS -->
-        <script src="js/libs/jquery.js"></script>
-        <script src="js/libs/classie.js"></script>
-        <script src="js/plugins/animateCSS.js"></script>
-        <script src="js/plugins/jquery.tooltipster.min.js"></script>
-        <script src="js/main.js"></script>
+        <script src="assets/js/libs/jquery.js"></script>
+        <script src="assets/js/libs/classie.js"></script>
+        <script src="assets/js/plugins/animateCSS.js"></script>
+        <script src="assets/js/plugins/jquery.tooltipster.min.js"></script>
+        <script src="assets/js/main.js"></script>
 
         <!-- Google Analytics: change UA-XXXXX-X to be your site's ID. -->
         <script>
