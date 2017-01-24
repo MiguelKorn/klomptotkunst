@@ -1,13 +1,13 @@
 # TODO List
 
-- [ ] ERD Maken
-- [ ] taakverdeling
-- [ ] database aanmaken + wat data
-- [ ] opzetten van smarty
-- [ ] cases aanmaken in smarty voor elke pagina
+- [x] ERD Maken
+- [x] taakverdeling
+- [x] database aanmaken + wat data
+- [x] opzetten van smarty
+- [x] cases aanmaken in smarty voor elke pagina
 
 #### cms algemeen
-- [ ] login functie cms
+- [x] login functie cms
 - [ ] Toolbar
 - [ ] Overzichtelijk dashboard met duidelijke navigatie
 
