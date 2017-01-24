@@ -57,6 +57,22 @@ switch ($action) {
     case 'home':
         $templateParser->display('index.tpl');
         break;
+    case 'check_register':
+
+        if(!isset($_POST['voornaam'], $_POST['achternaam'], $_POST['telefoon'], $_POST['e-mail'],
+            $_POST['naam-organisatie'], $_POST['website']))
+        {
+            $message = 'Elk veld is verplicht!';
+        }
+        elseif (strlen($_POST['telefoon'] > 10))
+        {
+            $message = 'Vul een geldig telefoon nummer in!';
+        }
+        else{
+            $register = new Register();
+        }
+
+        break;
     case 'agenda':
         $templateParser->display('agenda.tpl');
         break;
