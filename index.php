@@ -28,15 +28,13 @@ $action = isset($_GET['action']) ? $_GET['action'] : 'home';
 
 //$cms_action = isset($_GET['cms_action']) ? $_GET['cms_action'] : 'login';
 
-if(isset($_SESSION['user_id'])) {
-    if(isset($_GET['cms_action']) && $_GET['cms_action'] != 'login') {
+if (isset($_SESSION['user_id'])) {
+    if (isset($_GET['cms_action']) && $_GET['cms_action'] != 'login') {
         $cms_action = $_GET['cms_action'];
-    }
-    else {
+    } else {
         $cms_action = 'home';
     }
-}
-else {
+} else {
     $cms_action = 'login';
 }
 
@@ -75,30 +73,27 @@ switch ($action) {
     case 'register':
         $templateParser->display('register.tpl');
 
-        if($_SERVER['REQUEST_METHOD'] == 'POST') {
-            echo $_POST['voornaam'].'<br>';
-            echo $_POST['achternaam'].'<br>';
-            echo $_POST['telefoon'].'<br>';
-            echo $_POST['e-mail'].'<br>';
-            echo $_POST['naam-organisatie'].'<br>';
-            echo $_POST['website'].'<br>';
-            echo $_POST['type'].'<br>';
-            echo $_POST['plaats'].'<br>';
+        if ($_SERVER['REQUEST_METHOD'] == 'POST') {
+            echo $_POST['voornaam'] . '<br>';
+            echo $_POST['achternaam'] . '<br>';
+            echo $_POST['telefoon'] . '<br>';
+            echo $_POST['e-mail'] . '<br>';
+            echo $_POST['naam-organisatie'] . '<br>';
+            echo $_POST['website'] . '<br>';
+            echo $_POST['type'] . '<br>';
+            echo $_POST['plaats'] . '<br>';
         }
 
         break;
     case 'check_register':
 
-        if(!isset($_POST['voornaam'], $_POST['achternaam'], $_POST['telefoon'], $_POST['e-mail'],
-            $_POST['naam-organisatie'], $_POST['website']))
-        {
+        if (!isset($_POST['voornaam'], $_POST['achternaam'], $_POST['telefoon'], $_POST['e-mail'],
+            $_POST['naam-organisatie'], $_POST['website'])
+        ) {
             $message = 'Elk veld is verplicht!';
-        }
-        elseif (strlen($_POST['telefoon'] > 10))
-        {
+        } elseif (strlen($_POST['telefoon'] > 10)) {
             $message = 'Vul een geldig telefoon nummer in!';
-        }
-        else{
+        } else {
             $register = new Register();
         }
 
@@ -151,7 +146,7 @@ switch ($action) {
             case 'login':
                 $templateParser->display('cms/login.tpl');
 
-                if($_SERVER['REQUEST_METHOD'] == 'POST') {
+                if ($_SERVER['REQUEST_METHOD'] == 'POST') {
 
                     echo $_POST['usermail'];
                     echo $_POST['userpass'];
@@ -179,12 +174,9 @@ switch ($action) {
 
                         if ($user_id == false) {
 
-<<<<<<< HEAD
-                        echo "logged in";
+                            echo "logged in";
 
 
-                        
-=======
                             //failed
                             $message = 'failed';
 
@@ -195,7 +187,6 @@ switch ($action) {
                             $cms_action = 'home';
                             header("Refresh:0");
                         }
->>>>>>> master
                     }
 
                     echo $message;
