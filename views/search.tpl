@@ -8,7 +8,7 @@
 
     </div>
 </div>
-<?php @include('partials/nav.php'); ?>
+{include file='partials/nav.tpl'}
 <!-- search -->
 <section id="search">
     <div class="container">

@@ -1,4 +1,6 @@
 <?php
+ob_start();
+session_start();
 
 // Get username, password from database
 include 'includes/config.php';
@@ -7,37 +9,83 @@ require 'libs/Smarty.class.php';
 // Initialize
 include 'includes/bootstrap.php';
 
-// include helpers
+// require helpers
 require_once 'helpers/Database.php';
 require_once 'helpers/Model.php';
 
-include 'model/Landingspage.php';
-$landingspage = new Landingspage();
+// autoload php mailer
+require_once 'libs/PHPMailer-5.2.22/PHPMailerAutoload.php';
+
+//include 'model/Landingspage.php';
+//$landingspage = new Landingspage();
+
+
+include 'model/Login.php';
+
 
 // get action from url
 $action = isset($_GET['action']) ? $_GET['action'] : 'home';
 
+//$cms_action = isset($_GET['cms_action']) ? $_GET['cms_action'] : 'login';
+
+if(isset($_SESSION['user_id'])) {
+    if(isset($_GET['cms_action']) && $_GET['cms_action'] != 'login') {
+        $cms_action = $_GET['cms_action'];
+    }
+    else {
+        $cms_action = 'home';
+    }
+}
+else {
+    $cms_action = 'login';
+}
+
+
 // get action from url
-$lang = isset($_GET['lang']) ? $_GET['lang'] : 'nl';
+$lang = isset($_SESSION['lang']) ? $_SESSION['lang'] : 'nl';
+
+// get location from url
+$loc = isset($_GET['loc']) ? $_GET['loc'] : 'edam';
 
 // display header, nav, search-bar
-if ($action == 'agenda' || $action == 'profile' || $action == 'search') {
-    //search only header
-    if ($action == 'search') {
-        $templateParser->display('partials/head.tpl');
+if ($action != 'cms') {
+    if ($action == 'agenda' || $action == 'profile' || $action == 'search') {
+        //search only header
+        if ($action == 'search') {
+            $templateParser->display('partials/head.tpl');
+        } else {
+            $templateParser->display('partials/head.tpl');
+            $templateParser->display('partials/nav.tpl');
+        }
     } else {
         $templateParser->display('partials/head.tpl');
+        $templateParser->display('partials/search-bar.tpl');
         $templateParser->display('partials/nav.tpl');
     }
 } else {
-    $templateParser->display('partials/head.tpl');
-    $templateParser->display('partials/search-bar.tpl');
-    $templateParser->display('partials/nav.tpl');
+    $templateParser->display('cms/partials/cms-head.tpl');
 }
 
 switch ($action) {
     case 'home':
         $templateParser->display('index.tpl');
+
+
+        break;
+    case 'register':
+        $templateParser->display('register.tpl');
+
+        if($_SERVER['REQUEST_METHOD'] == 'POST') {
+            echo $_POST['voornaam'].'<br>';
+            echo $_POST['achternaam'].'<br>';
+            echo $_POST['telefoon'].'<br>';
+            echo $_POST['e-mail'].'<br>';
+            echo $_POST['naam-organisatie'].'<br>';
+            echo $_POST['website'].'<br>';
+            echo $_POST['type'].'<br>';
+            echo $_POST['plaats'].'<br>';
+        }
+
         break;
     case 'agenda':
         $templateParser->display('agenda.tpl');
@@ -46,6 +94,34 @@ switch ($action) {
         $templateParser->display('contact.tpl');
         break;
     case 'locations':
+        switch ($loc) {
+            case 'edam':
+
+                break;
+            case 'volendam':
+
+                break;
+            case 'warder':
+
+                break;
+            case 'kwadijk':
+
+                break;
+            case 'oosthuizen':
+
+                break;
+            case 'schardam':
+
+                break;
+            case 'beets':
+
+                break;
+            case 'middelie':
+
+                break;
+            case 'hobrede':
+
+        }
         $templateParser->display('locations.tpl');
         break;
     case 'profile':
@@ -54,8 +130,66 @@ switch ($action) {
     case 'search':
         $templateParser->display('search.tpl');
         break;
-    case 'login':
-        $templateParser->display('cms_index.tpl');
+    case 'cms':
+        switch ($cms_action) {
+            case 'login':
+                $templateParser->display('cms/login.tpl');
+
+                if($_SERVER['REQUEST_METHOD'] == 'POST') {
+
+                    echo $_POST['usermail'];
+                    echo $_POST['userpass'];
+
+                    if (!isset($_POST['usermail'], $_POST['userpass'])) {
+                        $message = 'Vul een geldig usermail en userpass in!';
+                    } elseif (strlen($_POST['userpass']) > 20 || strlen($_POST['userpass']) < 4) {
+                        $message = 'Ongeldige lengte voor userpass!';
+                    } elseif (!filter_var($_POST['usermail'], FILTER_VALIDATE_EMAIL)) {
+                        $message = 'usermail not valid!';
+                    } elseif (ctype_alnum($_POST['userpass']) != true) {
+                        $message = 'userpass mag alleen uit cijfers en letters bestaan!';
+                    } else {
+                        $login = new Login();
+
+                        $usermail = filter_var($_POST['usermail'], FILTER_SANITIZE_STRING);
+                        $userpass = filter_var($_POST['userpass'], FILTER_SANITIZE_STRING);
+
+                        $usermail = $login->checkInput($usermail);
+                        $userpass = $login->checkInput($userpass);
+
+                        $userpass = sha1($userpass);
+
+                        $user_id = $login->logUserIn($usermail, $userpass);
+
+                        if ($user_id == false) {
+
+                            //failed
+                            $message = 'failed';
+
+                        } else {
+                            $message = 'not failed';
+                            $_SESSION['user_id'] = $user_id;
+                            //logged in
+                            $cms_action = 'home';
+                            header("Refresh:0");
+                        }
+                    }
+
+                    echo $message;
+                }
+
+                break;
+            case 'home':
+                echo 'homepage';
+                $templateParser->display('cms/home.tpl');
+                break;
+            case 'logout':
+                echo 'logout';
+                unset($_SESSION['user_id']);
+                break;
+            default:
+
+        }
         break;
     default:
         $templateParser->display('404.tpl');
@@ -63,5 +197,9 @@ switch ($action) {
 }
 
 // display footer
-include_once 'views/partials/footer.php';
+if ($action != 'cms') {
+    include_once 'views/partials/footer.php';
+} else {
+    $templateParser->display('cms/partials/cms-footer.tpl');
+}
 
