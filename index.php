@@ -54,6 +54,9 @@ switch ($action) {
     case 'search':
         $templateParser->display('search.tpl');
         break;
+    case 'login':
+        $templateParser->display('cms_index.tpl');
+        break;
     default:
         $templateParser->display('404.tpl');
 
