@@ -21,6 +21,7 @@ include 'model/Landingspage.php';
 
 
 include 'model/Login.php';
+include 'model/User.php';
 
 
 // get action from url
@@ -149,6 +150,15 @@ switch ($action) {
         $templateParser->display('search.tpl');
         break;
     case 'cms':
+        if(isset($_SESSION['user_id'])) {
+            $cms = new User();
+            print_r($cms->checkUserRole($_SESSION['user_id']));
+        }
+
+        if($cms_action != 'login') {
+            $templateParser->display('cms/partials/cms-head.tpl');
+            $templateParser->display('cms/partials/cms-nav.tpl');
+        }
         switch ($cms_action) {
             case 'login':
                 $templateParser->display('cms/login.tpl');
@@ -189,7 +199,7 @@ switch ($action) {
 
                         } else {
                             $message = 'not failed';
-                            $_SESSION['user_id'] = $user_id;
+                            $_SESSION['user_id'] = $user_id['id'];
                             //logged in
                             $cms_action = 'home';
                             header("Refresh:0");
@@ -201,7 +211,7 @@ switch ($action) {
 
                 break;
             case 'home':
-                echo 'homepage';
+
                 $templateParser->display('cms/home.tpl');
                 break;
             case 'logout':
@@ -210,6 +220,9 @@ switch ($action) {
                 break;
             default:
 
+        }
+        if($cms_action != 'login') {
+            $templateParser->display('cms/partials/cms-footer.tpl');
         }
         break;
     default:
