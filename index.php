@@ -16,8 +16,8 @@ require_once 'helpers/Model.php';
 // autoload php mailer
 require_once 'libs/PHPMailer-5.2.22/PHPMailerAutoload.php';
 
-//include 'model/Landingspage.php';
-//$landingspage = new Landingspage();
+include 'model/Landingspage.php';
+
 
 
 include 'model/Login.php';
@@ -29,15 +29,13 @@ $action = isset($_GET['action']) ? $_GET['action'] : 'home';
 
 //$cms_action = isset($_GET['cms_action']) ? $_GET['cms_action'] : 'login';
 
-if(isset($_SESSION['user_id'])) {
-    if(isset($_GET['cms_action']) && $_GET['cms_action'] != 'login') {
+if (isset($_SESSION['user_id'])) {
+    if (isset($_GET['cms_action']) && $_GET['cms_action'] != 'login') {
         $cms_action = $_GET['cms_action'];
-    }
-    else {
+    } else {
         $cms_action = 'home';
     }
-}
-else {
+} else {
     $cms_action = 'login';
 }
 
@@ -63,12 +61,19 @@ if ($action != 'cms') {
         $templateParser->display('partials/search-bar.tpl');
         $templateParser->display('partials/nav.tpl');
     }
+    $landingspage = new Landingspage();
+    $headerTitle = $landingspage->getHeaderTitle();
+    $headerText = $landingspage->getHeaderText();
+    $headerImage = $landingspage->getHeaderImage();
 } else {
     $templateParser->display('cms/partials/cms-head.tpl');
 }
 
 switch ($action) {
     case 'home':
+
+        $templateParser->assign('header_title', $headerTitle);
+
         $templateParser->display('index.tpl');
 
 
@@ -76,15 +81,28 @@ switch ($action) {
     case 'register':
         $templateParser->display('register.tpl');
 
-        if($_SERVER['REQUEST_METHOD'] == 'POST') {
-            echo $_POST['voornaam'].'<br>';
-            echo $_POST['achternaam'].'<br>';
-            echo $_POST['telefoon'].'<br>';
-            echo $_POST['e-mail'].'<br>';
-            echo $_POST['naam-organisatie'].'<br>';
-            echo $_POST['website'].'<br>';
-            echo $_POST['type'].'<br>';
-            echo $_POST['plaats'].'<br>';
+        if ($_SERVER['REQUEST_METHOD'] == 'POST') {
+            echo $_POST['voornaam'] . '<br>';
+            echo $_POST['achternaam'] . '<br>';
+            echo $_POST['telefoon'] . '<br>';
+            echo $_POST['e-mail'] . '<br>';
+            echo $_POST['naam-organisatie'] . '<br>';
+            echo $_POST['website'] . '<br>';
+            echo $_POST['type'] . '<br>';
+            echo $_POST['plaats'] . '<br>';
+        }
+
+        break;
+    case 'check_register':
+
+        if (!isset($_POST['voornaam'], $_POST['achternaam'], $_POST['telefoon'], $_POST['e-mail'],
+            $_POST['naam-organisatie'], $_POST['website'])
+        ) {
+            $message = 'Elk veld is verplicht!';
+        } elseif (strlen($_POST['telefoon'] > 10)) {
+            $message = 'Vul een geldig telefoon nummer in!';
+        } else {
+            $register = new Register();
         }
 
         break;
@@ -145,7 +163,7 @@ switch ($action) {
             case 'login':
                 $templateParser->display('cms/login.tpl');
 
-                if($_SERVER['REQUEST_METHOD'] == 'POST') {
+                if ($_SERVER['REQUEST_METHOD'] == 'POST') {
 
                     echo $_POST['usermail'];
                     echo $_POST['userpass'];
@@ -172,6 +190,9 @@ switch ($action) {
                         $user_id = $login->logUserIn($usermail, $userpass);
 
                         if ($user_id == false) {
+
+                            echo "logged in";
+
 
                             //failed
                             $message = 'failed';
