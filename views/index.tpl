@@ -3,8 +3,8 @@
     <div class="container">
         <div class="image">
             <div class="overlay">
-                <h1>{$header_title}</h1>
-                <p>{$header_text}</p>
+                <h1>{$headerInfo.0.header_title}</h1>
+                <p>{$headerInfo.0.header_text}</p>
                 <a href="#" class="btn">Meer informatie</a>
             </div>
         </div>
