@@ -3,9 +3,9 @@
 class Landingspage extends Model
 {
 
-    public function getHeaderTitle()
+    public function getHeaderInfo()
     {
-        $stmt = $this->db->prepare('SELECT `header_title` FROM `landingspage`');
+        $stmt = $this->db->prepare('SELECT `header_title`, `header_text`, `header_img` FROM `landingspage`');
 
         $stmt->execute();
 
@@ -14,27 +14,6 @@ class Landingspage extends Model
         return $result;
 }
 
-    public function getHeaderText()
-    {
-        $stmt = $this->db->prepare('SELECT `header_text` FROM `landingspage`');
-
-        $stmt->execute();
-
-        $result = $stmt->fetchAll();
-
-        return $result;
-    }
-
-    public function getHeaderImage()
-    {
-        $stmt = $this->db->prepare('SELECT `header_img` FROM `landingspage`');
-
-        $stmt->execute();
-
-        $result = $stmt->fetchAll();
-
-        return $result;
-    }
 
 
 }

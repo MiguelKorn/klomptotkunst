@@ -17,9 +17,6 @@ require_once 'helpers/Model.php';
 require_once 'libs/PHPMailer-5.2.22/PHPMailerAutoload.php';
 
 include 'model/Landingspage.php';
-
-
-
 include 'model/Login.php';
 include 'model/User.php';
 
@@ -62,17 +59,14 @@ if ($action != 'cms') {
         $templateParser->display('partials/nav.tpl');
     }
     $landingspage = new Landingspage();
-    $headerTitle = $landingspage->getHeaderTitle();
-    $headerText = $landingspage->getHeaderText();
-    $headerImage = $landingspage->getHeaderImage();
+    $headerInfo = $landingspage->getHeaderInfo();
 } else {
     $templateParser->display('cms/partials/cms-head.tpl');
 }
 
 switch ($action) {
     case 'home':
-
-        $templateParser->assign('header_title', $headerTitle);
+        $templateParser->assign('headerInfo', $headerInfo);
 
         $templateParser->display('index.tpl');
 
