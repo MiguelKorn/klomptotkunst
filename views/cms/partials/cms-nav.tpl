@@ -30,7 +30,7 @@
                     <!-- /input-group -->
                 </li>
                 <li>
-                    <a href="index.html" class="active"><i class="fa fa-home fa-fw"></i> Dashboard</a>
+                    <a href="cms-dashboard.tpl" class="active"><i class="fa fa-home fa-fw"></i> Dashboard</a>
                 </li>
                 <li>
                     <a href="#"><i class="fa fa-edit fa-fw"></i> Backround Image</a>

@@ -66,6 +66,7 @@ if ($action != 'cms') {
     $templateParser->display('cms/partials/cms-head.tpl');
 }
 
+
 switch ($action) {
     case 'home':
         $templateParser->display('index.tpl');
@@ -183,6 +184,8 @@ switch ($action) {
                 echo 'homepage';
                 $templateParser->display('cms/home.tpl');
                 break;
+            case 'request':
+                $templateParser->display('cms/request.tpl');
             case 'logout':
                 echo 'logout';
                 unset($_SESSION['user_id']);
