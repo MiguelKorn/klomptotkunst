@@ -1528,7 +1528,7 @@ nav .searchclose {
 }
 
 /* line 22, ../sass/ui-elements/_forms.scss */
-input[type="text"] {
+input {
   background: #49525a;
   max-width: 250px;
   width: 100%;
@@ -1543,7 +1543,7 @@ input[type="text"] {
   box-sizing: border-box;
 }
 /* line 34, ../sass/ui-elements/_forms.scss */
-input[type="text"]#searchfield {
+input #searchfield {
   background: #ffffff;
   border: 1px solid #c8c7c7;
   max-width: 500px;
@@ -1567,7 +1567,7 @@ input[type="text"]#searchfield {
 
 /* line 58, ../sass/ui-elements/_forms.scss */
 #contact input[type="text"],
-#inschrijven input[type="text"] {
+#inschrijven input {
   background: #ffffff;
   max-width: 250px;
   width: 100%;
@@ -1607,7 +1607,8 @@ input[type="text"]#searchfield {
 }
 /* line 85, ../sass/ui-elements/_forms.scss */
 #contact input[type="text"]:focus,
-#inschrijven input[type="text"]:focus {
+#inschrijven input[type="text"]:focus,
+#inschrijven input[type="email"]:focus {
   -moz-transition: border-bottom 0.6s;
   -o-transition: border-bottom 0.6s;
   -webkit-transition: border-bottom 0.6s;

@@ -60,8 +60,6 @@ if ($action != 'cms') {
     }
     $landingspage = new Landingspage();
     $headerInfo = $landingspage->getHeaderInfo();
-} else {
-    $templateParser->display('cms/partials/cms-head.tpl');
 }
 
 
@@ -74,7 +72,6 @@ switch ($action) {
 
         break;
     case 'register':
-        $templateParser->display('register.tpl');
 
         if ($_SERVER['REQUEST_METHOD'] == 'POST') {
             echo $_POST['voornaam'] . '<br>';
@@ -87,19 +84,8 @@ switch ($action) {
             echo $_POST['plaats'] . '<br>';
         }
 
-        break;
-    case 'check_register':
-
-        if (!isset($_POST['voornaam'], $_POST['achternaam'], $_POST['telefoon'], $_POST['e-mail'],
-            $_POST['naam-organisatie'], $_POST['website'])
-        ) {
-            $message = 'Elk veld is verplicht!';
-        } elseif (strlen($_POST['telefoon'] > 10)) {
-            $message = 'Vul een geldig telefoon nummer in!';
-        } else {
-            $register = new Register();
-        }
-
+        $templateParser->assign('data', $data);
+        $templateParser->display('register.tpl');
         break;
     case 'agenda':
         $templateParser->display('agenda.tpl');
@@ -147,12 +133,12 @@ switch ($action) {
     case 'cms':
         if(isset($_SESSION['user_id'])) {
             $cms = new User();
-            print_r($cms->checkUserRole($_SESSION['user_id']));
+            $role = $cms->checkUserRole($_SESSION['user_id']);
         }
 
         if($cms_action != 'login') {
             $templateParser->display('cms/partials/cms-head.tpl');
-            $templateParser->display('cms/partials/cms-nav.tpl');
+            $templateParser->display('cms/partials/'.$role['role_name'].'/cms-nav.tpl');
         }
         switch ($cms_action) {
             case 'login':
