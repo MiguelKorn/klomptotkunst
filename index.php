@@ -16,11 +16,9 @@ require_once 'helpers/Model.php';
 // autoload php mailer
 require_once 'libs/PHPMailer-5.2.22/PHPMailerAutoload.php';
 
-//include 'model/Landingspage.php';
-//$landingspage = new Landingspage();
-
-
+include 'model/Landingspage.php';
 include 'model/Login.php';
+include 'model/User.php';
 
 
 // get action from url
@@ -28,15 +26,13 @@ $action = isset($_GET['action']) ? $_GET['action'] : 'home';
 
 //$cms_action = isset($_GET['cms_action']) ? $_GET['cms_action'] : 'login';
 
-if(isset($_SESSION['user_id'])) {
-    if(isset($_GET['cms_action']) && $_GET['cms_action'] != 'login') {
+if (isset($_SESSION['user_id'])) {
+    if (isset($_GET['cms_action']) && $_GET['cms_action'] != 'login') {
         $cms_action = $_GET['cms_action'];
-    }
-    else {
+    } else {
         $cms_action = 'home';
     }
-}
-else {
+} else {
     $cms_action = 'login';
 }
 
@@ -62,6 +58,8 @@ if ($action != 'cms') {
         $templateParser->display('partials/search-bar.tpl');
         $templateParser->display('partials/nav.tpl');
     }
+    $landingspage = new Landingspage();
+    $headerInfo = $landingspage->getHeaderInfo();
 } else {
     $templateParser->display('cms/partials/cms-head.tpl');
 }
@@ -69,6 +67,8 @@ if ($action != 'cms') {
 
 switch ($action) {
     case 'home':
+        $templateParser->assign('headerInfo', $headerInfo);
+
         $templateParser->display('index.tpl');
 
 
@@ -76,15 +76,28 @@ switch ($action) {
     case 'register':
         $templateParser->display('register.tpl');
 
-        if($_SERVER['REQUEST_METHOD'] == 'POST') {
-            echo $_POST['voornaam'].'<br>';
-            echo $_POST['achternaam'].'<br>';
-            echo $_POST['telefoon'].'<br>';
-            echo $_POST['e-mail'].'<br>';
-            echo $_POST['naam-organisatie'].'<br>';
-            echo $_POST['website'].'<br>';
-            echo $_POST['type'].'<br>';
-            echo $_POST['plaats'].'<br>';
+        if ($_SERVER['REQUEST_METHOD'] == 'POST') {
+            echo $_POST['voornaam'] . '<br>';
+            echo $_POST['achternaam'] . '<br>';
+            echo $_POST['telefoon'] . '<br>';
+            echo $_POST['e-mail'] . '<br>';
+            echo $_POST['naam-organisatie'] . '<br>';
+            echo $_POST['website'] . '<br>';
+            echo $_POST['type'] . '<br>';
+            echo $_POST['plaats'] . '<br>';
+        }
+
+        break;
+    case 'check_register':
+
+        if (!isset($_POST['voornaam'], $_POST['achternaam'], $_POST['telefoon'], $_POST['e-mail'],
+            $_POST['naam-organisatie'], $_POST['website'])
+        ) {
+            $message = 'Elk veld is verplicht!';
+        } elseif (strlen($_POST['telefoon'] > 10)) {
+            $message = 'Vul een geldig telefoon nummer in!';
+        } else {
+            $register = new Register();
         }
 
         break;
@@ -132,11 +145,20 @@ switch ($action) {
         $templateParser->display('search.tpl');
         break;
     case 'cms':
+        if(isset($_SESSION['user_id'])) {
+            $cms = new User();
+            print_r($cms->checkUserRole($_SESSION['user_id']));
+        }
+
+        if($cms_action != 'login') {
+            $templateParser->display('cms/partials/cms-head.tpl');
+            $templateParser->display('cms/partials/cms-nav.tpl');
+        }
         switch ($cms_action) {
             case 'login':
                 $templateParser->display('cms/login.tpl');
 
-                if($_SERVER['REQUEST_METHOD'] == 'POST') {
+                if ($_SERVER['REQUEST_METHOD'] == 'POST') {
 
                     echo $_POST['usermail'];
                     echo $_POST['userpass'];
@@ -164,12 +186,15 @@ switch ($action) {
 
                         if ($user_id == false) {
 
+                            echo "logged in";
+
+
                             //failed
                             $message = 'failed';
 
                         } else {
                             $message = 'not failed';
-                            $_SESSION['user_id'] = $user_id;
+                            $_SESSION['user_id'] = $user_id['id'];
                             //logged in
                             $cms_action = 'home';
                             header("Refresh:0");
@@ -181,7 +206,7 @@ switch ($action) {
 
                 break;
             case 'home':
-                echo 'homepage';
+
                 $templateParser->display('cms/home.tpl');
                 break;
             case 'request':
@@ -192,6 +217,9 @@ switch ($action) {
                 break;
             default:
 
+        }
+        if($cms_action != 'login') {
+            $templateParser->display('cms/partials/cms-footer.tpl');
         }
         break;
     default:
