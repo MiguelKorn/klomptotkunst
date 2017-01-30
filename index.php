@@ -60,11 +60,13 @@ if ($action != 'cms') {
     }
     $landingspage = new Landingspage();
     $headerInfo = $landingspage->getHeaderInfo();
+    $bodyInfo = $landingspage->getBodyInfo();
 }
 
 switch ($action) {
     case 'home':
         $templateParser->assign('headerInfo', $headerInfo);
+        $templateParser->assign('bodyInfo', $bodyInfo);
 
         $templateParser->display('index.tpl');
 
