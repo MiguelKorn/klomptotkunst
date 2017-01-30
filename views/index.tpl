@@ -182,10 +182,10 @@
                 <form action="?action=register" method="post">
                     <input class="first" type="text" placeholder="Voornaam" name="voornaam" required>
                     <input type="text" placeholder="Achternaam" name="achternaam" required>
-                    <input class="first" type="text" placeholder="Telefoon" name="telefoon" required>
-                    <input type="text" placeholder="E-mail" name="e-mail" required>
+                    <input class="first" type="tel" placeholder="Telefoon" name="telefoon" required>
+                    <input type="email" placeholder="E-mail" name="e-mail" required>
                     <input class="first" type="text" placeholder="Naam organisatie" name="naam-organisatie" required>
-                    <input type="text" placeholder="Website" name="website" required>
+                    <input type="url" placeholder="Website" name="website" required>
                     <select class="first" name="type" required>
                         <option value="cultuur">Cultuur</option>
                         <option value="kunst">Kunst</option>
