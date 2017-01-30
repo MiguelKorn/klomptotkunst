@@ -20,9 +20,8 @@
         <div class="col-33 edam">
             <a href="#">
                 <div class="overlay">
-                    <h3>Edam</h3>
-                    <p>Lorem ipsum dolor sit amet ,
-                        consectetur adipiscing amet elit.consectetur adipiscing amet elit.
+                    <h3>{$name.0.name}</h3>
+                    <p>{$info.0.info}
 
                     </p>
                 </div>
@@ -32,9 +31,8 @@
         <div class="col-33 volendam">
             <a href="#">
                 <div class="overlay">
-                    <h3>Volendam</h3>
-                    <p>Lorem ipsum dolor sit amet ,
-                        consectetur adipiscing amet elit. consectetur adipiscing amet elit.
+                    <h3>{$name.1.name}</h3>
+                    <p>{$info.0.info}
                     </p>
                 </div>
             </a>
@@ -42,9 +40,8 @@
         <div class="col-33 warder">
             <a href="#">
                 <div class="overlay">
-                    <h3>Warder</h3>
-                    <p>Lorem ipsum dolor sit amet ,
-                        consectetur adipiscing amet elit. consectetur adipiscing amet elit.
+                    <h3>{$name.2.name}</h3>
+                    <p>{$info.0.info}
                     </p>
                 </div>
             </a>
@@ -52,9 +49,8 @@
         <div class="col-33 kwadijk">
             <a href="#">
                 <div class="overlay">
-                    <h3>Kwadijk</h3>
-                    <p>Lorem ipsum dolor sit amet ,
-                        consectetur adipiscing amet elit. consectetur adipiscing amet elit.
+                    <h3>{$name.3.name}</h3>
+                    <p>{$info.0.info}
                     </p>
                 </div>
             </a>
@@ -63,9 +59,8 @@
         <div class="col-33 oosthuizen">
             <a href="#">
                 <div class="overlay">
-                    <h3>Oosthuizen</h3>
-                    <p>Lorem ipsum dolor sit amet ,
-                        consectetur adipiscing amet elit. consectetur adipiscing amet elit.
+                    <h3>{$name.4.name}</h3>
+                    <p>{$info.0.info}
                     </p>
                 </div>
             </a>
@@ -73,9 +68,8 @@
         <div class="col-33 schardam">
             <a href="#">
                 <div class="overlay">
-                    <h3>Schardam</h3>
-                    <p>Lorem ipsum dolor sit amet ,
-                        consectetur adipiscing amet elit. consectetur adipiscing amet elit.
+                    <h3>{$name.5.name}</h3>
+                    <p>{$info.0.info}
                     </p>
                 </div>
             </a>
@@ -83,9 +77,8 @@
         <div class="col-33 beets">
             <a href="#">
                 <div class="overlay">
-                    <h3>Beets</h3>
-                    <p>Lorem ipsum dolor sit amet ,
-                        consectetur adipiscing amet elit. consectetur adipiscing amet elit.
+                    <h3>{$name.6.name}</h3>
+                    <p>{$info.0.info}
                     </p>
                 </div>
             </a>
@@ -93,9 +86,8 @@
         <div class="col-33 middelie">
             <a href="#">
                 <div class="overlay">
-                    <h3>Middelie</h3>
-                    <p>Lorem ipsum dolor sit amet ,
-                        consectetur adipiscing amet elit. consectetur adipiscing amet elit.
+                    <h3>{$name.7.name}</h3>
+                    <p>{$info.0.info}
                     </p>
                 </div>
             </a>
@@ -103,9 +95,8 @@
         <div class="col-33 hobrede">
             <a href="#">
                 <div class="overlay">
-                    <h3>Hobrede</h3>
-                    <p>Lorem ipsum dolor sit amet ,
-                        consectetur adipiscing amet elit. consectetur adipiscing amet elit.
+                    <h3>{$name.8.name}</h3>
+                    <p>{$info.0.info}
                     </p>
                 </div>
             </a>
