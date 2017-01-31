@@ -8,16 +8,15 @@
 
 #### cms algemeen
 - [x] login functie cms
-- [ ] Toolbar
-- [ ] Overzichtelijk dashboard met duidelijke navigatie
+- [x] Toolbar
+- [x] Overzichtelijk dashboard met duidelijke navigatie
 
 - cms gemeente
   - [ ] Aanpas scherm nl/eng
-  - [ ] Aanmelding scherm / email
-  - [ ] Aanmelding goedkeuren/aanpassen
-  - [ ] Vereniging Pagina's bekijken/aanpassen
+  - [x] Aanmelding scherm / email
+  - [-] Aanmelding goedkeuren/aanpassen
+  - [-] Vereniging Pagina's bekijken/aanpassen
   
 - cms verenigingen
-  - [ ] Aanmeld scherm
+  - [x] Aanmeld scherm
   - [ ] Pagina aanmaken/aanpassen scherm
-  - [ ] Agenda items toevoegen scherm
