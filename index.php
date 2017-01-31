@@ -16,6 +16,7 @@ require_once 'helpers/Model.php';
 // autoload php mailer
 require_once 'libs/PHPMailer-5.2.22/PHPMailerAutoload.php';
 
+include "mode/CMS.php";
 include 'model/Landingspage.php';
 include 'model/Login.php';
 include 'model/User.php';
@@ -60,12 +61,14 @@ if ($action != 'cms') {
     }
     $landingspage = new Landingspage();
     $headerInfo = $landingspage->getHeaderInfo();
+    $bodyInfo = $landingspage->getBodyInfo();
 }
 
 
 switch ($action) {
     case 'home':
         $templateParser->assign('headerInfo', $headerInfo);
+        $templateParser->assign('bodyInfo', $bodyInfo);
 
         $templateParser->display('index.tpl');
 
@@ -201,6 +204,11 @@ switch ($action) {
                 echo 'logout';
                 unset($_SESSION['user_id']);
                 break;
+            case 'request':
+
+                $templateParser->assign($result, 'result');
+                $templateParser->display('request.tpl');
+
             default:
 
         }
