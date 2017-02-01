@@ -199,15 +199,16 @@ switch ($action) {
                 $templateParser->display('cms/home.tpl');
                 break;
             case 'request':
+                $templateParser->assign('result', $result);
                 $templateParser->display('cms/request.tpl');
             case 'logout':
                 echo 'logout';
                 unset($_SESSION['user_id']);
                 break;
-            case 'request':
+            case 'edit':
+                $templateParser->assign('result1', $result1);
+                $templateParser->display('cms/edit.tpl');
 
-                $templateParser->assign($result, 'result');
-                $templateParser->display('request.tpl');
 
             default:
 

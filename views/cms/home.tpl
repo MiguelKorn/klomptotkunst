@@ -20,7 +20,7 @@
                         </div>
                     </div>
                 </div>
-                <a href="#">
+                <a href="request.tpl">
                     <div class="panel-footer">
                         <span class="pull-left">View Requests</span>
                         <span class="pull-right"><i class="fa fa-arrow-circle-right"></i></span>
@@ -79,7 +79,7 @@
                 <!-- /.panel-heading -->
                 <div class="panel-body">
                     <div class="list-group">
-                        <a href="#" class="list-group-item">
+                        <a href="request.tpl" class="list-group-item">
                             <i class="fa fa-exclamation fa-fw"></i> New Request
                             <span class="pull-right text-muted small"><em>4 minutes ago</em>
                                     </span>
