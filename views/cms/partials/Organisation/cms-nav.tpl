@@ -33,13 +33,13 @@
                     <a href="index.html" class="active"><i class="fa fa-home fa-fw"></i> Dashboard</a>
                 </li>
                 <li>
-                    <a href="#"><i class="fa fa-edit fa-fw"></i> Backround Image</a>
+                    <a href="?action=cms&cms_action=edit_header"><i class="fa fa-edit fa-fw"></i> Header</a>
                 </li>
                 <li>
-                    <a href="#"><i class="fa fa-edit fa-fw"></i> About us</a>
+                    <a href="?action=cms&cms_action=edit_about"><i class="fa fa-edit fa-fw"></i> About us</a>
                 </li>
                 <li>
-                    <a href="#"><i class="fa fa-edit fa-fw"></i> Contact</a>
+                    <a href="?action=cms&cms_action=edit_contact"><i class="fa fa-edit fa-fw"></i> Contact</a>
                 </li>
             </ul>
         </div>
