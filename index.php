@@ -19,6 +19,7 @@ require_once 'libs/PHPMailer-5.2.22/PHPMailerAutoload.php';
 include "mode/CMS.php";
 include 'model/Landingspage.php';
 include 'model/Login.php';
+include 'model/Register.php';
 include 'model/User.php';
 
 
@@ -74,19 +75,32 @@ switch ($action) {
 
         break;
     case 'register':
-
         if ($_SERVER['REQUEST_METHOD'] == 'POST') {
-            echo $_POST['voornaam'] . '<br>';
-            echo $_POST['achternaam'] . '<br>';
-            echo $_POST['telefoon'] . '<br>';
-            echo $_POST['e-mail'] . '<br>';
-            echo $_POST['naam-organisatie'] . '<br>';
-            echo $_POST['website'] . '<br>';
-            echo $_POST['type'] . '<br>';
-            echo $_POST['plaats'] . '<br>';
+            $register = new Register();
+            $key = md5(uniqid(rand(), true));
+
+            $fname = ucfirst(strtolower(filter_var($_POST['voornaam'], FILTER_SANITIZE_STRING)));
+            $lname = ucfirst(strtolower(filter_var($_POST['achternaam'], FILTER_SANITIZE_STRING)));
+            $tel = filter_var($_POST['telefoon'], FILTER_SANITIZE_STRING);
+            $email = filter_var($_POST['e-mail'], FILTER_SANITIZE_EMAIL);
+            $organisation = filter_var($_POST['naam-organisatie'], FILTER_SANITIZE_STRING);
+            $site = filter_var($_POST['website'], FILTER_SANITIZE_URL);
+            $type = filter_var($_POST['type'], FILTER_SANITIZE_STRING);
+            $location = filter_var($_POST['plaats'], FILTER_SANITIZE_STRING);
+
+            $fullName = $fname . ' ' . $lname;
+
+            $subject = 'Activate Request KTK';
+            $message = '<p>Click the following link to validate your request</p>
+                        <p>http://miguelkorn.nl/klomptotkunst/index.php?action=validate&key=' . $key . '</p>';
+
+            $data['msg'] = $register->sendActivation($email, $fullName, $subject, $message);
+            $data['adduser'] = $register->addUser($fname, $lname, $tel, $email, $site, $key);
+
+            $templateParser->assign('data', $data);
         }
 
-        $templateParser->assign('data', $data);
+
         $templateParser->display('register.tpl');
         break;
     case 'agenda':
@@ -133,19 +147,18 @@ switch ($action) {
         $templateParser->display('search.tpl');
         break;
     case 'cms':
-        if(isset($_SESSION['user_id'])) {
+        if (isset($_SESSION['user_id'])) {
             $cms = new User();
             $role = $cms->checkUserRole($_SESSION['user_id']);
         }
 
-        if($cms_action != 'login') {
+        if ($cms_action != 'login' || $cms_action != 'logout') {
             $templateParser->display('cms/partials/cms-head.tpl');
-            $templateParser->display('cms/partials/'.$role['role_name'].'/cms-nav.tpl');
+            $templateParser->display('cms/partials/' . $role['role_name'] . '/cms-nav.tpl');
         }
         switch ($cms_action) {
             case 'login':
                 $templateParser->display('cms/login.tpl');
-
                 if ($_SERVER['REQUEST_METHOD'] == 'POST') {
 
                     echo $_POST['usermail'];
@@ -162,11 +175,8 @@ switch ($action) {
                     } else {
                         $login = new Login();
 
-                        $usermail = filter_var($_POST['usermail'], FILTER_SANITIZE_STRING);
+                        $usermail = filter_var($_POST['usermail'], FILTER_SANITIZE_EMAIL);
                         $userpass = filter_var($_POST['userpass'], FILTER_SANITIZE_STRING);
-
-                        $usermail = $login->checkInput($usermail);
-                        $userpass = $login->checkInput($userpass);
 
                         $userpass = sha1($userpass);
 
@@ -209,7 +219,7 @@ switch ($action) {
             default:
 
         }
-        if($cms_action != 'login') {
+        if ($cms_action != 'login') {
             $templateParser->display('cms/partials/cms-footer.tpl');
         }
         break;
