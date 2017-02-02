@@ -1,3 +1,4 @@
+<div id="page-wrapper" style="min-height: 236px;">
 <div class="row">
     <div class="col-lg-12">
 
@@ -21,4 +22,4 @@
 <!-- /.col-lg-12 -->
 </div>
 
-<div/>
+</div>
