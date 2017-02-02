@@ -42,7 +42,7 @@
         <meta name="msapplication-square310x310logo" content="assets/images/favicons/mstile-310x310.png" />
 	
 		<!-- stylesheet -->
-        <link rel="stylesheet" href="assets/css/style.css">
+        <link rel="stylesheet" href="assets/css/style.css?{$smarty.now|date_format}">
 
         <!--[if lt IE 9]>
 			<script src="assets/js/plugins/html5shiv.js"></script>

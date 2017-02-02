@@ -12,21 +12,18 @@ class Landingspage extends Model
         $result = $stmt->fetchAll();
 
         return $result;
-}
+    }
 
-public function getBodyInfo()
-{
-    $stmt = $this->db->prepare('SELECT `name`, `info`, `img` FROM `locations`');
+    public function getBodyInfo()
+    {
+        $stmt = $this->db->prepare('SELECT `name`, `info`, `img` FROM `locations`');
 
-    $stmt->execute();
+        $stmt->execute();
 
-    $result = $stmt->fetchAll();
+        $result = $stmt->fetchAll();
 
-    return $result;
-
-
-}
-
+        return $result;
+    }
 
 
 }

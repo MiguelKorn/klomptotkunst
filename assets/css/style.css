@@ -1528,7 +1528,7 @@ nav .searchclose {
 }
 
 /* line 22, ../sass/ui-elements/_forms.scss */
-input {
+input[type="text"] {
   background: #49525a;
   max-width: 250px;
   width: 100%;
@@ -1543,7 +1543,7 @@ input {
   box-sizing: border-box;
 }
 /* line 34, ../sass/ui-elements/_forms.scss */
-input #searchfield {
+input[type="text"]#searchfield {
   background: #ffffff;
   border: 1px solid #c8c7c7;
   max-width: 500px;
@@ -1567,7 +1567,10 @@ input #searchfield {
 
 /* line 58, ../sass/ui-elements/_forms.scss */
 #contact input[type="text"],
-#inschrijven input {
+#inschrijven input[type="text"],
+#inschrijven input[type="email"],
+#inschrijven input[type="url"],
+#inschrijven input[type="tel"] {
   background: #ffffff;
   max-width: 250px;
   width: 100%;
@@ -1592,14 +1595,20 @@ input #searchfield {
 @media screen and (max-width: 1190px) {
   /* line 58, ../sass/ui-elements/_forms.scss */
   #contact input[type="text"],
-  #inschrijven input[type="text"] {
+  #inschrijven input[type="text"],
+  #inschrijven input[type="email"],
+  #inschrijven input[type="url"],
+  #inschrijven input[type="tel"] {
     width: 47%;
   }
 }
 @media screen and (max-width: 945px) {
   /* line 58, ../sass/ui-elements/_forms.scss */
   #contact input[type="text"],
-  #inschrijven input[type="text"] {
+  #inschrijven input[type="text"],
+  #inschrijven input[type="email"],
+  #inschrijven input[type="url"],
+  #inschrijven input[type="tel"] {
     width: 100%;
     margin-left: 0px;
     max-width: 100%;
@@ -1608,7 +1617,9 @@ input #searchfield {
 /* line 85, ../sass/ui-elements/_forms.scss */
 #contact input[type="text"]:focus,
 #inschrijven input[type="text"]:focus,
-#inschrijven input[type="email"]:focus {
+#inschrijven input[type="email"]:focus,
+#inschrijven input[type="url"]:focus,
+#inschrijven input[type="tel"]:focus {
   -moz-transition: border-bottom 0.6s;
   -o-transition: border-bottom 0.6s;
   -webkit-transition: border-bottom 0.6s;
@@ -6160,9 +6171,3 @@ section#search .search-result p {
   overflow: hidden;
   text-overflow: ellipsis;
 }
-
-
-
-
-
-
