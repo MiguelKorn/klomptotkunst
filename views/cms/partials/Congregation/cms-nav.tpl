@@ -8,7 +8,7 @@
             <span class="icon-bar"></span>
             <span class="icon-bar"></span>
         </button>
-        <a class="navbar-brand" href="index.html">CMS SAdmin</a>
+        <a class="navbar-brand" href="index.html">CMS Admin</a>
     </div>
     <!-- /.navbar-header -->
 
@@ -33,16 +33,13 @@
                     <a href="index.html" class="active"><i class="fa fa-home fa-fw"></i> Dashboard</a>
                 </li>
                 <li>
-                    <a href="#"><i class="fa fa-edit fa-fw"></i> Organisations</a>
+                    <a href="#"><i class="fa fa-edit fa-fw"></i> Backround Image</a>
                 </li>
                 <li>
-                    <a href="#"><i class="fa fa-edit fa-fw"></i> Requests</a>
+                    <a href="#"><i class="fa fa-edit fa-fw"></i> About us</a>
                 </li>
                 <li>
                     <a href="#"><i class="fa fa-edit fa-fw"></i> Contact</a>
-                </li>
-                <li>
-                    <a href="#"><i class="fa fa-edit fa-fw"></i> </a>
                 </li>
             </ul>
         </div>

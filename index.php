@@ -16,7 +16,7 @@ require_once 'helpers/Model.php';
 // autoload php mailer
 require_once 'libs/PHPMailer-5.2.22/PHPMailerAutoload.php';
 
-include "mode/CMS.php";
+//include "mode/CMS.php";
 include 'model/Landingspage.php';
 include 'model/Login.php';
 include 'model/Register.php';
@@ -152,7 +152,7 @@ switch ($action) {
             $role = $cms->checkUserRole($_SESSION['user_id']);
         }
 
-        if ($cms_action != 'login' || $cms_action != 'logout') {
+        if ($cms_action != 'login' && $cms_action != 'logout') {
             $templateParser->display('cms/partials/cms-head.tpl');
             $templateParser->display('cms/partials/' . $role['role_name'] . '/cms-nav.tpl');
         }
@@ -204,8 +204,9 @@ switch ($action) {
 
                 break;
             case 'home':
-
-                $templateParser->display('cms/home.tpl');
+                if ($cms_action != 'login' && $cms_action != 'logout') {
+                    $templateParser->display('cms/partials/' . $role['role_name'] . '/cms-home.tpl');
+                }
                 break;
             case 'logout':
                 echo 'logout';
