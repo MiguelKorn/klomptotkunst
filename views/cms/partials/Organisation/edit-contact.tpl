@@ -5,22 +5,22 @@
 <h1>Edit contact</h1>
 
 <form action="../index.php?action=cms&cms_action=home">
-    <h2>Adres</h2>
+    <p>Adres</p>
     <input type="text">
 
-    <h2>Postcode</h2>
+    <p>Postcode</p>
     <input type="text">
 
-    <h2>Plaats</h2>
+    <p>Plaats</p>
     <input type="text">
 
-    <h2>Telefoon</h2>
+    <p>Telefoon</p>
     <input type="text">
 
-    <h2>Email</h2>
+    <p>Email</p>
     <input type="text">
 
-    <h2>Website</h2>
+    <p>Website</p>
     <input type="text">
 
     <input type="submit">

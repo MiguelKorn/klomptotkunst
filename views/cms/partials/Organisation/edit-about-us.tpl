@@ -5,7 +5,7 @@
 
 
 <form action="../index.php?action=cms&cms_action=home">
-    <h2>About us text</h2>
+    <p>About us text</p>
     <input type="text">
 
     <input type="submit">
